@@ -1,2 +1,414 @@
-# javascript-sdk-design
-Javascript SDK design guide extracted from work and personal experience and written in :heart:
+# Javascript SDK Design Guide
+
+## Introduction
+
+This guide gives you an introduction to develop a javascript sdk 
+on desktop and mobile web in different platforms and browsers (<99.99% I might skip some browsers). 
+
+Since I didn't find out a better documentation for the javascript sdk,
+I'm here to collect and note down the knowledges from my experiences.
+
+Feel free to edit it if you think there's a better design methodology or 
+any others I didn't mention here.
+
+*(inspired by [http-api-design](https://github.com/interagent/http-api-design))*
+
+## Content
+* [Design Philosophy](#design-philosophy)
+* [Include the SDK](#include-the-sdk)
+  * [Asynchronous Syntax](#asynchronous-syntax)
+  * [Traditional Syntax](#traditional-syntax)
+  * [Comparison](#comparison)
+* [SDK Versioning](#sdk-versioning)
+* [Changelog Document](#changelog-document)
+* [Namespace](#namespace)
+* [Storage Mechanism](#storage-mechanism)
+  * [Cookie](#cookie)
+    * [Check Cookie Writable](#check-cookie-writable)
+    * [Check Third Party Cookie Writable](#check-third-party-cookie-writable)
+  * [Session](#session)
+  * [LocalStorage](#localstorage)
+    * [Check LocalStorage Writable](#check-localstorage-writable)
+  * [SessionStorage](#sessionstorage)
+    * [Check SessionStorage Writable](#check-sessionstorage-writable)
+* [Request](#request)
+  * [Image Beacon](#image-beacon)
+  * [Single Post](#single-post)
+  * [Multiple Post](#multiple-post)
+  * [Iframe](#iframe)
+  * [XMLHttpRequest](#xmlhttprequest)
+* [Component of URI](#component-of-uri)
+ * [Parsing URI](#parsing-uri)
+* [Book to Read](#book-to-read)
+* [Reference](#reference)
+
+### Design Philosophy
+
+It depends on your purpose of your SDK service and usage, 
+but there must be **native**, **short**, **fast**, **clean** and **readable**.
+
+Written in native javascript code, compiler language like 
+livescript, coffeescript, typescript and others are not recommend.
+There must be a better way to write your own javascript code in native faster than others.
+
+Please don't involve jQuery in your SDK unless it's really important, 
+you can have other jQuery-like libraries, zepto.js, for the DOM manipulation. 
+Or if you need the http ajax request, use other light library like `window.fetch`.
+
+Once every SDK version released, make sure that it can be fitted into older and newer SDK version in the future. 
+Therefore, remember to write your **Documentation** for your SDK and comment for your code.
+
+
+### Include the SDK
+
+You are suggest to use **Asynchrnonous Syntax** for your script loaded.
+We want to optimize the user experience on the website as we don't want our SDK library interfere the main web loaded.
+
+#### Asynchronous Syntax
+
+```html
+<script>
+  (function () {
+    var s = document.createElement('script');
+    s.type = 'text/javascript';
+    s.async = true;
+    s.src = 'http://xxx.com/sdk.js';
+    var x = document.getElementsByTagName('script')[0];
+    x.parentNode.insertBefore(s, x);
+  })();
+</script>
+```
+
+Target on modern browser, you can use `async`.
+
+```html
+<script async src="http://xxx.com/sdk.js"></script>
+```
+
+#### Traditional Syntax
+
+```html
+<script type="text/javascript" src="http://xxx.com/sdk.js"></script>
+```
+
+#### Comparison
+
+Here's the simple graph to show the differentiate between Asynchronous and Traditional Syntax.
+
+Asynchronous:
+```
+ |----A-----|
+    |-----B-----------| 
+        |-------C------|
+```
+
+Synchronous:
+```
+|----A-----||-----B-----------||-------C------|
+```
+
+### SDK Versioning
+
+Please avoid using your special case for version like `brand-v<timestamp>.js` `brand-v<datetime>.js` `brand-v1-v2.js`, 
+it may cause the developer who use the SDK on confusing which is the latest version. 
+
+Use [Semantic Versioning](http://semver.org) to define your SDK Version in the form "MAJOR.MINOR.PATCH".
+Version in `v1.0.0` `v1.5.0` `v2.0.0` is easier for them to trace and search for the changelog documentation.
+
+Normally, we can have different ways to state the SDK version, it depends on your service and design.
+
+Using Query String path.
+```
+http://xxx.com/sdk.js?v=1.0.0
+```
+
+Using the Folder Naming.
+```
+http://xxx.com/v1.0.0/sdk.js
+```
+
+Using hostname (subdomain).
+```
+http://v1.xxx.com/sdk.js
+```
+
+For the futher development, you are advised to use  `stable` `unstable` `alpha` `latest` `experimental` version.
+```
+http://xxx.com/sdk-stable.js
+http://xxx.com/sdk-unstable.js
+http://xxx.com/sdk-alpha.js
+http://xxx.com/sdk-latest.js
+http://xxx.com/sdk-experimental.js
+```
+
+### Changelog Document
+
+You should notice that your SDK user will not know if you upgrade your sdk without announcement. 
+Remember to write a changelog to document your major, minor and even bug fix change. 
+It will be a good developer experience if we can trace the changing API for the SDK.
+
+### Namespace
+
+You should not define more than one global namespace in your SDK and 
+prevent using the common word for your namespace to avoid collision with other libraries.
+
+On your SDK mainland, you should use `(function () { ... })()` to wrap all your source.
+
+### Storage Mechanism
+
+#### Cookie
+
+The domain scope of using cookie is quite complex while involving the `subdomain` and `path`.
+
+For `path=/`, 
+you have a cookie `first=value1` in domain `http://github.com`, 
+another cookie `second=value2` in domain `http://sub.github.com`
+
+|  | http://github.com | http://sub.github.com 
+|:---------:|:------------:|:------------:
+first=value1	 | ✓ | ✓
+second=value2 | ✘ | ✓
+
+You have a cookie `first=value1` in domain `http://github.com`,
+cookie `second=value2` in domain path `http://github.com/path1`
+and cookie `third=value3` in domain `http://sub.github.com`,
+
+
+|  | http://github.com | http://github.com/path1 | http://sub.github.com
+|:---------:|:------------:|:------------:|:------------:
+first=value1	 | ✓ | ✓ | ✓
+second=value2 | ✘ | ✓ | ✘
+third=value3 | ✘ | ✘ | ✓
+
+##### Check Cookie Writable
+
+Given a domain (Default as current hostname), check whether the cookie is writable.
+
+```js
+var checkCookieWritable = function(domain) {
+    try {
+        // Create cookie
+        document.cookie = 'cookietest=1' + (domain ? '; domain=' + domain : '');
+        var ret = document.cookie.indexOf('cookietest=') != -1;
+        // Delete cookie
+        document.cookie = 'cookietest=1; expires=Thu, 01-Jan-1970 00:00:01 GMT' + (domain ? '; domain=' + domain : '');
+        return ret;
+    } catch (e) {
+        return false;
+    }
+};
+```
+
+##### Check Third Party Cookie Writable
+
+It's impossible to check only using client side javascript, you need a server to do that. ([Example](https://dl.dropboxusercontent.com/u/105727/web/3rd/third-party-cookies.html))
+
+#### Session
+
+It's important to know that Javascript is not possible to write Session, 
+please refer to the server side team to implement Session.
+
+#### LocalStorage
+
+Stores data with no expiration date, storage limit is far larger (at least 5MB) and 
+information is never transferred to the server.
+
+It's good to know that each localStorage from `http` and `https` in same domain aren't shared.
+You can create an iframe inside the website and use `postMessage` to pass the value to others. [HOW TO?](http://stackoverflow.com/questions/10502469/is-there-any-workaround-to-make-use-of-html5-localstorage-on-both-http-and-https)
+
+##### Check LocalStorage Writable
+
+window.localStorage is not support in every browser, SDK should check available before using it.
+
+```js
+var testCanLocalStorage = function() {
+   var mod = 'modernizr';
+   try {
+       localStorage.setItem(mod, mod);
+       localStorage.removeItem(mod);
+       return true;
+   } catch (e) {
+       return false;
+   }
+};
+```
+
+### Session Storage
+
+Stores data for one session (data is lost when the tab is closed).
+
+#### Check SessionStorage Writable
+
+```js
+var checkCanSessionStorage = function() {
+  var mod = 'modernizr';
+  try {
+    sessionStorage.setItem(mod, mod);
+    sessionStorage.removeItem(mod);
+    return true;
+  } catch (e) {
+    return false;
+  }
+}
+```
+
+### Request
+
+The communication between our SDK and Server is using Ajax Request, 
+as we know we can use jQuery ajax http request to communicate with Server, 
+but there's a better solution to implement it.
+
+#### Image Beacon
+
+Use the Image Beacon to ask browser to perform a method GET Request to get an Image.
+
+```js
+(new Image()).src = 'http://xxxxx.com/collect?id=1111';
+```
+
+#### Single Post
+
+Use the native form element method POST to send a key value.
+
+```js
+var form = document.createElement('form');
+var input = document.createElement('input');
+
+form.style.display = 'none';
+form.setAttribute('method', 'POST');
+form.setAttribute('action', 'http://xxxx.com/track');
+
+input.name = 'username';
+input.value = 'attacker';
+
+form.appendChild(input);
+document.getElementsByTagName('body')[0].appendChild(form);
+
+form.submit();
+```
+
+#### Multiple Post
+
+The Service is often complex, we need to send more data through method POST.
+
+```js
+function requestWithoutAjax( url, params, method ){
+
+    params = params || {};
+    method = method || "post";
+
+    // function to remove the iframe
+    var removeIframe = function( iframe ){
+        iframe.parentElement.removeChild(iframe);
+    };
+
+    // make a iframe...
+    var iframe = document.createElement('iframe');
+    iframe.style.display = 'none';
+
+    iframe.onload = function(){
+        var iframeDoc = this.contentWindow.document;
+
+        // Make a invisible form
+        var form = iframeDoc.createElement('form');
+        form.method = method;
+        form.action = url;
+        iframeDoc.body.appendChild(form);
+
+        // pass the parameters
+        for( var name in params ){
+            var input = iframeDoc.createElement('input');
+            input.type = 'hidden';
+            input.name = name;
+            input.value = params[name];
+            form.appendChild(input);
+        }
+
+        form.submit();
+        // remove the iframe
+        setTimeout( function(){ 
+            removeIframe(iframe);
+        }, 500);
+    };
+
+    document.body.appendChild(iframe);
+}
+```
+```js
+requestWithoutAjax('url/to', { id: 2, price: 2.5, lastname: 'Gamez'});
+```
+
+#### Iframe
+
+If you request is more complicated, use iframe.
+
+```js
+var iframe = document.createElement('iframe');
+var body = document.getElementsByTagName('body')[0];
+
+iframe.style.display = 'none';
+iframe.src = 'http://xxxx.com/page';
+iframe.onreadystatechange = function () {
+    if (iframe.readyState !== 'complete') {
+        return;
+    }
+};
+
+body.append(iframe);
+```
+#### XMLHttpRequest
+
+### Component of URI
+
+It's important to know if your SDK need to parse the location url.
+```
+                         authority
+                   __________|_________
+                  /                    \
+              userinfo                host                          resource
+               __|___                ___|___                 __________|___________
+              /      \              /       \               /                      \
+         username  password     hostname    port     path & segment      query   fragment
+           __|___   __|__    ______|______   |   __________|_________   ____|____   |
+          /      \ /     \  /             \ / \ /                    \ /         \ / \
+    foo://username:password@www.example.com:123/hello/world/there.html?name=ferret#foo
+    \_/                     \ / \       \ /    \__________/ \     \__/
+     |                       |   \       |           |       \      |
+  scheme               subdomain  \     tld      directory    \   suffix
+                                   \____/                      \___/
+                                      |                          |
+                                    domain                   filename
+```
+
+#### Parsing URI
+
+Here's a simplest by using the native URL() Interface but it doesn't support on all the browsers.
+
+```js
+var parser = new URL('http://github.com/huei90');
+parser.hostname; // => "github.com"
+```
+
+For the browser which doesn't have the URL() Interface, try DOM createElement('a').
+
+```js
+var parser = document.createElement('a');
+parser.href = "http://github.com/huei90";
+parser.hostname; // => "github.com"
+```
+
+### Book to Read
+
+1. [Third-Party Javascript](http://thirdpartyjs.com)
+
+### Reference
+
+1. [A window.fetch JavaScript polyfill.](https://github.com/github/fetch)
+2. [POST Request](http://stackoverflow.com/questions/692196/post-request-javascript/25423688#25423688)
+3. [Semantic VersioningVersioning 2.0.0](http://semver.org)
+4. [HTTP API design guide extracted from work on the Heroku Platform API](https://github.com/interagent/http-api-design)
+5. [Understanding URIs](http://medialize.github.io/URI.js/about-uris.html)
+6. [URI Parsing with Javascript](https://gist.github.com/jlong/2428561)
+7. [Modernizr: the feature detection library for HTML5/CSS3](http://modernizr.com)
+8. [HTML5 Web Storage](http://www.w3schools.com/html/html5_webstorage.asp)
+9. [Check if third-party cookies are enabled](http://stackoverflow.com/questions/3550790/check-if-third-party-cookies-are-enabled)
