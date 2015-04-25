@@ -43,7 +43,7 @@ any others I didn't mention here.
 * [Book to Read](#book-to-read)
 * [Reference](#reference)
 
-### Design Philosophy
+## Design Philosophy
 
 It depends on your purpose of your SDK service and usage, 
 but there must be **native**, **short**, **fast**, **clean** and **readable**.
@@ -60,12 +60,12 @@ Once every SDK version released, make sure that it can be fitted into older and 
 Therefore, remember to write your **Documentation** for your SDK and comment for your code.
 
 
-### Include the SDK
+## Include the SDK
 
 You are suggest to use **Asynchrnonous Syntax** for your script loaded.
 We want to optimize the user experience on the website as we don't want our SDK library interfere the main web loaded.
 
-#### Asynchronous Syntax
+### Asynchronous Syntax
 
 ```html
 <script>
@@ -86,13 +86,13 @@ Target on modern browser, you can use `async`.
 <script async src="http://xxx.com/sdk.js"></script>
 ```
 
-#### Traditional Syntax
+### Traditional Syntax
 
 ```html
 <script type="text/javascript" src="http://xxx.com/sdk.js"></script>
 ```
 
-#### Comparison
+### Comparison
 
 Here's the simple graph to show the differentiate between Asynchronous and Traditional Syntax.
 
@@ -108,7 +108,7 @@ Synchronous:
 |----A-----||-----B-----------||-------C------|
 ```
 
-#### Problem of Asynchronous
+### Problem of Asynchronous
 
 When you are using Asynchronous,
 you cannot execute your SDK function which script written within the page.
@@ -154,7 +154,7 @@ your SDK should handle and execute `SDKName.q` and reinitial the namespace `SDKN
 </script>
 ```
 
-### SDK Versioning
+## SDK Versioning
 
 Please avoid using your special case for version like `brand-v<timestamp>.js` `brand-v<datetime>.js` `brand-v1-v2.js`, 
 it may cause the developer who use the SDK on confusing which is the latest version. 
@@ -188,22 +188,22 @@ http://xxx.com/sdk-latest.js
 http://xxx.com/sdk-experimental.js
 ```
 
-### Changelog Document
+## Changelog Document
 
 You should notice that your SDK user will not know if you upgrade your sdk without announcement. 
 Remember to write a changelog to document your major, minor and even bug fix change. 
 It will be a good developer experience if we can trace the changing API for the SDK.
 
-### Namespace
+## Namespace
 
 You should not define more than one global namespace in your SDK and 
 prevent using the common word for your namespace to avoid collision with other libraries.
 
 On your SDK mainland, you should use `(function () { ... })()` to wrap all your source.
 
-### Storage Mechanism
+## Storage Mechanism
 
-#### Cookie
+### Cookie
 
 The domain scope of using cookie is quite complex while involving the `subdomain` and `path`.
 
@@ -227,7 +227,7 @@ first=value1	 | ✓ | ✓ | ✓
 second=value2 | ✘ | ✓ | ✘
 third=value3 | ✘ | ✘ | ✓
 
-##### Check Cookie Writable
+#### Check Cookie Writable
 
 Given a domain (Default as current hostname), check whether the cookie is writable.
 
@@ -246,16 +246,16 @@ var checkCookieWritable = function(domain) {
 };
 ```
 
-##### Check Third Party Cookie Writable
+#### Check Third Party Cookie Writable
 
 It's impossible to check only using client side javascript, you need a server to do that. ([Example](https://dl.dropboxusercontent.com/u/105727/web/3rd/third-party-cookies.html))
 
-#### Session
+### Session
 
 It's important to know that Javascript is not possible to write Session, 
 please refer to the server side team to implement Session.
 
-#### LocalStorage
+### LocalStorage
 
 Stores data with no expiration date, storage limit is far larger (at least 5MB) and 
 information is never transferred to the server.
@@ -263,7 +263,7 @@ information is never transferred to the server.
 It's good to know that each localStorage from `http` and `https` in same domain aren't shared.
 You can create an iframe inside the website and use `postMessage` to pass the value to others. [HOW TO?](http://stackoverflow.com/questions/10502469/is-there-any-workaround-to-make-use-of-html5-localstorage-on-both-http-and-https)
 
-##### Check LocalStorage Writable
+#### Check LocalStorage Writable
 
 window.localStorage is not support in every browser, SDK should check available before using it.
 
@@ -284,7 +284,7 @@ var testCanLocalStorage = function() {
 
 Stores data for one session (data is lost when the tab is closed).
 
-#### Check SessionStorage Writable
+### Check SessionStorage Writable
 
 ```js
 var checkCanSessionStorage = function() {
@@ -299,13 +299,13 @@ var checkCanSessionStorage = function() {
 }
 ```
 
-### Request
+## Request
 
 The communication between our SDK and Server is using Ajax Request, 
 as we know we can use jQuery ajax http request to communicate with Server, 
 but there's a better solution to implement it.
 
-#### Image Beacon
+### Image Beacon
 
 Use the Image Beacon to ask browser to perform a method GET Request to get an Image.
 
@@ -313,7 +313,7 @@ Use the Image Beacon to ask browser to perform a method GET Request to get an Im
 (new Image()).src = 'http://xxxxx.com/collect?id=1111';
 ```
 
-#### Single Post
+### Single Post
 
 Use the native form element method POST to send a key value.
 
@@ -334,7 +334,7 @@ document.getElementsByTagName('body')[0].appendChild(form);
 form.submit();
 ```
 
-#### Multiple Post
+### Multiple Post
 
 The Service is often complex, we need to send more data through method POST.
 
@@ -385,7 +385,7 @@ function requestWithoutAjax( url, params, method ){
 requestWithoutAjax('url/to', { id: 2, price: 2.5, lastname: 'Gamez'});
 ```
 
-#### Iframe
+### Iframe
 
 If you request is more complicated, use iframe.
 
@@ -403,9 +403,9 @@ iframe.onreadystatechange = function () {
 
 body.append(iframe);
 ```
-#### XMLHttpRequest
+### XMLHttpRequest
 
-### Component of URI
+## Component of URI
 
 It's important to know if your SDK need to parse the location url.
 ```
@@ -427,7 +427,7 @@ It's important to know if your SDK need to parse the location url.
                                     domain                   filename
 ```
 
-#### Parsing URI
+### Parsing URI
 
 Here's a simplest by using the native URL() Interface but it doesn't support on all the browsers.
 
@@ -444,11 +444,11 @@ parser.href = "http://github.com/huei90";
 parser.hostname; // => "github.com"
 ```
 
-### Book to Read
+## Book to Read
 
 1. [Third-Party Javascript](http://thirdpartyjs.com)
 
-### Reference
+## Reference
 
 1. [A window.fetch JavaScript polyfill.](https://github.com/github/fetch)
 2. [POST Request](http://stackoverflow.com/questions/692196/post-request-javascript/25423688#25423688)
