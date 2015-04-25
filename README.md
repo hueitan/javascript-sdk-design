@@ -19,6 +19,7 @@ any others I didn't mention here.
   * [Asynchronous Syntax](#asynchronous-syntax)
   * [Traditional Syntax](#traditional-syntax)
   * [Comparison](#comparison)
+  * [Problem of Asynchronous](#problem-of-asynchronous)
 * [SDK Versioning](#sdk-versioning)
 * [Changelog Document](#changelog-document)
 * [Namespace](#namespace)
@@ -105,6 +106,52 @@ Asynchronous:
 Synchronous:
 ```
 |----A-----||-----B-----------||-------C------|
+```
+
+#### Problem of Asynchronous
+
+When you are using Asynchronous,
+you cannot execute your SDK function which script written within the page.
+
+```js
+<script>
+  (function () {
+    var s = document.createElement('script');
+    s.type = 'text/javascript';
+    s.async = true;
+    s.src = 'http://xxx.com/sdk.js';
+    var x = document.getElementsByTagName('script')[0];
+    x.parentNode.insertBefore(s, x);
+  })();
+  
+  // execute your script immediately here
+  SDKName('some arguments');
+</script>
+```
+
+The result will lead to undefined because the `SDKName()` execute before the script loaded, 
+therefore we should do some tricks and make sure the script execute successfully. 
+The event will store in the `SDKName.q` queue array, 
+your SDK should handle and execute `SDKName.q` and reinitial the namespace `SDKName`.
+
+```js
+<script>
+  (function () {
+    // add a queue event here
+    SDKName = SDKName || function () {
+      (SDKName.q = SDKName.q || []).push(arguments);
+    };
+    var s = document.createElement('script');
+    s.type = 'text/javascript';
+    s.async = true;
+    s.src = 'http://xxx.com/sdk.js';
+    var x = document.getElementsByTagName('script')[0];
+    x.parentNode.insertBefore(s, x);
+  })();
+  
+  // execute your script immediately here
+  SDKName('some arguments');
+</script>
 ```
 
 ### SDK Versioning
@@ -412,3 +459,4 @@ parser.hostname; // => "github.com"
 7. [Modernizr: the feature detection library for HTML5/CSS3](http://modernizr.com)
 8. [HTML5 Web Storage](http://www.w3schools.com/html/html5_webstorage.asp)
 9. [Check if third-party cookies are enabled](http://stackoverflow.com/questions/3550790/check-if-third-party-cookies-are-enabled)
+10. [Introduction to Analytics.js - Universal Analytics Web Tracking](https://developers.google.com/analytics/devguides/collection/analyticsjs/)
