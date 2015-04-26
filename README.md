@@ -14,6 +14,7 @@ any others I didn't mention here.
 *(inspired by [http-api-design](https://github.com/interagent/http-api-design))*
 
 ## Content
+* [What is SDK](#what-is-sdk)
 * [Design Philosophy](#design-philosophy)
 * [Include the SDK](#include-the-sdk)
   * [Asynchronous Syntax](#asynchronous-syntax)
@@ -42,6 +43,12 @@ any others I didn't mention here.
  * [Parsing URI](#parsing-uri)
 * [Book to Read](#book-to-read)
 * [Reference](#reference)
+
+## What is SDK
+
+I know it's very common, but it is.
+
+"Short for **software development kit**, a programming package that enables a programmer to develop applications for a specific platform. Typically an SDK includes one or more APIs, programming tools, and documentation."
 
 ## Design Philosophy
 
@@ -450,13 +457,14 @@ parser.hostname; // => "github.com"
 
 ## Reference
 
-1. [A window.fetch JavaScript polyfill.](https://github.com/github/fetch)
-2. [POST Request](http://stackoverflow.com/questions/692196/post-request-javascript/25423688#25423688)
-3. [Semantic VersioningVersioning 2.0.0](http://semver.org)
-4. [HTTP API design guide extracted from work on the Heroku Platform API](https://github.com/interagent/http-api-design)
-5. [Understanding URIs](http://medialize.github.io/URI.js/about-uris.html)
-6. [URI Parsing with Javascript](https://gist.github.com/jlong/2428561)
-7. [Modernizr: the feature detection library for HTML5/CSS3](http://modernizr.com)
-8. [HTML5 Web Storage](http://www.w3schools.com/html/html5_webstorage.asp)
-9. [Check if third-party cookies are enabled](http://stackoverflow.com/questions/3550790/check-if-third-party-cookies-are-enabled)
-10. [Introduction to Analytics.js - Universal Analytics Web Tracking](https://developers.google.com/analytics/devguides/collection/analyticsjs/)
+1. [What is Software Development Kit](http://www.webopedia.com/TERM/S/SDK.html)
+2. [A window.fetch JavaScript polyfill.](https://github.com/github/fetch)
+3. [POST Request](http://stackoverflow.com/questions/692196/post-request-javascript/25423688#25423688)
+4. [Semantic VersioningVersioning 2.0.0](http://semver.org)
+5. [HTTP API design guide extracted from work on the Heroku Platform API](https://github.com/interagent/http-api-design)
+6. [Understanding URIs](http://medialize.github.io/URI.js/about-uris.html)
+7. [URI Parsing with Javascript](https://gist.github.com/jlong/2428561)
+8. [Modernizr: the feature detection library for HTML5/CSS3](http://modernizr.com)
+9. [HTML5 Web Storage](http://www.w3schools.com/html/html5_webstorage.asp)
+10. [Check if third-party cookies are enabled](http://stackoverflow.com/questions/3550790/check-if-third-party-cookies-are-enabled)
+11. [Introduction to Analytics.js - Universal Analytics Web Tracking](https://developers.google.com/analytics/devguides/collection/analyticsjs/)
