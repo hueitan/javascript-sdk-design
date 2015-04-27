@@ -41,6 +41,8 @@ any others I didn't mention here.
   * [XMLHttpRequest](#xmlhttprequest)
 * [Component of URI](#component-of-uri)
  * [Parsing URI](#parsing-uri)
+* [Tips and Tricks](#tips-and-tricks)
+ * [Piggyback](#piggyback)
 * [Book to Read](#book-to-read)
 * [Reference](#reference)
 
@@ -451,6 +453,17 @@ parser.href = "http://github.com/huei90";
 parser.hostname; // => "github.com"
 ```
 
+## Tips and Tricks
+
+### Piggyback
+
+Sometimes, we don't want our developers include all the SDK source, 
+we just need to do a simple 1x1 pixel request (for example: return a request when landing on thank you/last page). All we need to do is ask the developer to include an image file with our url link.
+
+```html
+<img height="1" width="1" alt="" style="display:none" src="https://yourUrlLink.com/t?timestamp=1234567890&type=page1&currency=USD&noscript=1" />
+```
+
 ## Book to Read
 
 1. [Third-Party Javascript](http://thirdpartyjs.com)
@@ -468,3 +481,4 @@ parser.hostname; // => "github.com"
 9. [HTML5 Web Storage](http://www.w3schools.com/html/html5_webstorage.asp)
 10. [Check if third-party cookies are enabled](http://stackoverflow.com/questions/3550790/check-if-third-party-cookies-are-enabled)
 11. [Introduction to Analytics.js - Universal Analytics Web Tracking](https://developers.google.com/analytics/devguides/collection/analyticsjs/)
+12. [Facebook Conversion Tracking Pixel](https://www.facebook.com/help/421433191260652)
