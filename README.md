@@ -163,6 +163,26 @@ your SDK should handle and execute `SDKName.q` and reinitial the namespace `SDKN
 </script>
 ```
 
+**Or** using [].push
+
+```js
+<script>
+  (function () {
+    // add a queue event here
+    SDKName = window.SDKName || (window.SDKName = []);
+    var s = document.createElement('script');
+    s.type = 'text/javascript';
+    s.async = true;
+    s.src = 'http://xxx.com/sdk.js';
+    var x = document.getElementsByTagName('script')[0];
+    x.parentNode.insertBefore(s, x);
+  })();
+  
+  // execute your script immediately here
+  SDKName.push(['some arguments']);
+</script>
+```
+
 ## SDK Versioning
 
 Please avoid using your special case for version like `brand-v<timestamp>.js` `brand-v<datetime>.js` `brand-v1-v2.js`, 
