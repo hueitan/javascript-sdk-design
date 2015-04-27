@@ -8,7 +8,7 @@ on desktop and mobile web in different platforms and browsers (<99.99% I might s
 Since I didn't find out a better documentation for the javascript sdk,
 I'm here to collect and note down the knowledges from my experiences.
 
-Feel free to edit it if you think there's a better design methodology or 
+Feel free to [edit](https://github.com/huei90/javascript-sdk-design/edit/master/README.md) it if you think there's a better design methodology or 
 any others I didn't mention here.
 
 *(inspired by [http-api-design](https://github.com/interagent/http-api-design))*
