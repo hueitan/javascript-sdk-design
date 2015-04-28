@@ -342,6 +342,16 @@ Use the Image Beacon to ask browser to perform a method GET Request to get an Im
 (new Image()).src = 'http://xxxxx.com/collect?id=1111';
 ```
 
+Some notice for GET Query String, there is the limit of length which is 2048(Basically It depends on different browser and server). You should do some tricks to handle if exceed length limit.
+
+```js
+if (length > 2048) {
+    // do Multiple Post (form)
+} else {
+    // do Image Beacon
+}
+```
+
 ### Single Post
 
 Use the native form element method POST to send a key value.
@@ -416,7 +426,7 @@ requestWithoutAjax('url/to', { id: 2, price: 2.5, lastname: 'Gamez'});
 
 ### Iframe
 
-If you request is more complicated, use iframe.
+When you need to generate a content within the page, you can use iframe to embed your html.
 
 ```js
 var iframe = document.createElement('iframe');
@@ -502,3 +512,4 @@ we just need to do a simple 1x1 pixel request (for example: return a request whe
 10. [Check if third-party cookies are enabled](http://stackoverflow.com/questions/3550790/check-if-third-party-cookies-are-enabled)
 11. [Introduction to Analytics.js - Universal Analytics Web Tracking](https://developers.google.com/analytics/devguides/collection/analyticsjs/)
 12. [Facebook Conversion Tracking Pixel](https://www.facebook.com/help/421433191260652)
+13. [What is the maximum length of a URL](http://www.boutell.com/newfaq/misc/urllength.html)
