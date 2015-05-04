@@ -44,6 +44,7 @@ any others I didn't mention here.
 * [Tips and Tricks](#tips-and-tricks)
  * [Piggyback](#piggyback)
  * [BrowserSync](#browsersync)
+ * [Page Visibility API](#page-visibility-api)
 * [Book to Read](#book-to-read)
 * [Reference](#reference)
 
@@ -499,6 +500,11 @@ we just need to do a simple 1x1 pixel request (for example: return a request whe
 [BrowserSync](http://www.browsersync.io) makes your tweaking and testing faster by synchronising file changes and interactions across multiple devices. It’s wicked-fast and totally free.
 
 It really helps alot if you need to test your sdk result in multiple cross devices. Try it =)
+
+### Page Visibility API
+
+Sometimes, your SDK wants to detect the user is whether focus your page. Try the polyfills  [visibly.js](https://github.com/addyosmani/visibly.js) and [visibilityjs](https://github.com/ai/visibilityjs).
+
 ## Book to Read
 
 1. [Third-Party Javascript](http://thirdpartyjs.com)
