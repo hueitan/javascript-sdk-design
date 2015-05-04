@@ -31,7 +31,7 @@ any others I didn't mention here.
   * [Session](#session)
   * [LocalStorage](#localstorage)
     * [Check LocalStorage Writable](#check-localstorage-writable)
-  * [SessionStorage](#sessionstorage)
+  * [Session Storage](#session-storage)
     * [Check SessionStorage Writable](#check-sessionstorage-writable)
 * [Request](#request)
   * [Image Beacon](#image-beacon)
@@ -43,6 +43,7 @@ any others I didn't mention here.
  * [Parsing URI](#parsing-uri)
 * [Tips and Tricks](#tips-and-tricks)
  * [Piggyback](#piggyback)
+ * [BrowserSync](#browsersync)
 * [Book to Read](#book-to-read)
 * [Reference](#reference)
 
@@ -493,6 +494,11 @@ we just need to do a simple 1x1 pixel request (for example: return a request whe
 <img height="1" width="1" alt="" style="display:none" src="https://yourUrlLink.com/t?timestamp=1234567890&type=page1&currency=USD&noscript=1" />
 ```
 
+### BrowserSync
+
+[BrowserSync](http://www.browsersync.io) makes your tweaking and testing faster by synchronising file changes and interactions across multiple devices. It’s wicked-fast and totally free.
+
+It really helps alot if you need to test your sdk result in multiple cross devices. Try it =)
 ## Book to Read
 
 1. [Third-Party Javascript](http://thirdpartyjs.com)
