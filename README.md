@@ -55,7 +55,7 @@ I know it's very common, but it is.
 ## Design Philosophy
 
 It depends on your purpose of your SDK service and usage, 
-but there must be **native**, **short**, **fast**, **clean** and **readable**.
+but there must be **native**, **short**, **fast**, **clean**, **readable** and **testable**.
 
 Written in native javascript code, compiler language like 
 livescript, coffeescript, typescript and others are not recommend.
@@ -66,8 +66,7 @@ you can have other jQuery-like libraries, zepto.js, for the DOM manipulation.
 Or if you need the http ajax request, use other light library like `window.fetch`.
 
 Once every SDK version released, make sure that it can be fitted into older and newer SDK version in the future. 
-Therefore, remember to write your **Documentation** for your SDK and comment for your code.
-
+Therefore, remember to write your **Documentation** for your SDK, comment for your code, unit test and user scenario test.
 
 ## Include the SDK
 
