@@ -45,6 +45,7 @@ any others I didn't mention here.
  * [Piggyback](#piggyback)
  * [BrowserSync](#browsersync)
  * [Page Visibility API](#page-visibility-api)
+ * [Document Referrer](#document-referrer)
 * [Book to Read](#book-to-read)
 * [Reference](#reference)
 
@@ -504,6 +505,10 @@ It really helps alot if you need to test your sdk result in multiple cross devic
 ### Page Visibility API
 
 Sometimes, your SDK wants to detect the user is whether focus your page. Try the polyfills  [visibly.js](https://github.com/addyosmani/visibly.js) and [visibilityjs](https://github.com/ai/visibilityjs).
+
+### Document Referrer
+
+Use `document.referrer` to get the url of current previous page. But remember that this referrer is "Browser Referrer" not the "Human Known Referrer". If you click the **browser back button**, for example pageA -> pageB -> pageC -> (back button) pageB, current pageB's referrer is pageA, not pageC.
 
 ## Book to Read
 
