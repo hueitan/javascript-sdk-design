@@ -46,6 +46,7 @@ any others I didn't mention here.
  * [BrowserSync](#browsersync)
  * [Page Visibility API](#page-visibility-api)
  * [Document Referrer](#document-referrer)
+ * [EncodeURI or EncodeURIComponent](#encodeuri-or-encodeuricomponent)
 * [Book to Read](#book-to-read)
 * [Reference](#reference)
 
@@ -354,6 +355,8 @@ if (length > 2048) {
 }
 ```
 
+You may have the problem on `encodeURI` or `encodeURIComponent`, it's better if you understand them. [See below](#encodeuri-or-encodeuricomponent).
+
 ### Single Post
 
 Use the native form element method POST to send a key value.
@@ -509,6 +512,13 @@ Sometimes, your SDK wants to detect the user is whether focus your page. Try the
 ### Document Referrer
 
 Use `document.referrer` to get the url of current previous page. But remember that this referrer is "Browser Referrer" not the "Human Known Referrer". If you click the **browser back button**, for example pageA -> pageB -> pageC -> (back button) pageB, current pageB's referrer is pageA, not pageC.
+
+### EncodeURI or EncodeURIComponent
+
+Understand the difference between `escape()` `encodeURI()` `encodeURIComponent()` [here](http://stackoverflow.com/a/3608791/1748884).
+
+Remember that using `encodeURI()` and `encodeURIComponent()` has exactly 11 characters difference.
+These characters are: # $ & + , / : ; = ? @ [more discussion](http://stackoverflow.com/a/23842171/1748884).
 
 ## Book to Read
 
