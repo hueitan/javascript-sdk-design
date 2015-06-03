@@ -38,6 +38,7 @@ any others I didn't mention here.
   * [Single Post](#single-post)
   * [Multiple Post](#multiple-post)
   * [Iframe](#iframe)
+  * [Script jsonp](#script-jsonp)
   * [XMLHttpRequest](#xmlhttprequest)
 * [Component of URI](#component-of-uri)
  * [Parsing URI](#parsing-uri)
@@ -447,6 +448,23 @@ iframe.onreadystatechange = function () {
 
 body.append(iframe);
 ```
+
+### Script jsonp
+
+This is the case that your server need to response javascript code and let the client browser execute it.
+Just include the JS script link.
+
+```js
+  (function () {
+    var s = document.createElement('script');
+    s.type = 'text/javascript';
+    s.async = true;
+    s.src = '/yourscript?some=parameter';
+    var x = document.getElementsByTagName('script')[0];
+    x.parentNode.insertBefore(s, x);
+  })();
+```
+
 ### XMLHttpRequest
 
 Writing XMLHttpRequest is not a good idea. I assume that you don't want to waste time on battling with IE or other browsers. Here's some polyfills or code you can try
