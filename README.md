@@ -449,6 +449,12 @@ body.append(iframe);
 ```
 ### XMLHttpRequest
 
+Writing XMLHttpRequest is not a good idea. I assume that you don't want to waste time on battling with IE or other browsers. Here's some polyfills or code you can try
+
+1. [window.fetch](https://github.com/github/fetch) - A window.fetch JavaScript polyfill.
+2. [got](https://github.com/sindresorhus/got) - Simplified HTTP/HTTPS requests
+3. more
+
 ## Component of URI
 
 It's important to know if your SDK need to parse the location url.
