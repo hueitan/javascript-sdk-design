@@ -40,6 +40,7 @@ any others I didn't mention here.
   * [Iframe](#iframe)
   * [Script jsonp](#script-jsonp)
   * [XMLHttpRequest](#xmlhttprequest)
+  * [Navigator.sendBeacon()](#navigator.sendBeacon())
 * [Component of URI](#component-of-uri)
  * [Parsing URI](#parsing-uri)
 * [Tips and Tricks](#tips-and-tricks)
@@ -463,6 +464,18 @@ Just include the JS script link.
     var x = document.getElementsByTagName('script')[0];
     x.parentNode.insertBefore(s, x);
   })();
+```
+
+### Navigator.sendBeacon()
+
+Look at the [documentation](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/sendBeacon).
+
+> This method addresses the needs of analytics and diagnostics code that typically attempt to send data to a web server prior to the unloading of the document. Sending the data any sooner may result in a missed opportunity to gather data. However, ensuring that the data has been sent during the unloading of a document is something that has traditionally been difficult for developers.
+
+Send POST beacon through the API. It's cool.
+
+```js
+navigator.sendBeacon("/log", analyticsData);
 ```
 
 ### XMLHttpRequest
