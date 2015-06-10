@@ -2,13 +2,13 @@
 
 ## Introduction
 
-This guide gives you an introduction to develop a javascript sdk 
-on desktop and mobile web in different platforms and browsers (<99.99% I might skip some browsers). 
+This guide gives you an introduction to develop a javascript sdk
+on desktop and mobile web in different platforms and browsers (<99.99% I might skip some browsers).
 
 Since I didn't find out a better documentation for the javascript sdk,
 I'm here to collect and note down the knowledges from my experiences.
 
-Feel free to [edit](https://github.com/huei90/javascript-sdk-design/edit/master/README.md) it if you think there's a better design methodology or 
+Feel free to [edit](https://github.com/huei90/javascript-sdk-design/edit/master/README.md) it if you think there's a better design methodology or
 any others I didn't mention here.
 
 *(inspired by [http-api-design](https://github.com/interagent/http-api-design))*
@@ -49,6 +49,7 @@ any others I didn't mention here.
  * [Page Visibility API](#page-visibility-api)
  * [Document Referrer](#document-referrer)
  * [EncodeURI or EncodeURIComponent](#encodeuri-or-encodeuricomponent)
+* [Example](#example)
 * [Book to Read](#book-to-read)
 * [Reference](#reference)
 
@@ -60,18 +61,18 @@ I know it's very common, but it is.
 
 ## Design Philosophy
 
-It depends on your purpose of your SDK service and usage, 
+It depends on your purpose of your SDK service and usage,
 but there must be **native**, **short**, **fast**, **clean**, **readable** and **testable**.
 
-Written in native javascript code, compiler language like 
+Written in native javascript code, compiler language like
 livescript, coffeescript, typescript and others are not recommend.
 There must be a better way to write your own javascript code in native faster than others.
 
-Please don't involve jQuery in your SDK unless it's really important, 
-you can have other jQuery-like libraries, zepto.js, for the DOM manipulation. 
+Please don't involve jQuery in your SDK unless it's really important,
+you can have other jQuery-like libraries, zepto.js, for the DOM manipulation.
 Or if you need the http ajax request, use other light library like `window.fetch`.
 
-Once every SDK version released, make sure that it can be fitted into older and newer SDK version in the future. 
+Once every SDK version released, make sure that it can be fitted into older and newer SDK version in the future.
 Therefore, remember to write your **Documentation** for your SDK, comment for your code, unit test and user scenario test.
 
 ## Include the SDK
@@ -113,7 +114,7 @@ Here's the simple graph to show the differentiate between Asynchronous and Tradi
 Asynchronous:
 ```
  |----A-----|
-    |-----B-----------| 
+    |-----B-----------|
         |-------C------|
 ```
 
@@ -137,15 +138,15 @@ you cannot execute your SDK function which script written within the page.
     var x = document.getElementsByTagName('script')[0];
     x.parentNode.insertBefore(s, x);
   })();
-  
+
   // execute your script immediately here
   SDKName('some arguments');
 </script>
 ```
 
-The result will lead to undefined because the `SDKName()` execute before the script loaded, 
-therefore we should do some tricks and make sure the script execute successfully. 
-The event will store in the `SDKName.q` queue array, 
+The result will lead to undefined because the `SDKName()` execute before the script loaded,
+therefore we should do some tricks and make sure the script execute successfully.
+The event will store in the `SDKName.q` queue array,
 your SDK should handle and execute `SDKName.q` and reinitial the namespace `SDKName`.
 
 ```js
@@ -162,7 +163,7 @@ your SDK should handle and execute `SDKName.q` and reinitial the namespace `SDKN
     var x = document.getElementsByTagName('script')[0];
     x.parentNode.insertBefore(s, x);
   })();
-  
+
   // execute your script immediately here
   SDKName('some arguments');
 </script>
@@ -182,7 +183,7 @@ your SDK should handle and execute `SDKName.q` and reinitial the namespace `SDKN
     var x = document.getElementsByTagName('script')[0];
     x.parentNode.insertBefore(s, x);
   })();
-  
+
   // execute your script immediately here
   SDKName.push(['some arguments']);
 </script>
@@ -190,8 +191,8 @@ your SDK should handle and execute `SDKName.q` and reinitial the namespace `SDKN
 
 ## SDK Versioning
 
-Please avoid using your special case for version like `brand-v<timestamp>.js` `brand-v<datetime>.js` `brand-v1-v2.js`, 
-it may cause the developer who use the SDK on confusing which is the latest version. 
+Please avoid using your special case for version like `brand-v<timestamp>.js` `brand-v<datetime>.js` `brand-v1-v2.js`,
+it may cause the developer who use the SDK on confusing which is the latest version.
 
 Use [Semantic Versioning](http://semver.org) to define your SDK Version in the form "MAJOR.MINOR.PATCH".
 Version in `v1.0.0` `v1.5.0` `v2.0.0` is easier for them to trace and search for the changelog documentation.
@@ -224,13 +225,13 @@ http://xxx.com/sdk-experimental.js
 
 ## Changelog Document
 
-You should notice that your SDK user will not know if you upgrade your sdk without announcement. 
-Remember to write a changelog to document your major, minor and even bug fix change. 
+You should notice that your SDK user will not know if you upgrade your sdk without announcement.
+Remember to write a changelog to document your major, minor and even bug fix change.
 It will be a good developer experience if we can trace the changing API for the SDK.
 
 ## Namespace
 
-You should not define more than one global namespace in your SDK and 
+You should not define more than one global namespace in your SDK and
 prevent using the common word for your namespace to avoid collision with other libraries.
 
 On your SDK mainland, you should use `(function () { ... })()` to wrap all your source.
@@ -241,11 +242,11 @@ On your SDK mainland, you should use `(function () { ... })()` to wrap all your 
 
 The domain scope of using cookie is quite complex while involving the `subdomain` and `path`.
 
-For `path=/`, 
-you have a cookie `first=value1` in domain `http://github.com`, 
+For `path=/`,
+you have a cookie `first=value1` in domain `http://github.com`,
 another cookie `second=value2` in domain `http://sub.github.com`
 
-|  | http://github.com | http://sub.github.com 
+|  | http://github.com | http://sub.github.com
 |:---------:|:------------:|:------------:
 first=value1	 | ✓ | ✓
 second=value2 | ✘ | ✓
@@ -286,12 +287,12 @@ It's impossible to check only using client side javascript, you need a server to
 
 ### Session
 
-It's important to know that Javascript is not possible to write Session, 
+It's important to know that Javascript is not possible to write Session,
 please refer to the server side team to implement Session.
 
 ### LocalStorage
 
-Stores data with no expiration date, storage limit is far larger (at least 5MB) and 
+Stores data with no expiration date, storage limit is far larger (at least 5MB) and
 information is never transferred to the server.
 
 It's good to know that each localStorage from `http` and `https` in same domain aren't shared.
@@ -335,8 +336,8 @@ var checkCanSessionStorage = function() {
 
 ## Request
 
-The communication between our SDK and Server is using Ajax Request, 
-as we know we can use jQuery ajax http request to communicate with Server, 
+The communication between our SDK and Server is using Ajax Request,
+as we know we can use jQuery ajax http request to communicate with Server,
 but there's a better solution to implement it.
 
 ### Image Beacon
@@ -419,7 +420,7 @@ function requestWithoutAjax( url, params, method ){
 
         form.submit();
         // remove the iframe
-        setTimeout( function(){ 
+        setTimeout( function(){
             removeIframe(iframe);
         }, 500);
     };
@@ -529,7 +530,7 @@ parser.hostname; // => "github.com"
 
 ### Piggyback
 
-Sometimes, we don't want our developers include all the SDK source, 
+Sometimes, we don't want our developers include all the SDK source,
 we just need to do a simple 1x1 pixel request (for example: return a request when landing on thank you/last page). All we need to do is ask the developer to include an image file with our url link.
 
 ```html
@@ -556,6 +557,10 @@ Understand the difference between `escape()` `encodeURI()` `encodeURIComponent()
 
 Remember that using `encodeURI()` and `encodeURIComponent()` has exactly 11 characters difference.
 These characters are: # $ & + , / : ; = ? @ [more discussion](http://stackoverflow.com/a/23842171/1748884).
+
+## Example
+
+See next page [EXAMPLE.md](https://github.com/huei90/javascript-sdk-design/blob/master/EXAMPLE.md) to find out how others provide their javascript sdk.
 
 ## Book to Read
 
