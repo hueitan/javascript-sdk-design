@@ -485,7 +485,8 @@ Writing XMLHttpRequest is not a good idea. I assume that you don't want to waste
 
 1. [window.fetch](https://github.com/github/fetch) - A window.fetch JavaScript polyfill.
 2. [got](https://github.com/sindresorhus/got) - Simplified HTTP/HTTPS requests
-3. more
+3. [microjs](http://microjs.com/#ajax) - list of ajax lib
+4. more
 
 ## Component of URI
 
