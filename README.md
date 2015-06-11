@@ -227,7 +227,7 @@ http://xxx.com/sdk-experimental.js
 
 You should notice that your SDK user will not know if you upgrade your sdk without announcement.
 Remember to write a changelog to document your major, minor and even bug fix change.
-It will be a good developer experience if we can trace the changing API for the SDK.
+It will be a good developer experience if we can trace the changing API for the SDK. - [Keep a Changelog](http://keepachangelog.com), [Github Repo](https://github.com/olivierlacan/keep-a-changelog)
 
 ## Namespace
 
