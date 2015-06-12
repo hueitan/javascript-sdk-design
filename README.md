@@ -33,6 +33,8 @@ any others I didn't mention here.
     * [Check LocalStorage Writable](#check-localstorage-writable)
   * [Session Storage](#session-storage)
     * [Check SessionStorage Writable](#check-sessionstorage-writable)
+* [Event](#event)
+  * [Document Ready](#document-ready)
 * [Request](#request)
   * [Image Beacon](#image-beacon)
   * [Single Post](#single-post)
@@ -331,6 +333,28 @@ var checkCanSessionStorage = function() {
   } catch (e) {
     return false;
   }
+}
+```
+
+## Event
+
+In client browser, there are events `load` `unload` `on` `off` `bind` .... Here's some polyfills for you to handle all different platforms.
+
+### Document Ready
+
+```js
+// handle IE8+
+function ready (fn) {
+	if (document.readyState != 'loading') {
+		fn();
+	} else if (document.addEventListener) {
+		document.addEventListener('DOMContentLoaded', fn);
+	} else {
+		document.attachEvent('onreadystatechange', function() {
+      if (document.readyState != 'loading')
+        fn();
+    });
+	}
 }
 ```
 
