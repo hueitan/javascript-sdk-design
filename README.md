@@ -51,6 +51,7 @@ any others I didn't mention here.
  * [Page Visibility API](#page-visibility-api)
  * [Document Referrer](#document-referrer)
  * [EncodeURI or EncodeURIComponent](#encodeuri-or-encodeuricomponent)
+ * [YOU MIGHT NOT NEED JQUERY](#you-might-not-need-jquery)
 * [Example](#example)
 * [Book to Read](#book-to-read)
 * [Reference](#reference)
@@ -584,6 +585,10 @@ Understand the difference between `escape()` `encodeURI()` `encodeURIComponent()
 Remember that using `encodeURI()` and `encodeURIComponent()` has exactly 11 characters difference.
 These characters are: # $ & + , / : ; = ? @ [more discussion](http://stackoverflow.com/a/23842171/1748884).
 
+### YOU MIGHT NOT NEED JQUERY
+
+As the title said, [you might not need jquery](http://youmightnotneedjquery.com/). It's really useful if you are looking for  some utilities code - [AJAX](http://youmightnotneedjquery.com/#AJAX) [EFFECTS](http://youmightnotneedjquery.com/#effects), [ELEMENTS](http://youmightnotneedjquery.com/#elements), [EVENTS](http://youmightnotneedjquery.com/#events), [UTILS](http://youmightnotneedjquery.com/#utils)
+
 ## Example
 
 See next page [EXAMPLE.md](https://github.com/huei90/javascript-sdk-design/blob/master/EXAMPLE.md) to find out how others provide their javascript sdk.
@@ -607,3 +612,4 @@ See next page [EXAMPLE.md](https://github.com/huei90/javascript-sdk-design/blob/
 11. [Introduction to Analytics.js - Universal Analytics Web Tracking](https://developers.google.com/analytics/devguides/collection/analyticsjs/)
 12. [Facebook Conversion Tracking Pixel](https://www.facebook.com/help/421433191260652)
 13. [What is the maximum length of a URL](http://www.boutell.com/newfaq/misc/urllength.html)
+14. [YOU MIGHT NOW NEED JQUERY](http://youmightnotneedjquery.com/)
