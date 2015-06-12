@@ -345,17 +345,18 @@ In client browser, there are events `load` `unload` `on` `off` `bind` .... Here'
 ```js
 // handle IE8+
 function ready (fn) {
-	if (document.readyState != 'loading') {
-		fn();
-	} else if (document.addEventListener) {
-		document.addEventListener('DOMContentLoaded', fn);
-	} else {
-		document.attachEvent('onreadystatechange', function() {
-      if (document.readyState != 'loading')
+    if (document.readyState != 'loading') {
         fn();
-    });
-	}
+    } else if (document.addEventListener) {
+        document.addEventListener('DOMContentLoaded', fn);
+    } else {
+        document.attachEvent('onreadystatechange', function() {
+            if (document.readyState != 'loading')
+                fn();
+            });
+    }
 }
+
 ```
 
 ## Request
