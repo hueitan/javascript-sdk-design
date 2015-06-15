@@ -4,6 +4,7 @@
 * [Mixpanel](#mixpanel)
 * [Disqus for Web](#disqus-for-web)
 * [Google Maps Async load](#google-maps-async-load)
+* [UserVoice Javascript SDK](#uservoice-javascript-sdk)
 
 ## Facebook SDK
 
@@ -102,4 +103,21 @@ function loadScript() {
 }
 
 window.onload = loadScript;
+```
+
+## UserVoice Javascript SDK
+
+> https://developer.uservoice.com/docs/widgets/install/
+
+```js
+// Include the UserVoice JavaScript SDK (only needed once on a page)
+UserVoice=window.UserVoice||[];
+(function(){
+  var uv=document.createElement('script');
+  uv.type='text/javascript';
+  uv.async=true;
+  uv.src='//widget.uservoice.com/[YOUR_API_KEY].js';
+  var s=document.getElementsByTagName('script')[0];
+  s.parentNode.insertBefore(uv,s)
+})();
 ```
