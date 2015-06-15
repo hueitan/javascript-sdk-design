@@ -343,6 +343,8 @@ In client browser, there are events `load` `unload` `on` `off` `bind` .... Here'
 
 ### Document Ready
 
+Please do make sure that the entire page is finished loading(ready) before starting execution the sdk functions.
+
 ```js
 // handle IE8+
 function ready (fn) {
