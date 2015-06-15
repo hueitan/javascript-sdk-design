@@ -73,7 +73,7 @@ There must be a better way to write your own javascript code in native faster th
 
 Please don't involve jQuery in your SDK unless it's really important,
 you can have other jQuery-like libraries, zepto.js, for the DOM manipulation.
-Or if you need the http ajax request, use other light library like `window.fetch`.
+Or if you need the http [ajax request](https://github.com/huei90/javascript-sdk-design#request), use other light library like `window.fetch`.
 
 Once every SDK version released, make sure that it can be fitted into older and newer SDK version in the future.
 Therefore, remember to write your **Documentation** for your SDK, comment for your code, unit test and user scenario test.
