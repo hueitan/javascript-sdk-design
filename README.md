@@ -45,6 +45,9 @@ any others I didn't mention here.
   * [XMLHttpRequest](#xmlhttprequest)
 * [Component of URI](#component-of-uri)
  * [Parsing URI](#parsing-uri)
+* [Debugging](#debugging)
+ * [Developer Tools](#developer-tools)
+ * [Console Logs](#console-logs)
 * [Tips and Tricks](#tips-and-tricks)
  * [Piggyback](#piggyback)
  * [BrowserSync](#browsersync)
@@ -554,6 +557,20 @@ var parser = document.createElement('a');
 parser.href = "http://github.com/huei90";
 parser.hostname; // => "github.com"
 ```
+
+## Debugging
+
+### Developer Tools
+
+Use the web debugging tools from browser vendors when debugging your sdk Javascript code - `Chrome Developer Tools` `Safari Developer Tools` `Firebug`. Developer tools also short for DevTools.
+
+> The DevTools provide web developers deep access into the internals of the browser and their web application. Use the DevTools to efficiently track down layout issues, set JavaScript breakpoints, and get insights for code optimization.
+
+### Console Logs
+
+For testing expected output text and other general debugging, `Console Logs` can be used throught the browser API `console.log()`. There are various typeways to format and output your messages, find out more [Console API](https://developer.mozilla.org/en/docs/Web/API/console).
+
+![screen shot 2015-06-15 at 3 50 23 pm](https://cloud.githubusercontent.com/assets/2560096/8155377/411fb24a-1376-11e5-98da-f71f8ed29bcd.png)
 
 ## Tips and Tricks
 
