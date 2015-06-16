@@ -612,9 +612,10 @@ As the title said, [you might not need jquery](http://youmightnotneedjquery.com/
 
 See next page [EXAMPLE.md](https://github.com/huei90/javascript-sdk-design/blob/master/EXAMPLE.md) to find out how others provide their javascript sdk.
 
-## Book to Read
+## Book/Nice to Read
 
 1. [Third-Party Javascript](http://thirdpartyjs.com)
+2. [JQuery Plugin](https://learn.jquery.com/plugins/)
 
 ## Reference
 
