@@ -5,6 +5,7 @@
 * [Disqus for Web](#disqus-for-web)
 * [Google Maps Async load](#google-maps-async-load)
 * [UserVoice Javascript SDK](#uservoice-javascript-sdk)
+* [More](#more)
 
 ## Facebook SDK
 
@@ -121,3 +122,7 @@ UserVoice=window.UserVoice||[];
   s.parentNode.insertBefore(uv,s)
 })();
 ```
+
+## More
+
+Some other [SDKs](https://github.com/vsouza/awesome-ios#sdk).
