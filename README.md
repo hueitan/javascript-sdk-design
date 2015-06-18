@@ -342,7 +342,7 @@ var checkCanSessionStorage = function() {
 
 ## Event
 
-In client browser, there are events `load` `unload` `on` `off` `bind` .... Here's some polyfills for you to handle all different platforms.
+In client browser, there are events `load` `unload` `on` `off` `bind` .... Here's some [polyfills](https://remysharp.com/2010/10/08/what-is-a-polyfill) for you to handle all different platforms.
 
 ### Document Ready
 
@@ -633,3 +633,4 @@ See next page [EXAMPLE.md](https://github.com/huei90/javascript-sdk-design/blob/
 12. [Facebook Conversion Tracking Pixel](https://www.facebook.com/help/421433191260652)
 13. [What is the maximum length of a URL](http://www.boutell.com/newfaq/misc/urllength.html)
 14. [YOU MIGHT NOW NEED JQUERY](http://youmightnotneedjquery.com/)
+15. [What is a Polyfill?](https://remysharp.com/2010/10/08/what-is-a-polyfill)
