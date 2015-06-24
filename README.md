@@ -622,6 +622,10 @@ Understand the difference between `escape()` `encodeURI()` `encodeURIComponent()
 Remember that using `encodeURI()` and `encodeURIComponent()` has exactly 11 characters difference.
 These characters are: # $ & + , / : ; = ? @ [more discussion](http://stackoverflow.com/a/23842171/1748884).
 
+<h2 align="center">
+ <img src="http://i.imgur.com/rHWC1r1.png" alt="encodeuri or encodeuricomponent"/>
+</h2>
+
 ### YOU MIGHT NOT NEED JQUERY
 
 As the title said, [you might not need jquery](http://youmightnotneedjquery.com/). It's really useful if you are looking for  some utilities code - [AJAX](http://youmightnotneedjquery.com/#AJAX) [EFFECTS](http://youmightnotneedjquery.com/#effects), [ELEMENTS](http://youmightnotneedjquery.com/#elements), [EVENTS](http://youmightnotneedjquery.com/#events), [UTILS](http://youmightnotneedjquery.com/#utils)
