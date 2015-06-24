@@ -43,6 +43,7 @@ any others I didn't mention here.
   * [Script jsonp](#script-jsonp)
   * [Navigator.sendBeacon()](#navigatorsendbeacon)
   * [XMLHttpRequest](#xmlhttprequest)
+  * [Fragment Identifier](#fragment-identifier)
 * [Component of URI](#component-of-uri)
  * [Parsing URI](#parsing-uri)
 * [Debugging](#debugging)
@@ -518,6 +519,23 @@ Writing XMLHttpRequest is not a good idea. I assume that you don't want to waste
 2. [got](https://github.com/sindresorhus/got) - Simplified HTTP/HTTPS requests
 3. [microjs](http://microjs.com/#ajax) - list of ajax lib
 4. more
+
+### Fragment Identifier
+
+Also known as hash mark `#`. Remember that request with hash mark at the end is not pass within http request.
+
+For example, you are in the page `http://github.com/awesome#huei90`
+
+```js
+// Sending a request with a parameter url which contains current url
+(new Image()).src = 'http://yourrequest.com?url=http://github.com/awesome#huei90';
+
+// actual request will be without #
+(new Image()).src = 'http://yourrequest.com?url=http://github.com/awesome';
+
+// Solved, encodeURIComponent(url);
+(new Image()).src = 'http://yourrequest.com?url=' + encodeURIComponent('http://github.com/awesome#huei90');
+```
 
 ## Component of URI
 
