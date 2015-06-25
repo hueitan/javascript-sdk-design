@@ -57,6 +57,7 @@ any others I didn't mention here.
  * [EncodeURI or EncodeURIComponent](#encodeuri-or-encodeuricomponent)
  * [YOU MIGHT NOT NEED JQUERY](#you-might-not-need-jquery)
 * [Example](#example)
+* [Template](#template)
 * [Book to Read](#book-to-read)
 * [Reference](#reference)
 
@@ -633,6 +634,10 @@ As the title said, [you might not need jquery](http://youmightnotneedjquery.com/
 ## Example
 
 See next page [EXAMPLE.md](https://github.com/huei90/javascript-sdk-design/blob/master/EXAMPLE.md) to find out how others provide their javascript sdk.
+
+## Template
+
+Someone ask for the template/boilerplate of the sdk, here some example for you. [TEMPLATE.md](https://github.com/huei90/javascript-sdk-design/blob/master/Template/README.md)
 
 ## Book/Nice to Read
 
