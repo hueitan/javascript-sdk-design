@@ -54,6 +54,7 @@ any others I didn't mention here.
  * [BrowserSync](#browsersync)
  * [Page Visibility API](#page-visibility-api)
  * [Document Referrer](#document-referrer)
+ * [Console Logs Polyfill](console-logs-polyfill)
  * [EncodeURI or EncodeURIComponent](#encodeuri-or-encodeuricomponent)
  * [YOU MIGHT NOT NEED JQUERY](#you-might-not-need-jquery)
 * [Example](#example)
@@ -615,6 +616,22 @@ Sometimes, your SDK wants to detect the user is whether focus your page. Try the
 ### Document Referrer
 
 Use `document.referrer` to get the url of current previous page. But remember that this referrer is "Browser Referrer" not the "Human Known Referrer". If you click the **browser back button**, for example pageA -> pageB -> pageC -> (back button) pageB, current pageB's referrer is pageA, not pageC.
+
+### Console Logs Polyfill
+
+It's not a real polyfill, just make sure that calling `console.log` API doesn't throw error event to client side.
+
+```js
+if (typeof console === "undefined") {
+    var f = function() {};
+    console = {
+        log: f,
+        debug: f,
+        error: f,
+        info: f
+    };
+}
+```
 
 ### EncodeURI or EncodeURIComponent
 
