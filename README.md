@@ -54,9 +54,10 @@ any others I didn't mention here.
  * [BrowserSync](#browsersync)
  * [Page Visibility API](#page-visibility-api)
  * [Document Referrer](#document-referrer)
- * [Console Logs Polyfill](console-logs-polyfill)
+ * [Console Logs Polyfill](#console-logs-polyfill)
  * [EncodeURI or EncodeURIComponent](#encodeuri-or-encodeuricomponent)
  * [YOU MIGHT NOT NEED JQUERY](#you-might-not-need-jquery)
+ * [Load Script with Callback](#load-script-with-callback)
 * [Example](#example)
 * [Template](#template)
 * [Book to Read](#book-to-read)
@@ -647,6 +648,33 @@ These characters are: # $ & + , / : ; = ? @ [more discussion](http://stackoverfl
 ### YOU MIGHT NOT NEED JQUERY
 
 As the title said, [you might not need jquery](http://youmightnotneedjquery.com/). It's really useful if you are looking for  some utilities code - [AJAX](http://youmightnotneedjquery.com/#AJAX) [EFFECTS](http://youmightnotneedjquery.com/#effects), [ELEMENTS](http://youmightnotneedjquery.com/#elements), [EVENTS](http://youmightnotneedjquery.com/#events), [UTILS](http://youmightnotneedjquery.com/#utils)
+
+### Load Script with Callback
+
+It's similar to [asynchrnous script loading](#asynchronous-syntax) with addition callback event
+
+```js
+function loadScript(url, callback) {
+  var script = document.createElement('script');
+  script.async = true;
+  script.src = url;
+  
+  var entry = document.getElementsByTagName('script')[0];
+  entry.parentNode.insertBefore(script, entry);
+  
+  script.onload = script.onreadystatechange = function () {
+    var rdyState = script.readyState;
+    
+    if (!rdyState || /complete|loaded/.test(script.readyState)) {
+      callback();
+      
+      // detach the event handler to avoid memory leaks in IE (http://mng.bz/W8fx)
+      script.onload = null;
+      script.onreadystatechange = null;
+    }
+  };
+}
+```
 
 ## Example
 
