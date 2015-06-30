@@ -49,6 +49,7 @@ any others I didn't mention here.
 * [Debugging](#debugging)
  * [Developer Tools](#developer-tools)
  * [Console Logs](#console-logs)
+ * [Debugging Proxy](#debugging-proxy)
 * [Tips and Tricks](#tips-and-tricks)
  * [Piggyback](#piggyback)
  * [BrowserSync](#browsersync)
@@ -592,6 +593,14 @@ Use the web debugging tools from browser vendors when debugging your sdk Javascr
 For testing expected output text and other general debugging, `Console Logs` can be used throught the browser API `console.log()`. There are various typeways to format and output your messages, find out more [Console API](https://developer.mozilla.org/en/docs/Web/API/console).
 
 ![screen shot 2015-06-15 at 3 50 23 pm](https://cloud.githubusercontent.com/assets/2560096/8155377/411fb24a-1376-11e5-98da-f71f8ed29bcd.png)
+
+### Debugging Proxy
+
+Sometimes debugging proxy will give you a hand on testing your sdk. Debug traffic, modify cookies, headers, cache, edit http request/response, SSL Proxying, ajax debugging and more.
+
+Here's some software you can try
+- [FiddlerCore](http://www.telerik.com/fiddler/fiddlercore)
+- [Charles](http://www.charlesproxy.com)
 
 ## Tips and Tricks
 
