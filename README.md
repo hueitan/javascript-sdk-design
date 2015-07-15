@@ -601,6 +601,7 @@ Sometimes debugging proxy will give you a hand on testing your sdk. Debug traffi
 Here's some software you can try
 - [FiddlerCore](http://www.telerik.com/fiddler/fiddlercore)
 - [Charles](http://www.charlesproxy.com)
+- [Cellist](https://itunes.apple.com/tw/app/cellist-http-debugging-proxy/id897814548?l=zh&mt=12)
 
 ## Tips and Tricks
 
