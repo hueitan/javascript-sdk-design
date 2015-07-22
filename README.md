@@ -698,6 +698,7 @@ Someone ask for the template/boilerplate of the sdk, here some example for you. 
 
 1. [Third-Party JavaScript](http://thirdpartyjs.com)
 2. [JQuery Plugin](https://learn.jquery.com/plugins/)
+3. [LightningJS](https://github.com/olark/lightningjs)
 
 ## Reference
 
