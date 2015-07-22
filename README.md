@@ -1,14 +1,14 @@
-# Javascript SDK Design Guide
+# JavaScript SDK Design Guide
 
 ## Introduction
 
-This guide gives you an introduction to develop a javascript sdk
+This guide gives you an introduction to develop a [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) sdk
 on desktop and mobile web in different platforms and browsers (<99.99% I might skip some browsers).
 
-Since I didn't find out a better documentation for the javascript sdk,
+Since I didn't find out a better documentation for the [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) sdk,
 I'm here to collect and note down the knowledges from my experiences.
 
-Feel free to [edit](https://github.com/huei90/javascript-sdk-design/edit/master/README.md) it if you think there's a better design methodology or
+Feel free to [edit](https://github.com/huei90/JavaScript-sdk-design/edit/master/README.md) it if you think there's a better design methodology or
 any others I didn't mention here.
 
 *(inspired by [http-api-design](https://github.com/interagent/http-api-design))*
@@ -75,13 +75,13 @@ I know it's very common, but it is.
 It depends on your purpose of your SDK service and usage,
 but there must be **native**, **short**, **fast**, **clean**, **readable** and **testable**.
 
-Written in native javascript code, compiler language like
+Written in native JavaScript code, compiler language like
 livescript, coffeescript, typescript and others are not recommend.
-There must be a better way to write your own javascript code in native faster than others.
+There must be a better way to write your own JavaScript code in native faster than others.
 
 Please don't involve jQuery in your SDK unless it's really important,
 you can have other jQuery-like libraries, zepto.js, for the DOM manipulation.
-Or if you need the http [ajax request](https://github.com/huei90/javascript-sdk-design#request), use other light library like `window.fetch`.
+Or if you need the http [ajax request](https://github.com/huei90/JavaScript-sdk-design#request), use other light library like `window.fetch`.
 
 Once every SDK version released, make sure that it can be fitted into older and newer SDK version in the future.
 Therefore, remember to write your **Documentation** for your SDK, comment for your code, unit test and user scenario test.
@@ -294,11 +294,11 @@ var checkCookieWritable = function(domain) {
 
 #### Check Third Party Cookie Writable
 
-It's impossible to check only using client side javascript, you need a server to do that. ([Example](https://dl.dropboxusercontent.com/u/105727/web/3rd/third-party-cookies.html))
+It's impossible to check only using client side JavaScript, you need a server to do that. ([Example](https://dl.dropboxusercontent.com/u/105727/web/3rd/third-party-cookies.html))
 
 ### Session
 
-It's important to know that Javascript is not possible to write Session,
+It's important to know that JavaScript is not possible to write Session,
 please refer to the server side team to implement Session.
 
 ### LocalStorage
@@ -489,7 +489,7 @@ body.append(iframe);
 
 ### Script jsonp
 
-This is the case that your server need to response javascript code and let the client browser execute it.
+This is the case that your server need to response JavaScript code and let the client browser execute it.
 Just include the JS script link.
 
 ```js
@@ -584,7 +584,7 @@ parser.hostname; // => "github.com"
 
 ### Developer Tools
 
-Use the web debugging tools from browser vendors when debugging your sdk Javascript code - `Chrome Developer Tools` `Safari Developer Tools` `Firebug`. Developer tools also short for DevTools.
+Use the web debugging tools from browser vendors when debugging your sdk JavaScript code - `Chrome Developer Tools` `Safari Developer Tools` `Firebug`. Developer tools also short for DevTools.
 
 > The DevTools provide web developers deep access into the internals of the browser and their web application. Use the DevTools to efficiently track down layout issues, set JavaScript breakpoints, and get insights for code optimization.
 
@@ -668,16 +668,16 @@ function loadScript(url, callback) {
   var script = document.createElement('script');
   script.async = true;
   script.src = url;
-  
+
   var entry = document.getElementsByTagName('script')[0];
   entry.parentNode.insertBefore(script, entry);
-  
+
   script.onload = script.onreadystatechange = function () {
     var rdyState = script.readyState;
-    
+
     if (!rdyState || /complete|loaded/.test(script.readyState)) {
       callback();
-      
+
       // detach the event handler to avoid memory leaks in IE (http://mng.bz/W8fx)
       script.onload = null;
       script.onreadystatechange = null;
@@ -688,26 +688,26 @@ function loadScript(url, callback) {
 
 ## Example
 
-See next page [EXAMPLE.md](https://github.com/huei90/javascript-sdk-design/blob/master/EXAMPLE.md) to find out how others provide their javascript sdk.
+See next page [EXAMPLE.md](https://github.com/huei90/JavaScript-sdk-design/blob/master/EXAMPLE.md) to find out how others provide their JavaScript sdk.
 
 ## Template
 
-Someone ask for the template/boilerplate of the sdk, here some example for you. [TEMPLATE.md](https://github.com/huei90/javascript-sdk-design/blob/master/Template/README.md)
+Someone ask for the template/boilerplate of the sdk, here some example for you. [TEMPLATE.md](https://github.com/huei90/JavaScript-sdk-design/blob/master/Template/README.md)
 
 ## Book/Nice to Read
 
-1. [Third-Party Javascript](http://thirdpartyjs.com)
+1. [Third-Party JavaScript](http://thirdpartyjs.com)
 2. [JQuery Plugin](https://learn.jquery.com/plugins/)
 
 ## Reference
 
 1. [What is Software Development Kit](http://www.webopedia.com/TERM/S/SDK.html)
 2. [A window.fetch JavaScript polyfill.](https://github.com/github/fetch)
-3. [POST Request](http://stackoverflow.com/questions/692196/post-request-javascript/25423688#25423688)
+3. [POST Request](http://stackoverflow.com/questions/692196/post-request-JavaScript/25423688#25423688)
 4. [Semantic VersioningVersioning 2.0.0](http://semver.org)
 5. [HTTP API design guide extracted from work on the Heroku Platform API](https://github.com/interagent/http-api-design)
 6. [Understanding URIs](http://medialize.github.io/URI.js/about-uris.html)
-7. [URI Parsing with Javascript](https://gist.github.com/jlong/2428561)
+7. [URI Parsing with JavaScript](https://gist.github.com/jlong/2428561)
 8. [Modernizr: the feature detection library for HTML5/CSS3](http://modernizr.com)
 9. [HTML5 Web Storage](http://www.w3schools.com/html/html5_webstorage.asp)
 10. [Check if third-party cookies are enabled](http://stackoverflow.com/questions/3550790/check-if-third-party-cookies-are-enabled)
