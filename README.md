@@ -76,10 +76,10 @@ It depends on your purpose of your SDK service and usage,
 but there must be **native**, **short**, **fast**, **clean**, **readable** and **testable**.
 
 Written in native JavaScript code, compiler language like
-livescript, coffeescript, typescript and others are not recommend.
+livescript, coffeescript, typescript and others are **not** recommend.
 There must be a better way to write your own JavaScript code in native faster than others.
 
-Please don't involve jQuery in your SDK unless it's really important,
+Please **don't** involve jQuery in your SDK unless it's really important,
 you can have other jQuery-like libraries, zepto.js, for the DOM manipulation.
 Or if you need the http [ajax request](https://github.com/huei90/JavaScript-sdk-design#request), use other light library like `window.fetch`.
 
