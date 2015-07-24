@@ -717,3 +717,5 @@ Someone ask for the template/boilerplate of the sdk, here some example for you. 
 13. [What is the maximum length of a URL](http://www.boutell.com/newfaq/misc/urllength.html)
 14. [YOU MIGHT NOW NEED JQUERY](http://youmightnotneedjquery.com/)
 15. [What is a Polyfill?](https://remysharp.com/2010/10/08/what-is-a-polyfill)
+
+<script data-gratipay-username="huei90" src="//grtp.co/v1.js"></script>
