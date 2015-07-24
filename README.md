@@ -61,7 +61,7 @@ any others I didn't mention here.
  * [Load Script with Callback](#load-script-with-callback)
 * [Example](#example)
 * [Template](#template)
-* [Book to Read](#book-to-read)
+* [Book to Read](#booknice-to-read)
 * [Reference](#reference)
 
 ## What is SDK
