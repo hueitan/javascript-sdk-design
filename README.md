@@ -44,6 +44,7 @@ any others I didn't mention here.
   * [Navigator.sendBeacon()](#navigatorsendbeacon)
   * [XMLHttpRequest](#xmlhttprequest)
   * [Fragment Identifier](#fragment-identifier)
+  * [Maximum Number of Connection](#maximum-number-of-connection)
 * [Component of URI](#component-of-uri)
  * [Parsing URI](#parsing-uri)
 * [Debugging](#debugging)
@@ -540,6 +541,14 @@ For example, you are in the page `http://github.com/awesome#huei90`
 // Solved, encodeURIComponent(url);
 (new Image()).src = 'http://yourrequest.com?url=' + encodeURIComponent('http://github.com/awesome#huei90');
 ```
+
+### Maximum Number of Connection
+
+Check the maximum number of browser's request connection. [browserscope](http://www.browserscope.org/?category=network&v=top)
+
+<h2 align="center">
+ <img src="https://cloud.githubusercontent.com/assets/2560096/9082891/ac4dc26e-3b99-11e5-8178-606270a801c4.png" alt="max number of connection"/>
+</h2>
 
 ## Component of URI
 
