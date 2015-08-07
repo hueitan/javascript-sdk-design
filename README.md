@@ -397,6 +397,15 @@ if (length > 2048) {
 
 You may have the problem on `encodeURI` or `encodeURIComponent`, it's better if you understand them. [See below](#encodeuri-or-encodeuricomponent).
 
+For the image load **success/error callback**
+
+```js
+var img = new Image();
+img.src = 'http://xxxxx.com/collect?id=1111';
+img.onload = successCallback;
+img.onerror = errorCallback;
+```
+
 ### Single Post
 
 Use the native form element method POST to send a key value.
@@ -484,6 +493,7 @@ iframe.onreadystatechange = function () {
         return;
     }
 };
+iframe.onload = loadCallback;
 
 body.append(iframe);
 ```
