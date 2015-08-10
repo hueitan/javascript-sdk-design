@@ -135,6 +135,10 @@ Synchronous:
 |----A-----||-----B-----------||-------C------|
 ```
 
+Asynchronous and deferred JavaScript execution explained
+
+<img src="http://peter.sh/wp-content/uploads/2010/09/execution2.jpg"/>
+
 ### Problem of Asynchronous
 
 When you are using Asynchronous,
@@ -736,5 +740,6 @@ Someone ask for the template/boilerplate of the sdk, here some example for you. 
 13. [What is the maximum length of a URL](http://www.boutell.com/newfaq/misc/urllength.html)
 14. [YOU MIGHT NOW NEED JQUERY](http://youmightnotneedjquery.com/)
 15. [What is a Polyfill?](https://remysharp.com/2010/10/08/what-is-a-polyfill)
+16. [Asynchronous and deferred JavaScript execution explained](http://peter.sh/experiments/asynchronous-and-deferred-javascript-execution-explained/)
 
 <script data-gratipay-username="huei90" src="//grtp.co/v1.js"></script>
