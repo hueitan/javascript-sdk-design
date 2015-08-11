@@ -741,5 +741,6 @@ Someone ask for the template/boilerplate of the sdk, here some example for you. 
 14. [YOU MIGHT NOW NEED JQUERY](http://youmightnotneedjquery.com/)
 15. [What is a Polyfill?](https://remysharp.com/2010/10/08/what-is-a-polyfill)
 16. [Asynchronous and deferred JavaScript execution explained](http://peter.sh/experiments/asynchronous-and-deferred-javascript-execution-explained/)
+17. [generate random UUIDs](https://gist.github.com/jed/982883)
 
 <script data-gratipay-username="huei90" src="//grtp.co/v1.js"></script>
