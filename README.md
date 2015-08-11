@@ -499,7 +499,7 @@ iframe.onreadystatechange = function () {
 };
 iframe.onload = loadCallback;
 
-body.append(iframe);
+body.appendChild(iframe);
 ```
 
 ### Script jsonp
