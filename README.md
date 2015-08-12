@@ -364,6 +364,7 @@ function ready (fn) {
     if (document.readyState != 'loading') {
         fn();
     } else if (document.addEventListener) {
+        // document.addEventListener('load', fn);
         document.addEventListener('DOMContentLoaded', fn);
     } else {
         document.attachEvent('onreadystatechange', function() {
@@ -372,8 +373,11 @@ function ready (fn) {
             });
     }
 }
-
 ```
+
+> **DOMContentLoaded** -  fired when the document has been completely loaded and parsed, without waiting for stylesheets, images, and subframes to finish loading
+
+> **load** event can be used to detect a fully-loaded page
 
 ## Request
 
@@ -742,5 +746,6 @@ Someone ask for the template/boilerplate of the sdk, here some example for you. 
 15. [What is a Polyfill?](https://remysharp.com/2010/10/08/what-is-a-polyfill)
 16. [Asynchronous and deferred JavaScript execution explained](http://peter.sh/experiments/asynchronous-and-deferred-javascript-execution-explained/)
 17. [generate random UUIDs](https://gist.github.com/jed/982883)
+18. [DOMContentLoaded and Load Event](http://stackoverflow.com/questions/2414750/difference-between-domcontentloaded-and-load-events)
 
 <script data-gratipay-username="huei90" src="//grtp.co/v1.js"></script>
