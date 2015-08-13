@@ -2,13 +2,13 @@
 
 ## Introduction
 
-This guide gives you an introduction to develop a [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) sdk
+This guide gives you an introduction to develop a [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) SDK
 on desktop and mobile web in different platforms and browsers (<99.99% I might skip some browsers).
 
-Since I didn't find out a better documentation for the [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) sdk,
+Since I didn't find out a better documentation for the [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) SDK,
 I'm here to collect and note down the knowledges from my experiences.
 
-Feel free to [edit](https://github.com/huei90/JavaScript-sdk-design/edit/master/README.md) it if you think there's a better design methodology or
+Feel free to [edit](https://github.com/huei90/JavaScript-sdk-design/edit/master/README.md) if you think there's a better design methodology or
 any others I didn't mention here.
 
 *(inspired by [http-api-design](https://github.com/interagent/http-api-design))*
@@ -241,7 +241,7 @@ http://xxx.com/sdk-experimental.js
 
 ## Changelog Document
 
-You should notice that your SDK user will not know if you upgrade your sdk without announcement.
+You should notice that your SDK user will not know if you upgrade your SDK without announcement.
 Remember to write a changelog to document your major, minor and even bug fix change.
 It will be a good developer experience if we can trace the changing API for the SDK. - [Keep a Changelog](http://keepachangelog.com), [Github Repo](https://github.com/olivierlacan/keep-a-changelog)
 
@@ -356,7 +356,7 @@ In client browser, there are events `load` `unload` `on` `off` `bind` .... Here'
 
 ### Document Ready
 
-Please do make sure that the entire page is finished loading(ready) before starting execution the sdk functions.
+Please do make sure that the entire page is finished loading(ready) before starting execution the SDK functions.
 
 ```js
 // handle IE8+
@@ -611,7 +611,7 @@ parser.hostname; // => "github.com"
 
 ### Developer Tools
 
-Use the web debugging tools from browser vendors when debugging your sdk JavaScript code - `Chrome Developer Tools` `Safari Developer Tools` `Firebug`. Developer tools also short for DevTools.
+Use the web debugging tools from browser vendors when debugging your SDK JavaScript code - `Chrome Developer Tools` `Safari Developer Tools` `Firebug`. Developer tools also short for DevTools.
 
 > The DevTools provide web developers deep access into the internals of the browser and their web application. Use the DevTools to efficiently track down layout issues, set JavaScript breakpoints, and get insights for code optimization.
 
@@ -623,7 +623,7 @@ For testing expected output text and other general debugging, `Console Logs` can
 
 ### Debugging Proxy
 
-Sometimes debugging proxy will give you a hand on testing your sdk. Debug traffic, modify cookies, headers, cache, edit http request/response, SSL Proxying, ajax debugging and more.
+Sometimes debugging proxy will give you a hand on testing your SDK. Debug traffic, modify cookies, headers, cache, edit http request/response, SSL Proxying, ajax debugging and more.
 
 Here's some software you can try
 - [FiddlerCore](http://www.telerik.com/fiddler/fiddlercore)
@@ -645,7 +645,7 @@ we just need to do a simple 1x1 pixel request (for example: return a request whe
 
 [BrowserSync](http://www.browsersync.io) makes your tweaking and testing faster by synchronising file changes and interactions across multiple devices. It’s wicked-fast and totally free.
 
-It really helps alot if you need to test your sdk result in multiple cross devices. Try it =)
+It really helps alot if you need to test your SDK result in multiple cross devices. Try it =)
 
 ### Page Visibility API
 
@@ -715,11 +715,11 @@ function loadScript(url, callback) {
 
 ## Example
 
-See next page [EXAMPLE.md](https://github.com/huei90/JavaScript-sdk-design/blob/master/EXAMPLE.md) to find out how others provide their JavaScript sdk.
+See next page [EXAMPLE.md](https://github.com/huei90/JavaScript-sdk-design/blob/master/EXAMPLE.md) to find out how others provide their JavaScript SDK.
 
 ## Template
 
-Someone ask for the template/boilerplate of the sdk, here some example for you. [TEMPLATE.md](https://github.com/huei90/JavaScript-sdk-design/blob/master/Template/README.md)
+Someone ask for the template/boilerplate of the SDK, here some example for you. [TEMPLATE.md](https://github.com/huei90/JavaScript-sdk-design/blob/master/Template/README.md)
 
 ## Book/Nice to Read
 
