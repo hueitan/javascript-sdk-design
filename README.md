@@ -28,6 +28,7 @@ any others I didn't mention here.
   * [Cookie](#cookie)
     * [Check Cookie Writable](#check-cookie-writable)
     * [Check Third Party Cookie Writable](#check-third-party-cookie-writable)
+    * [Write Read Remove Cookie Code](#write-read-remove-cookie-code)
   * [Session](#session)
   * [LocalStorage](#localstorage)
     * [Check LocalStorage Writable](#check-localstorage-writable)
@@ -301,6 +302,39 @@ var checkCookieWritable = function(domain) {
 
 It's impossible to check only using client side JavaScript, you need a server to do that. ([Example](https://dl.dropboxusercontent.com/u/105727/web/3rd/third-party-cookies.html))
 
+#### Write Read Remove Cookie Code
+
+Snippet Code for write/read/remove cookie script.
+
+```js
+var cookie = {
+    write: function(name, value, days, domain, path) {
+        var date = new Date();
+        days = days || 730; // two years
+        path = path || '/';
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        var expires = '; expires=' + date.toGMTString();
+        var cookieValue = name + '=' + value + expires + '; path=' + path;
+        if (domain) {
+            cookieValue += '; domain=' + domain;
+        }
+        document.cookie = cookieValue;
+    },
+    read: function(name) {
+        var allCookie = '' + document.cookie;
+        var index = allCookie.indexOf(name);
+        if (name === undefined || name === '' || index === -1) return '';
+        var ind1 = allCookie.indexOf(';', index);
+        if (ind1 == -1) ind1 = allCookie.length;
+        return unescape(allCookie.substring(index + name.length + 1, ind1));
+    },
+    remove: function(name) {
+        if (this.read(name)) {
+            this.write(name, '', -1, '/');
+        }
+    }
+};
+```
 ### Session
 
 It's important to know that JavaScript is not possible to write Session,
