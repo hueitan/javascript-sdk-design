@@ -3,7 +3,7 @@
 ## Introduction
 
 This guide gives you an introduction to develop a [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) SDK
-on desktop and mobile web in different platforms and browsers (<99.99% I might skip some browsers).
+on desktop and mobile web in different platforms and browsers (<99.99% I might skip some browsers), for those developed for non-browser supports (hardware, embedded, node/io js) are excluded in this document and will be considered in the future.
 
 Since I didn't find out a better documentation for the [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) SDK,
 I'm here to collect and note down the knowledges from my experiences.
