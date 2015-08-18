@@ -18,6 +18,7 @@ Feel free to [edit](https://github.com/huei90/JavaScript-sdk-design/edit/master/
   * [Traditional Syntax](#traditional-syntax)
   * [Comparison](#comparison)
   * [Problem of Asynchronous](#problem-of-asynchronous)
+* [Scope](#scope)
 * [SDK Versioning](#sdk-versioning)
 * [Changelog Document](#changelog-document)
 * [Namespace](#namespace)
@@ -202,6 +203,10 @@ your SDK should handle and execute `SDKName.q` and reinitial the namespace `SDKN
   SDKName.push(['some arguments']);
 </script>
 ```
+
+## Scope
+
+*(Work In Progress)* In what case we should use SDK in JavaScript environment? [Suggest one](https://github.com/huei90/JavaScript-sdk-design/edit/master/README.md).
 
 ## SDK Versioning
 
