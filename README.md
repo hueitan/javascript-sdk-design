@@ -399,11 +399,11 @@ Please do make sure that the entire page is finished loading(ready) before start
 function ready (fn) {
     if (document.readyState != 'loading') {
         fn();
-    } else if (document.addEventListener) {
-        // document.addEventListener('load', fn);
-        document.addEventListener('DOMContentLoaded', fn);
+    } else if (window.addEventListener) {
+        // window.addEventListener('load', fn);
+        window.addEventListener('DOMContentLoaded', fn);
     } else {
-        document.attachEvent('onreadystatechange', function() {
+        window.attachEvent('onreadystatechange', function() {
             if (document.readyState != 'loading')
                 fn();
             });
