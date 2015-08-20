@@ -59,7 +59,6 @@ Feel free to [edit](https://github.com/huei90/JavaScript-sdk-design/edit/master/
  * [EncodeURI or EncodeURIComponent](#encodeuri-or-encodeuricomponent)
  * [YOU MIGHT NOT NEED JQUERY](#you-might-not-need-jquery)
  * [Load Script with Callback](#load-script-with-callback)
-* [Example](#example)
 * [Template](#template)
 * [Book to Read](#booknice-to-read)
 * [Reference](#reference)
@@ -92,9 +91,9 @@ Therefore, remember to write your **Documentation** for your SDK, comment for yo
 
 In which case you should design a JavaScript SDK for your application?
 
-1. Embedded widgets - Small interactive applications embedded on the publisher's web page (Disqus, Google Maps, Facebook Widget)
-2. Analytics and metrics - For gathering intelligence about visitors and how they interact with the publisher's website (GA, Flurry, Mixpanel)
-3. Web service API wrappers - For developing client-side applications that communicate with external web services. (Facebook Graph API)
+1. [Embedded widgets](https://github.com/huei90/javascript-sdk-design/blob/master/SCOPE.md#embedded-widgets) - Small interactive applications embedded on the publisher's web page (Disqus, Google Maps, Facebook Widget)
+2. [Analytics and metrics](https://github.com/huei90/javascript-sdk-design/blob/master/SCOPE.md#analytics-and-metrics) - For gathering intelligence about visitors and how they interact with the publisher's website (GA, Flurry, Mixpanel)
+3. [Web service API wrappers](https://github.com/huei90/javascript-sdk-design/blob/master/SCOPE.md#web-service-api-wrappers) - For developing client-side applications that communicate with external web services. (Facebook Graph API)
 
 In what case we should use SDK in JavaScript environment? [Suggest one](https://github.com/huei90/JavaScript-sdk-design/edit/master/README.md).
 
@@ -756,10 +755,6 @@ function loadScript(url, callback) {
   };
 }
 ```
-
-## Example
-
-See next page [EXAMPLE.md](https://github.com/huei90/JavaScript-sdk-design/blob/master/EXAMPLE.md) to find out how others provide their JavaScript SDK.
 
 ## Template
 
