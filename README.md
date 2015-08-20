@@ -13,12 +13,12 @@ Feel free to [edit](https://github.com/huei90/JavaScript-sdk-design/edit/master/
 ## Content
 * [What is SDK](#what-is-sdk)
 * [Design Philosophy](#design-philosophy)
+* [Scope](#scope)
 * [Include the SDK](#include-the-sdk)
   * [Asynchronous Syntax](#asynchronous-syntax)
   * [Traditional Syntax](#traditional-syntax)
   * [Comparison](#comparison)
   * [Problem of Asynchronous](#problem-of-asynchronous)
-* [Scope](#scope)
 * [SDK Versioning](#sdk-versioning)
 * [Changelog Document](#changelog-document)
 * [Namespace](#namespace)
@@ -85,6 +85,18 @@ Or if you need the http [ajax request](https://github.com/huei90/JavaScript-sdk-
 
 Once every SDK version released, make sure that it can be fitted into older and newer SDK version in the future.
 Therefore, remember to write your **Documentation** for your SDK, comment for your code, unit test and user scenario test.
+
+## Scope
+
+*Based on the book [Third-Party JavaScript](http://thirdpartyjs.com)*
+
+In which case you should design a JavaScript SDK for your application?
+
+1. Embedded widgets - Small interactive applications embedded on the publisher's web page (Disqus, Google Maps, Facebook Widget)
+2. Analytics and metrics - For gathering intelligence about visitors and how they interact with the publisher's website (GA, Flurry, Mixpanel)
+3. Web service API wrappers - For developing client-side applications that communicate with external web services. (Facebook Graph API)
+
+In what case we should use SDK in JavaScript environment? [Suggest one](https://github.com/huei90/JavaScript-sdk-design/edit/master/README.md).
 
 ## Include the SDK
 
@@ -203,10 +215,6 @@ your SDK should handle and execute `SDKName.q` and reinitial the namespace `SDKN
   SDKName.push(['some arguments']);
 </script>
 ```
-
-## Scope
-
-*(Work In Progress)* In what case we should use SDK in JavaScript environment? [Suggest one](https://github.com/huei90/JavaScript-sdk-design/edit/master/README.md).
 
 ## SDK Versioning
 
