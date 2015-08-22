@@ -10,6 +10,8 @@ I'm here to collect and note down the knowledges from my personal experiences. T
 
 Feel free to [edit](https://github.com/huei90/JavaScript-sdk-design/edit/master/README.md) or you can drop me suggestions on the [issue list](https://github.com/huei90/JavaScript-sdk-design/issues).
 
+[Click to Tweet](http://ctt.ec/GyjRN) `#javascript` `#sdk` `#design`
+
 ## Content
 * [What is SDK](#what-is-sdk)
 * [Design Philosophy](#design-philosophy)
