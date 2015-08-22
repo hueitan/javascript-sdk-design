@@ -10,7 +10,11 @@ I'm here to collect and note down the knowledges from my personal experiences. T
 
 Feel free to [edit](https://github.com/huei90/JavaScript-sdk-design/edit/master/README.md) or you can drop me suggestions on the [issue list](https://github.com/huei90/JavaScript-sdk-design/issues).
 
-[Click to Tweet](http://ctt.ec/GyjRN) `#javascript` `#sdk` `#design`
+<hr/>
+<p align="center">
+<a href="http://ctt.ec/GyjRN" title="Click to Tweet">Click to Tweet</a> `#javascript` `#sdk` `#design`
+</p>
+<hr/>
 
 ## Content
 * [What is SDK](#what-is-sdk)
