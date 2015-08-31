@@ -65,6 +65,7 @@ Feel free to [edit](https://github.com/huei90/JavaScript-sdk-design/edit/master/
  * [EncodeURI or EncodeURIComponent](#encodeuri-or-encodeuricomponent)
  * [YOU MIGHT NOT NEED JQUERY](#you-might-not-need-jquery)
  * [Load Script with Callback](#load-script-with-callback)
+ * [Disable Scroll](#disable-scroll)
 * [Template](#template)
 * [Book to Read](#booknice-to-read)
 * [Reference](#reference)
@@ -762,6 +763,16 @@ function loadScript(url, callback) {
     }
   };
 }
+```
+
+### Disable Scroll
+
+In web page, use CSS style `overflow: hidden`, in some mobie web, this css doesn't work, use javascript event.
+
+```js
+document.addEventListener('touchstart', function(e){ e.preventDefault(); }); // prevent scroll
+// or 
+document.body.addEventListener('touchstart', function(e){ e.preventDefault(); }); // prevent scroll
 ```
 
 ## Template
