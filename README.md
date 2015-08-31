@@ -773,6 +773,8 @@ In web page, use CSS style `overflow: hidden`, in some mobie web, this css doesn
 document.addEventListener('touchstart', function(e){ e.preventDefault(); }); // prevent scroll
 // or 
 document.body.addEventListener('touchstart', function(e){ e.preventDefault(); }); // prevent scroll
+// use move if you need some touch event
+document.addEventListener('touchmove', function(e){ e.preventDefault(); }); // prevent scroll
 ```
 
 ## Template
