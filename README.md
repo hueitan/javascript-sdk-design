@@ -440,7 +440,7 @@ It's about the cross-origin communication between iframe and window, read the [A
 
 ```js
 // in the iframe
-parent.postMessage("Hello");
+parent.postMessage("Hello"); // string
 
 // ==========================================
 
@@ -456,6 +456,8 @@ eventer(messageEvent,function(e) {
   console.log('parent received message!:  ',e.data);
 },false);
 ```
+
+The post message data should be **String**, for more advanced used in json, use **JSON String**. Although the modern browser do support [Structured Clone Algorithm](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Structured_clone_algorithm) on the parameter, but not the 100% browser.
 
 ### Orientation Change
 
