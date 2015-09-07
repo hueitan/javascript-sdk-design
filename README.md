@@ -40,7 +40,7 @@ Feel free to [edit](https://github.com/huei90/JavaScript-sdk-design/edit/master/
     * [Check SessionStorage Writable](#check-sessionstorage-writable)
 * [Event](#event)
   * [Document Ready](#document-ready)
-  * [e](#orientation-change)
+  * [Orientation Change](#orientation-change)
 * [Request](#request)
   * [Image Beacon](#image-beacon)
   * [Single Post](#single-post)
