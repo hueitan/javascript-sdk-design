@@ -40,6 +40,7 @@ Feel free to [edit](https://github.com/huei90/JavaScript-sdk-design/edit/master/
     * [Check SessionStorage Writable](#check-sessionstorage-writable)
 * [Event](#event)
   * [Document Ready](#document-ready)
+  * [e](#orientation-change)
 * [Request](#request)
   * [Image Beacon](#image-beacon)
   * [Single Post](#single-post)
@@ -430,6 +431,27 @@ function ready (fn) {
 > **DOMContentLoaded** -  fired when the document has been completely loaded and parsed, without waiting for stylesheets, images, and subframes to finish loading
 
 > **load** event can be used to detect a fully-loaded page
+
+### Orientation Change
+
+Detect device orientation change
+
+```js
+window.addEventListener('orientationchange', fn);
+```
+
+Get Orientation Rotate Degree
+
+```js
+window.orientation; // => 90, -90, 0
+```
+
+Screen portrait-primary, portrait-secondary, landscape-primary, landscape-secondary (Experimental)
+
+```js
+// https://developer.mozilla.org/en-US/docs/Web/API/Screen/orientation
+var orientation = screen.orientation || screen.mozOrientation || screen.msOrientation;
+```
 
 ## Request
 
