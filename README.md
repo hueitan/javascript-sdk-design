@@ -67,6 +67,7 @@ Feel free to [edit](https://github.com/huei90/JavaScript-sdk-design/edit/master/
  * [YOU MIGHT NOT NEED JQUERY](#you-might-not-need-jquery)
  * [Load Script with Callback](#load-script-with-callback)
  * [Disable Scroll](#disable-scroll)
+ * [Once Function](#once-function)
 * [Template](#template)
 * [Book to Read](#booknice-to-read)
 * [Reference](#reference)
@@ -797,6 +798,37 @@ document.addEventListener('touchstart', function(e){ e.preventDefault(); }); // 
 document.body.addEventListener('touchstart', function(e){ e.preventDefault(); }); // prevent scroll
 // use move if you need some touch event
 document.addEventListener('touchmove', function(e){ e.preventDefault(); }); // prevent scroll
+```
+
+### Once Function
+
+Here show how to implement the function `once`
+
+> Every so often you have a function which you only want to run once.  Oftentimes these functions are in the form of event listeners which may be difficult to manage.  Of course if they were easy to manage, you'd just remove the listeners but that's a perfect world and sometimes you simply want the ability to only allow a function to be called once.  Here's the JavaScript function to make that possible!
+
+```js
+// Copy from DWB
+// http://davidwalsh.name/javascript-once
+function once(fn, context) { 
+	var result;
+
+	return function() { 
+		if(fn) {
+			result = fn.apply(context || this, arguments);
+			fn = null;
+		}
+
+		return result;
+	};
+}
+
+// Usage
+var canOnlyFireOnce = once(function() {
+	console.log('Fired!');
+});
+
+canOnlyFireOnce(); // "Fired!"
+canOnlyFireOnce(); // nada
 ```
 
 ## Template
