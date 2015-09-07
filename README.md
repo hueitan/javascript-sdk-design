@@ -40,6 +40,7 @@ Feel free to [edit](https://github.com/huei90/JavaScript-sdk-design/edit/master/
     * [Check SessionStorage Writable](#check-sessionstorage-writable)
 * [Event](#event)
   * [Document Ready](#document-ready)
+  * [Message Event](#message-event)
   * [Orientation Change](#orientation-change)
 * [Request](#request)
   * [Image Beacon](#image-beacon)
@@ -432,6 +433,29 @@ function ready (fn) {
 > **DOMContentLoaded** -  fired when the document has been completely loaded and parsed, without waiting for stylesheets, images, and subframes to finish loading
 
 > **load** event can be used to detect a fully-loaded page
+
+### Message Event
+
+It's about the cross-origin communication between iframe and window, read the [API documentation](https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage).
+
+```js
+// in the iframe
+parent.postMessage("Hello");
+
+// ==========================================
+
+// in the iframe's parent
+// Create IE + others compatible event handler
+var eventMethod = window.addEventListener ? "addEventListener" : "attachEvent";
+var eventer = window[eventMethod];
+var messageEvent = eventMethod == "attachEvent" ? "onmessage" : "message";
+
+// Listen to message from child window
+eventer(messageEvent,function(e) {
+  // e.origin , check the message origin
+  console.log('parent received message!:  ',e.data);
+},false);
+```
 
 ### Orientation Change
 
