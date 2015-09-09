@@ -69,6 +69,7 @@ Feel free to [edit](https://github.com/huei90/JavaScript-sdk-design/edit/master/
  * [Load Script with Callback](#load-script-with-callback)
  * [Disable Scroll](#disable-scroll)
  * [Once Function](#once-function)
+ * [Pixel Ratio Density](#pixel-ratio-density)
 * [Template](#template)
 * [Book to Read](#booknice-to-read)
 * [Reference](#reference)
@@ -856,6 +857,13 @@ var canOnlyFireOnce = once(function() {
 canOnlyFireOnce(); // "Fired!"
 canOnlyFireOnce(); // nada
 ```
+
+### Pixel Ratio Density
+
+If you stuck on the term pixel, ratio, densty, dimension, what while developing mobile web, try understand the video, it may helps.
+
+[Device pixel ratio - Mobile Web Development](https://www.youtube.com/watch?v=u0rfDeaxehc) <br/>
+[Mobile device pixels - Mobile Web Development](https://www.youtube.com/watch?t=34&v=UUF4jD-xoYc)
 
 ## Template
 
