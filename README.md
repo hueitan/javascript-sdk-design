@@ -66,7 +66,7 @@ Feel free to [edit](https://github.com/huei90/JavaScript-sdk-design/edit/master/
  * [Console Logs Polyfill](#console-logs-polyfill)
  * [EncodeURI or EncodeURIComponent](#encodeuri-or-encodeuricomponent)
  * [YOU MIGHT NOT NEED JQUERY](#you-might-not-need-jquery)
- * [You Don't Need jQuery](#you-don't-need-jquery)
+ * [You Don't Need jQuery](#you-dont-need-jquery)
  * [Load Script with Callback](#load-script-with-callback)
  * [Disable Scroll](#disable-scroll)
  * [Once Function](#once-function)
@@ -792,6 +792,8 @@ As the title said, [you might not need jquery](http://youmightnotneedjquery.com/
 ### You Don't Need jQuery
 
 > Free yourself from the chains of jQuery by embracing and understanding the modern Web API and discovering various directed libraries to help you fill in the gaps.
+
+[http://blog.garstasio.com/you-dont-need-jquery/](http://blog.garstasio.com/you-dont-need-jquery/)
 
 ### Load Script with Callback
 
