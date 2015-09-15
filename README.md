@@ -795,6 +795,11 @@ As the title said, [you might not need jquery](http://youmightnotneedjquery.com/
 
 [http://blog.garstasio.com/you-dont-need-jquery/](http://blog.garstasio.com/you-dont-need-jquery/)
 
+Useful Tips
+
+1. [Selecting Elements](http://blog.garstasio.com/you-dont-need-jquery/selectors/)
+2. [DOM Manipulation](http://blog.garstasio.com/you-dont-need-jquery/dom-manipulation/)
+
 ### Load Script with Callback
 
 It's similar to [asynchrnous script loading](#asynchronous-syntax) with addition callback event
