@@ -609,6 +609,18 @@ iframe.onload = loadCallback;
 body.appendChild(iframe);
 ```
 
+**Remove extra margin from INSIDE an iframe**
+
+```html
+<iframe src="..."
+ marginwidth="0"
+ marginheight="0"
+ hspace="0"
+ vspace="0"
+ frameborder="0"
+ scrolling="no"></iframe>
+```
+
 ### Script jsonp
 
 This is the case that your server need to response JavaScript code and let the client browser execute it.
