@@ -71,6 +71,7 @@ Feel free to [edit](https://github.com/huei90/JavaScript-sdk-design/edit/master/
  * [Disable Scroll](#disable-scroll)
  * [Once Function](#once-function)
  * [Pixel Ratio Density](#pixel-ratio-density)
+ * [Get Style Value](#get-style-value)
 * [Template](#template)
 * [Book to Read](#booknice-to-read)
 * [Reference](#reference)
@@ -888,6 +889,39 @@ If you stuck on the term pixel, ratio, densty, dimension, what while developing 
 
 [Device pixel ratio - Mobile Web Development](https://www.youtube.com/watch?v=u0rfDeaxehc) <br/>
 [Mobile device pixels - Mobile Web Development](https://www.youtube.com/watch?t=34&v=UUF4jD-xoYc)
+
+### Get Style Value
+
+**Get inline-style value**
+
+```html
+<span id="black" style="color: black"> This is black color span </span>
+<script>
+    document.getElementById('black').style.color; // => black
+</script>
+```
+
+**Get Real style value**
+
+```html
+<style>
+#black {
+    color: red !important;
+}
+</style>
+
+<span id="black" style="color: black"> This is black color span </span>
+
+<script>
+    document.getElementById('black').style.color; // => black
+    
+    // real
+    var black = document.getElementById('black');
+    window.getComputedStyle(black, null).getPropertyValue('color'); // => rgb(255, 0, 0)
+</script>
+```
+
+ref: [https://developer.mozilla.org/en-US/docs/Web/API/Window/getComputedStyle](https://developer.mozilla.org/en-US/docs/Web/API/Window/getComputedStyle)
 
 ## Template
 
