@@ -708,7 +708,7 @@ It's important to know if your SDK need to parse the location url.
 
 ### Parsing URI
 
-Here's a simplest by using the native URL() Interface but it doesn't support on all the browsers.
+Here's a simplest by using the native URL() Interface but it doesn't support on all the browsers also [not standard yet](https://developer.mozilla.org/en-US/docs/Web/API/Window/URL).
 
 ```js
 var parser = new URL('http://github.com/huei90');
