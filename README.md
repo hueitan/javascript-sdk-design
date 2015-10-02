@@ -622,6 +622,24 @@ body.appendChild(iframe);
  scrolling="no"></iframe>
 ```
 
+**Putting html content into an iframe**
+
+```html
+<iframe id="iframe"></iframe>
+
+<script>
+  var html_string= "content <script>alert(location.href);</script>";
+  document.getElementById('iframe').src = "data:text/html;charset=utf-8," + escape(html_string);
+  // alert data:text/html;charset=utf-8.....
+  
+  var doc = document.getElementById('iframe').contentWindow.document;
+  doc.open();
+  doc.write('<body>Test<script>alert(location.href);</script></body>');
+  doc.close();
+  // alert "top window url"
+</script>
+```
+
 ### Script jsonp
 
 This is the case that your server need to response JavaScript code and let the client browser execute it.
