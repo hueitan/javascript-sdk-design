@@ -650,11 +650,19 @@ Just include the JS script link.
     var s = document.createElement('script');
     s.type = 'text/javascript';
     s.async = true;
-    s.src = '/yourscript?some=parameter';
+    s.src = '/yourscript?some=parameter&callback=jsonpCallback';
     var x = document.getElementsByTagName('script')[0];
     x.parentNode.insertBefore(s, x);
   })();
 ```
+
+Know more about jsonp
+
+1. JSONP only works in GET HTTP request.
+2. JSONP lacks error handling, means you cannot detect case in response status code 404, 500 and so on.
+3. JSONP requests are always asynchronous.
+4. Beware of CSRF attack.
+5. Cross domain communication. Script response side (server-side) don't need to care about CORS.
 
 ### Navigator.sendBeacon()
 
