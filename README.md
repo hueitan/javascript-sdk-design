@@ -631,12 +631,18 @@ body.appendChild(iframe);
   var html_string= "content <script>alert(location.href);</script>";
   document.getElementById('iframe').src = "data:text/html;charset=utf-8," + escape(html_string);
   // alert data:text/html;charset=utf-8.....
+  // access cookie get ERROR
   
   var doc = document.getElementById('iframe').contentWindow.document;
   doc.open();
   doc.write('<body>Test<script>alert(location.href);</script></body>');
   doc.close();
   // alert "top window url"
+  
+  var iframe = document.createElement('iframe');
+  iframe.src = 'javascript:;\'' + '<html><body><script>alert(location.href);</body></html>' + '\'';
+  document.body.appendChild(iframe);
+  // alert "about:blank"
 </script>
 ```
 
