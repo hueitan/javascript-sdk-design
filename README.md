@@ -72,6 +72,7 @@ Feel free to [edit](https://github.com/huei90/JavaScript-sdk-design/edit/master/
  * [Once Function](#once-function)
  * [Pixel Ratio Density](#pixel-ratio-density)
  * [Get Style Value](#get-style-value)
+ * [Check if Element in Viewport](#check-if-element-in-viewport)
 * [Template](#template)
 * [Book to Read](#booknice-to-read)
 * [Reference](#reference)
@@ -954,6 +955,29 @@ If you stuck on the term pixel, ratio, densty, dimension, what while developing 
 ```
 
 ref: [https://developer.mozilla.org/en-US/docs/Web/API/Window/getComputedStyle](https://developer.mozilla.org/en-US/docs/Web/API/Window/getComputedStyle)
+
+**Check if Element in Viewport**
+
+You can find out more [here](http://stackoverflow.com/questions/123999/how-to-tell-if-a-dom-element-is-visible-in-the-current-viewport/7557433#7557433).
+
+```js
+function isElementInViewport (el) {
+
+    //special bonus for those using jQuery
+    if (typeof jQuery === "function" && el instanceof jQuery) {
+        el = el[0];
+    }
+
+    var rect = el.getBoundingClientRect();
+
+    return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) && /*or $(window).height() */
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth) /*or $(window).width() */
+    );
+}
+```
 
 ## Template
 
