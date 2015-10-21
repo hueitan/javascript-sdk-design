@@ -956,7 +956,7 @@ If you stuck on the term pixel, ratio, densty, dimension, what while developing 
 
 ref: [https://developer.mozilla.org/en-US/docs/Web/API/Window/getComputedStyle](https://developer.mozilla.org/en-US/docs/Web/API/Window/getComputedStyle)
 
-**Check if Element in Viewport**
+### Check if Element in Viewport
 
 You can find out more [here](http://stackoverflow.com/questions/123999/how-to-tell-if-a-dom-element-is-visible-in-the-current-viewport/7557433#7557433).
 
