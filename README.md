@@ -25,6 +25,7 @@ Feel free to [edit](https://github.com/huei90/JavaScript-sdk-design/edit/master/
   * [Traditional Syntax](#traditional-syntax)
   * [Comparison](#comparison)
   * [Problem of Asynchronous](#problem-of-asynchronous)
+  * [Others](#others)
 * [SDK Versioning](#sdk-versioning)
 * [Changelog Document](#changelog-document)
 * [Namespace](#namespace)
@@ -227,6 +228,54 @@ your SDK should handle and execute `SDKName.q` and reinitial the namespace `SDKN
   // execute your script immediately here
   SDKName.push(['some arguments']);
 </script>
+```
+
+### Others
+
+There are other different ways to include a script
+
+**Import in ES2015**
+
+```js
+import "your-sdk";
+```
+
+**Modular include a Script**
+
+For full source code, see this awesome tutorial. [Loading JavaScript Modules](https://libraryinstitute.wordpress.com/2010/12/01/loading-javascript-modules/)
+
+```js
+module('sdk.js',['sdk-track.js', 'sdk-beacon.js'],function(track, beacon) {
+  // sdk definitions, split into local and global/exported definitions
+  // local definitions
+  // exports
+});
+
+// you should contain this "module" method
+(function () {
+ 
+  var modules = {}; // private record of module data
+ 
+  // modules are functions with additional information
+  function module(name,imports,mod) {
+ 
+    // record module information
+    window.console.log('found module '+name);
+    modules[name] = {name:name, imports: imports, mod: mod};
+ 
+    // trigger loading of import dependencies
+    for (var imp in imports) loadModule(imports[imp]);
+ 
+    // check whether this was the last module to be loaded
+    // in a given dependency group
+    loadedModule(name);
+  }
+  
+  // function loadModule
+  // function loadedModule
+  
+  window.module = module;
+})();
 ```
 
 ## SDK Versioning
