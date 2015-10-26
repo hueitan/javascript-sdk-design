@@ -59,9 +59,9 @@ Feel free to [edit](https://github.com/huei90/JavaScript-sdk-design/edit/master/
  * [Developer Tools](#developer-tools)
  * [Console Logs](#console-logs)
  * [Debugging Proxy](#debugging-proxy)
+ * [BrowserSync](#browsersync)
 * [Tips and Tricks](#tips-and-tricks)
  * [Piggyback](#piggyback)
- * [BrowserSync](#browsersync)
  * [Page Visibility API](#page-visibility-api)
  * [Document Referrer](#document-referrer)
  * [Console Logs Polyfill](#console-logs-polyfill)
@@ -828,6 +828,12 @@ Here's some software you can try
 - [Charles](http://www.charlesproxy.com)
 - [Cellist](https://itunes.apple.com/tw/app/cellist-http-debugging-proxy/id897814548?l=zh&mt=12)
 
+### BrowserSync
+
+[BrowserSync](http://www.browsersync.io) makes your tweaking and testing faster by synchronising file changes and interactions across multiple devices. It’s wicked-fast and totally free.
+
+It really helps alot if you need to test your SDK result in multiple cross devices. Try it =)
+
 ## Tips and Tricks
 
 ### Piggyback
@@ -838,12 +844,6 @@ we just need to do a simple 1x1 pixel request (for example: return a request whe
 ```html
 <img height="1" width="1" alt="" style="display:none" src="https://yourUrlLink.com/t?timestamp=1234567890&type=page1&currency=USD&noscript=1" />
 ```
-
-### BrowserSync
-
-[BrowserSync](http://www.browsersync.io) makes your tweaking and testing faster by synchronising file changes and interactions across multiple devices. It’s wicked-fast and totally free.
-
-It really helps alot if you need to test your SDK result in multiple cross devices. Try it =)
 
 ### Page Visibility API
 
