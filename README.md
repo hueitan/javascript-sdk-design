@@ -43,6 +43,7 @@ Feel free to [edit](https://github.com/huei90/JavaScript-sdk-design/edit/master/
   * [Document Ready](#document-ready)
   * [Message Event](#message-event)
   * [Orientation Change](#orientation-change)
+  * [Disable Scroll](#disable-scroll)
 * [Request](#request)
   * [Image Beacon](#image-beacon)
   * [Single Post](#single-post)
@@ -69,7 +70,6 @@ Feel free to [edit](https://github.com/huei90/JavaScript-sdk-design/edit/master/
  * [YOU MIGHT NOT NEED JQUERY](#you-might-not-need-jquery)
  * [You Don't Need jQuery](#you-dont-need-jquery)
  * [Load Script with Callback](#load-script-with-callback)
- * [Disable Scroll](#disable-scroll)
  * [Once Function](#once-function)
  * [Pixel Ratio Density](#pixel-ratio-density)
  * [Get Style Value](#get-style-value)
@@ -533,6 +533,18 @@ Screen portrait-primary, portrait-secondary, landscape-primary, landscape-second
 var orientation = screen.orientation || screen.mozOrientation || screen.msOrientation;
 ```
 
+### Disable Scroll
+
+In web page, use CSS style `overflow: hidden`, in some mobie web, this css doesn't work, use javascript event.
+
+```js
+document.addEventListener('touchstart', function(e){ e.preventDefault(); }); // prevent scroll
+// or 
+document.body.addEventListener('touchstart', function(e){ e.preventDefault(); }); // prevent scroll
+// use move if you need some touch event
+document.addEventListener('touchmove', function(e){ e.preventDefault(); }); // prevent scroll
+```
+
 ## Request
 
 The communication between our SDK and Server is using Ajax Request,
@@ -922,18 +934,6 @@ function loadScript(url, callback) {
 }
 ```
 
-### Disable Scroll
-
-In web page, use CSS style `overflow: hidden`, in some mobie web, this css doesn't work, use javascript event.
-
-```js
-document.addEventListener('touchstart', function(e){ e.preventDefault(); }); // prevent scroll
-// or 
-document.body.addEventListener('touchstart', function(e){ e.preventDefault(); }); // prevent scroll
-// use move if you need some touch event
-document.addEventListener('touchmove', function(e){ e.preventDefault(); }); // prevent scroll
-```
-
 ### Once Function
 
 Here show how to implement the function `once`
@@ -1060,3 +1060,4 @@ Someone ask for the template/boilerplate of the SDK, here some example for you. 
 18. [DOMContentLoaded and Load Event](http://stackoverflow.com/questions/2414750/difference-between-domcontentloaded-and-load-events)
 
 *(inspired by [http-api-design](https://github.com/interagent/http-api-design))*
+d
