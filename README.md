@@ -57,6 +57,7 @@ Feel free to [edit](https://github.com/huei90/JavaScript-sdk-design/edit/master/
 * [Component of URI](#component-of-uri)
  * [Parsing URI](#parsing-uri)
 * [Debugging](#debugging)
+ * [Simulating Multiple Domains](#simulating-multiple-domains)
  * [Developer Tools](#developer-tools)
  * [Console Logs](#console-logs)
  * [Debugging Proxy](#debugging-proxy)
@@ -818,6 +819,24 @@ parser.hostname; // => "github.com"
 ```
 
 ## Debugging
+
+### Simulating Multiple Domains
+
+You don't need to register different domains names to simulate multiple domain, you can just edit your operating system's hostes file.
+
+```shell
+$ sudo vim /etc/hosts
+```
+
+Add the following entries
+
+```shell
+# refer to localhost
+127.0.0.1 publisher.net
+127.0.0.1 sdk.net
+```
+
+Then you can access the page `http://publisher.net` and `http://sdk.net`
 
 ### Developer Tools
 
