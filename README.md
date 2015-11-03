@@ -556,6 +556,8 @@ but there's a better solution to implement it.
 
 Use the Image Beacon to ask browser to perform a method GET Request to get an Image.
 
+*Remember to add timestamp (Cache Buster) to prevent caching in browser.*
+
 ```js
 (new Image()).src = 'http://xxxxx.com/collect?id=1111';
 ```
