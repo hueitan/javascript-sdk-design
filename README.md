@@ -328,6 +328,23 @@ On your SDK mainland, you should use `(function () { ... })()` to wrap all your 
 
 This is an increasingly common practice, employed by many popular JavaScript libraries (jQuery, Node.js, etc.). This technique creates a closure around the entire contents of the file which, perhaps most importantly, creates a private namespace and thereby helps avoid potential name clashes between different JavaScript modules and libraries. [#](http://www.toptal.com/javascript/interview-questions)
 
+To avoid **namespace collision**
+
+Learning this from Google Analytics, you can define your namespace by changing the value `ga`
+
+```js
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+```
+
+From [OpenX experience](http://docs.openx.com/ad_server/adtags_namespace.html), support a parameter to request the namespace.
+
+```html
+<script src="http://your_domain/sdk?namespace=yourcompany"></script>
+```
+
 ## Storage Mechanism
 
 ### Cookie
