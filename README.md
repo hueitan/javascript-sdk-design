@@ -4,7 +4,7 @@
 
 This guide gives you an introduction to developing a [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) SDK on desktop and mobile web in different platforms and browsers (<99.99% I might skip some browsers), for those developed for non-browser supports (hardware, embedded, node/io js) are excluded in this document and will be considered in the future.
 
-Since I didn't find out a better documentation for the [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) SDK,
+Since I didn't find out a better documentation for the [JavaScript](https://developer.mozillca.org/en-US/docs/Web/JavaScript) SDK,
 I'm here to gather and note down the knowledges of my personal experiences. This document has been written for months, there is a change we should know, **JavaScript-SDK-Design** is not just about SDK only, it's the connection between human and browser machine. The more native we write, the more we think, we do care about the performances and differences between platforms and browsers.
 
 Feel free to [edit](https://github.com/huei90/JavaScript-sdk-design/edit/master/README.md) or you can drop me suggestions on the [issue list](https://github.com/huei90/JavaScript-sdk-design/issues).
@@ -98,7 +98,7 @@ you can have other jQuery-like libraries, zepto.js, for the DOM manipulation.
 Or if you need the http [ajax request](https://github.com/huei90/JavaScript-sdk-design#request), use other light library like `window.fetch`.
 
 Once every SDK version released, make sure that it can be fitted into older and newer SDK version in the future.
-Therefore, remember to write your **Documentation** for your SDK, comment for your code, unit test and user scenario test.
+Hence, remember to write your **Documentation** for your SDK, comment in your code, unit test and user scenario test.
 
 ## Scope
 
@@ -114,8 +114,8 @@ In what case we should use SDK in JavaScript environment? [Suggest one](https://
 
 ## Include the SDK
 
-You are suggest to use **Asynchrnonous Syntax** for your script loaded.
-We want to optimize the user experience on the website as we don't want our SDK library interfere the main web loaded.
+You are suggested to use **Asynchrnonous Syntax** for your script loaded.
+We want to optimize the user experience on the website as we don't want our SDK library to interfere the main web loaded.
 
 ### Asynchronous Syntax
 
