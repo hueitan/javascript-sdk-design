@@ -842,7 +842,7 @@ parser.hostname; // => "github.com"
 
 ### Simulating Multiple Domains
 
-You don't need to register different domains names to simulate multiple domain, you can just edit your operating system's hostes file.
+You don't need to register different domain names to simulate multiple domain, you can just edit your operating system's hosts file.
 
 ```shell
 $ sudo vim /etc/hosts
@@ -883,7 +883,7 @@ Here's some software you can try
 
 [BrowserSync](http://www.browsersync.io) makes your tweaking and testing faster by synchronising file changes and interactions across multiple devices. It’s wicked-fast and totally free.
 
-It really helps alot if you need to test your SDK result in multiple cross devices. Try it =)
+It really helps a lot if you need to test your SDK result in multiple cross devices. Try it =)
 
 ## Tips and Tricks
 
@@ -933,7 +933,7 @@ These characters are: # $ & + , / : ; = ? @ [more discussion](http://stackoverfl
 
 ### YOU MIGHT NOT NEED JQUERY
 
-As the title said, [you might not need jquery](http://youmightnotneedjquery.com/). It's really useful if you are looking for  some utilities code - [AJAX](http://youmightnotneedjquery.com/#AJAX) [EFFECTS](http://youmightnotneedjquery.com/#effects), [ELEMENTS](http://youmightnotneedjquery.com/#elements), [EVENTS](http://youmightnotneedjquery.com/#events), [UTILS](http://youmightnotneedjquery.com/#utils)
+As the title said, [you might not need jquery](http://youmightnotneedjquery.com/). It's really useful if you are looking for some utilities code - [AJAX](http://youmightnotneedjquery.com/#AJAX) [EFFECTS](http://youmightnotneedjquery.com/#effects), [ELEMENTS](http://youmightnotneedjquery.com/#elements), [EVENTS](http://youmightnotneedjquery.com/#events), [UTILS](http://youmightnotneedjquery.com/#utils)
 
 ### You Don't Need jQuery
 
@@ -1006,7 +1006,7 @@ canOnlyFireOnce(); // nada
 
 ### Pixel Ratio Density
 
-If you stuck on the term pixel, ratio, densty, dimension, what while developing mobile web, try understand the video, it may helps.
+If you stuck on the term pixel, ratio, density, dimension, what while developing mobile web, try understanding the video, it may help.
 
 [Device pixel ratio - Mobile Web Development](https://www.youtube.com/watch?v=u0rfDeaxehc) <br/>
 [Mobile device pixels - Mobile Web Development](https://www.youtube.com/watch?t=34&v=UUF4jD-xoYc)
@@ -1069,7 +1069,7 @@ function isElementInViewport (el) {
 
 ## Template
 
-Someone ask for the template/boilerplate of the SDK, here some example for you. [TEMPLATE.md](https://github.com/huei90/JavaScript-sdk-design/blob/master/Template/README.md)
+Someone asks for the template/boilerplate of the SDK, here some example for you. [TEMPLATE.md](https://github.com/huei90/JavaScript-sdk-design/blob/master/Template/README.md)
 
 ## Book/Nice to Read
 
@@ -1099,4 +1099,3 @@ Someone ask for the template/boilerplate of the SDK, here some example for you. 
 18. [DOMContentLoaded and Load Event](http://stackoverflow.com/questions/2414750/difference-between-domcontentloaded-and-load-events)
 
 *(inspired by [http-api-design](https://github.com/interagent/http-api-design))*
-d
