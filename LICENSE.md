@@ -2,6 +2,6 @@
 
 ---
 
-✔ Yes, you are allow to use it, but remember give a link from here. <br/>
+✔ Yes, you are allowed to use it, but remember giving a link from here. <br/>
 ✔ Free free to share it. <br/>
 ✔ Tell me what you have done.
