@@ -13,6 +13,8 @@
 
 ## Embedded widgets
 
+Small interactive applications embedded on the publisher's web page.
+
 ## Disqus for Web
 
 > https://help.disqus.com/customer/portal/articles/472097-universal-embed-code
@@ -101,6 +103,8 @@ UserVoice=window.UserVoice||[];
 ```
 
 ## Analytics and Metrics
+
+For gathering intelligence about visitors and how they interact with the publisher's website.
 
 ## Google Analytics
 
