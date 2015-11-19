@@ -5,7 +5,7 @@
 This guide gives you an introduction to developing a [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) SDK on desktop and mobile web in different platforms and browsers (<99.99% I might skip some browsers), for those developed for non-browser supports (hardware, embedded, node/io js) are excluded in this document and will be considered in the future.
 
 Since I didn't find out a better documentation for the [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) SDK,
-I'm here to gather and note down the knowledges of my personal experiences. This document has been written for months, there is a change we should know, **JavaScript-SDK-Design** is not just about SDK only, it's the connection between human and browser machine. The more native we write, the more we think, we do care about the performances and differences between platforms and browsers.
+I'm here to gather and note down the knowledge of my personal experiences. This document has been written for months, there is a change we should know, **JavaScript-SDK-Design** is not just about SDK only, it's the connection between human and browser machine. The more native we write, the more we think, we do care about the performances and differences between platforms and browsers.
 
 Feel free to [edit](https://github.com/huei90/JavaScript-sdk-design/edit/master/README.md) or you can drop me suggestions on the [issue list](https://github.com/huei90/JavaScript-sdk-design/issues).
 
@@ -90,12 +90,12 @@ It depends on your purpose of your SDK service and usage,
 but there must be **native**, **short**, **fast**, **clean**, **readable** and **testable**.
 
 Written in native JavaScript code, compiler language like
-livescript, coffeescript, typescript and others are **not** recommend.
+Livescript, Coffeescript, Typescript and others are **not** recommend.
 There must be a better way to write your own JavaScript code in native faster than others.
 
 Please **don't** involve jQuery in your SDK unless it's really important,
 you can have other jQuery-like libraries, zepto.js, for the DOM manipulation.
-Or if you need the http [ajax request](https://github.com/huei90/JavaScript-sdk-design#request), use other light library like `window.fetch`.
+Or if you need the HTTP [ajax request](https://github.com/huei90/JavaScript-sdk-design#request), use another light library like `window.fetch`.
 
 Once every SDK version released, make sure that it can be fitted into older and newer SDK version in the future.
 Hence, remember to write your **Documentation** for your SDK, comment in your code, unit test and user scenario test.
@@ -104,7 +104,7 @@ Hence, remember to write your **Documentation** for your SDK, comment in your co
 
 *Based on the book [Third-Party JavaScript](http://thirdpartyjs.com)*
 
-In which case you should design a JavaScript SDK for your application?
+In which case, you should design a JavaScript SDK for your application?
 
 1. [Embedded widgets](https://github.com/huei90/javascript-sdk-design/blob/master/SCOPE.md#embedded-widgets) - Small interactive applications embedded on the publisher's web page (Disqus, Google Maps, Facebook Widget)
 2. [Analytics and metrics](https://github.com/huei90/javascript-sdk-design/blob/master/SCOPE.md#analytics-and-metrics) - For gathering intelligence about visitors and how they interact with the publisher's website (GA, Flurry, Mixpanel)
@@ -114,7 +114,7 @@ In what case we should use SDK in JavaScript environment? [Suggest one](https://
 
 ## Include the SDK
 
-You are suggested to use **Asynchrnonous Syntax** for your script loaded.
+You are suggested to use **Asynchronous Syntax** for your script loaded.
 We want to optimize the user experience on the website as we don't want our SDK library to interfere the main web loaded.
 
 ### Asynchronous Syntax
@@ -132,7 +132,7 @@ We want to optimize the user experience on the website as we don't want our SDK 
 </script>
 ```
 
-Target on modern browser, you can use `async`.
+Target on the modern browser, you can use `async`.
 
 ```html
 <script async src="http://xxx.com/sdk.js"></script>
@@ -303,7 +303,7 @@ Using hostname (subdomain).
 http://v1.xxx.com/sdk.js
 ```
 
-For the futher development, you are advised to use  `stable` `unstable` `alpha` `latest` `experimental` version.
+For the further development, you are advised to use  `stable` `unstable` `alpha` `latest` `experimental` version.
 ```
 http://xxx.com/sdk-stable.js
 http://xxx.com/sdk-unstable.js
@@ -438,7 +438,7 @@ A page session lasts for as long as the browser is open and survives over page r
 Stores data with no expiration date, storage limit is far larger (at least 5MB) and
 information is never transferred to the server.
 
-It's good to know that each localStorage from `http` and `https` in same domain aren't shared.
+It's good to know that each localStorage from `http` and `https` in the same domain aren't shared.
 You can create an iframe inside the website and use `postMessage` to pass the value to others. [HOW TO?](http://stackoverflow.com/questions/10502469/is-there-any-workaround-to-make-use-of-html5-localstorage-on-both-http-and-https)
 
 #### Check LocalStorage Writable
@@ -554,7 +554,7 @@ var orientation = screen.orientation || screen.mozOrientation || screen.msOrient
 
 ### Disable Scroll
 
-In web page, use CSS style `overflow: hidden`, in some mobie web, this css doesn't work, use javascript event.
+In web page, use CSS style `overflow: hidden`, in some mobile web, this css doesn't work, use javascript event.
 
 ```js
 document.addEventListener('touchstart', function(e){ e.preventDefault(); }); // prevent scroll
@@ -572,7 +572,7 @@ but there's a better solution to implement it.
 
 ### Image Beacon
 
-Use the Image Beacon to ask browser to perform a method GET Request to get an Image.
+Use the Image Beacon to ask the browser to perform a method GET Request to get an Image.
 
 *Remember to add timestamp (Cache Buster) to prevent caching in browser.*
 
@@ -731,7 +731,7 @@ body.appendChild(iframe);
 
 ### Script jsonp
 
-This is the case that your server need to response JavaScript code and let the client browser execute it.
+This is the case that your server needs to response JavaScript code and let the client browser execute it.
 Just include the JS script link.
 
 ```js
@@ -801,7 +801,7 @@ Check the maximum number of browser's request connection. [browserscope](http://
 
 ## Component of URI
 
-It's important to know if your SDK need to parse the location url.
+It's important to know if your SDK needs to parse the location url.
 ```
                          authority
                    __________|_________
@@ -823,7 +823,7 @@ It's important to know if your SDK need to parse the location url.
 
 ### Parsing URI
 
-Here's a simplest by using the native URL() Interface but it doesn't support on all the browsers also [not standard yet](https://developer.mozilla.org/en-US/docs/Web/API/Window/URL).
+Here's a simplest by using the native URL() Interface but it doesn't support all the browsers also [not standard yet](https://developer.mozilla.org/en-US/docs/Web/API/Window/URL).
 
 ```js
 var parser = new URL('http://github.com/huei90');
