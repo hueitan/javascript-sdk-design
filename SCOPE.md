@@ -137,6 +137,8 @@ mixpanel.init("YOUR TOKEN");</script><!-- end Mixpanel -->
 
 ## Web service API wrappers
 
+For developing client-side applications that communicate with external web services.
+
 ## Google Tag Manager
 
 > https://developers.google.com/tag-manager/quickstart
