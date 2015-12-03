@@ -318,6 +318,17 @@ You should notice that your SDK user will not know if you upgrade your SDK witho
 Remember to write a changelog to document your major, minor and even bug fix change.
 It will be a good developer experience if we can trace the changing API for the SDK. - [Keep a Changelog](http://keepachangelog.com), [Github Repo](https://github.com/olivierlacan/keep-a-changelog)
 
+Each version should have:
+
+```
+[Added] for new features.
+[Changed] for changes in existing functionality.
+[Deprecated] for once-stable features removed in upcoming releases.
+[Removed] for deprecated features removed in this release.
+[Fixed] for any bug fixes.
+[Security] to invite users to upgrade in case of vulnerabilities.
+```
+
 ## Namespace
 
 You should not define more than one global namespace in your SDK and
