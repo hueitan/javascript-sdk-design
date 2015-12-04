@@ -35,6 +35,8 @@ Small interactive applications embedded on the publisher's web page.
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 ```
 
+![screen shot 2015-12-04 at 10 47 38 am](https://cloud.githubusercontent.com/assets/2560096/11580590/f679d9b6-9a73-11e5-9e0c-2c7f2b88f506.png)
+
 ## Google Maps Async load
 
 > https://developers.google.com/maps/documentation/javascript/tutorial
@@ -61,6 +63,8 @@ function loadScript() {
 window.onload = loadScript;
 ```
 
+![screen shot 2015-12-04 at 10 49 34 am](https://cloud.githubusercontent.com/assets/2560096/11580606/18879732-9a74-11e5-81a6-849f068e602d.png)
+
 ## UserVoice Javascript SDK
 
 > https://developer.uservoice.com/docs/widgets/install/
@@ -77,6 +81,8 @@ UserVoice=window.UserVoice||[];
   s.parentNode.insertBefore(uv,s)
 })();
 ```
+
+![screen shot 2015-12-04 at 10 51 55 am](https://cloud.githubusercontent.com/assets/2560096/11580647/6163734a-9a74-11e5-82b7-2c6858aef1bd.png)
 
 ### Facebook SDK
 
