@@ -734,7 +734,8 @@ body.appendChild(iframe);
   // alert "top window url"
   
   var iframe = document.createElement('iframe');
-  iframe.src = 'javascript:;\'' + '<html><body><script>alert(location.href);</body></html>' + '\'';
+  iframe.src = 'javascript:;\'' + encodeURI('<html><body><script>alert(location.href);</body></html>') + '\'';
+  // iframe.src = 'javascript:;"' + encodeURI((html_tag).replace(/\"/g, '\\\"')) + '"';
   document.body.appendChild(iframe);
   // alert "about:blank"
 </script>
