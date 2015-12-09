@@ -1109,5 +1109,6 @@ Someone asks for the template/boilerplate of the SDK, here some example for you.
 16. [Asynchronous and deferred JavaScript execution explained](http://peter.sh/experiments/asynchronous-and-deferred-javascript-execution-explained/)
 17. [generate random UUIDs](https://gist.github.com/jed/982883)
 18. [DOMContentLoaded and Load Event](http://stackoverflow.com/questions/2414750/difference-between-domcontentloaded-and-load-events)
+19. [Must See JavaScript Dev Tools That Put Other Dev Tools to Shame](https://medium.com/javascript-scene/must-see-javascript-dev-tools-that-put-other-dev-tools-to-shame-aca6d3e3d925)
 
 *(inspired by [http-api-design](https://github.com/interagent/http-api-design))*
