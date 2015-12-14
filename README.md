@@ -439,7 +439,7 @@ var cookie = {
 ```
 ### Session
 
-It's important to know that JavaScript is not possible to write Session,
+It's important to know that JavaScript is **not possible** to write Session,
 please refer to the server side team to implement Session.
 
 A page session lasts for as long as the browser is open and survives over page reloads and restores. Opening a page in a new tab or window will cause a new session to be initiated.
