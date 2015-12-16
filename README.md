@@ -74,6 +74,7 @@ Feel free to [edit](https://github.com/huei90/JavaScript-sdk-design/edit/master/
  * [Pixel Ratio Density](#pixel-ratio-density)
  * [Get Style Value](#get-style-value)
  * [Check if Element in Viewport](#check-if-element-in-viewport)
+ * [Check if Element is Visible](#check-if-element-is-visible)
  * [Get Viewport Size](#get-viewport-size)
 * [Template](#template)
 * [Book to Read](#booknice-to-read)
@@ -1083,6 +1084,18 @@ function isElementInViewport (el) {
         rect.right <= (window.innerWidth || document.documentElement.clientWidth) /*or $(window).width() */
     );
 }
+```
+
+### Check if Element is Visible
+
+```js
+var isVisible: function(b) {
+    var a = window.getComputedStyle(b);
+    return 0 === a.getPropertyValue("opacity") || "none" === a.getPropertyValue("display") || "hidden" === a.getPropertyValue("visibility") || 0 === parseInt(b.style.opacity, 10) || "none" === b.style.display || "hidden" === b.style.visibility ? false : true;
+}
+
+var element = document.getElementById('box');
+isVisible(element); // => false or true
 ```
 
 ### Get Viewport Size
