@@ -164,6 +164,11 @@ Asynchronous and deferred JavaScript execution explained
 
 <img src="http://peter.sh/wp-content/uploads/2010/09/execution2.jpg"/>
 
+
+
+> _https://developers.google.com/speed/docs/insights/BlockingJS_ <br/>
+> You should avoid and minimize the use of blocking JavaScript, especially external scripts that must be fetched before they can be executed. Scripts that are necessary to render page content can be inlined to avoid extra network requests, however the inlined content needs to be small and must execute quickly to deliver good performance. Scripts that are not critical to initial render should be made asynchronous or deferred until after the first render.
+
 ### Problem of Asynchronous
 
 When you are using Asynchronous,
