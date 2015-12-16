@@ -74,6 +74,7 @@ Feel free to [edit](https://github.com/huei90/JavaScript-sdk-design/edit/master/
  * [Pixel Ratio Density](#pixel-ratio-density)
  * [Get Style Value](#get-style-value)
  * [Check if Element in Viewport](#check-if-element-in-viewport)
+ * [Get Viewport Size](#get-viewport-size)
 * [Template](#template)
 * [Book to Read](#booknice-to-read)
 * [Reference](#reference)
@@ -1082,6 +1083,25 @@ function isElementInViewport (el) {
         rect.right <= (window.innerWidth || document.documentElement.clientWidth) /*or $(window).width() */
     );
 }
+```
+
+### Get Viewport Size
+
+```js
+var getViewportSize = function() {
+    try {
+        var doc = top.document.documentElement
+          , g = (e = top.document.body) && top.document.clientWidth && top.document.clientHeight;
+    } catch (e) {
+        var doc = document.documentElement
+          , g = (e = document.body) && document.clientWidth && document.clientHeight;
+    }
+    var vp = [];
+    doc && doc.clientWidth && doc.clientHeight && ("CSS1Compat" === document.compatMode || !g) ? vp = [doc.clientWidth, doc.clientHeight] : g && (vp = [doc.clientWidth, doc.clientHeight]);
+    return vp;
+}
+
+// return as rray [viewport_width, viewport_height]
 ```
 
 ## Template
