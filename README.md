@@ -9,10 +9,18 @@ I'm here to gather and note down the knowledge of my personal experiences. This 
 
 Feel free to [edit](https://github.com/huei90/JavaScript-sdk-design/edit/master/README.md) or you can drop me suggestions on the [issue list](https://github.com/huei90/JavaScript-sdk-design/issues).
 
-<hr/>
-<p align="center">
-<a href="http://ctt.ec/GyjRN" title="Click to Tweet">Click to Tweet</a>
+<p align="right">
+<i>READ IT</i> 
+<a href="http://sdk-design.js.org" target="_blank">ONLINE</a> /
+<a href="https://gitprint.com/huei90/javascript-sdk-design/blob/master/README.md" target="_blank">PDF</a>
+<i>OR</i> 
+<a href="http://ctt.ec/GyjRN" title="Click to Tweet">Tweet It</a> <br/>
 </p>
+
+<!--<hr/>-->
+<!--<p align="center">-->
+<!--<a href="http://ctt.ec/GyjRN" title="Click to Tweet">Click to Tweet</a>-->
+<!--</p>-->
 <hr/>
 
 ## Content
