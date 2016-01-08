@@ -1137,6 +1137,10 @@ _According to the [Wikipedia](https://en.wikipedia.org/wiki/HTTP_referer#Etymolo
 
 > The `misspelling of referrer` originated in the original proposal by computer scientist `Phillip Hallam-Baker` to incorporate the field into the HTTP specification. The misspelling was set in stone by the time of its incorporation into the `Request for Comments` standards document `RFC 1945`; document co-author `Roy Fielding` has remarked that neither "referrer" nor the misspelling "referer" were recognized by the standard `Unix spell checker` of the period. "Referer" has since become a widely used spelling in the industry when discussing HTTP referrers; usage of the misspelling is not universal, though, as the correct spelling "referrer" is used in some web specifications such as the `Document Object Model`.
 
+<h2 align="center">
+    <img src="https://cloud.githubusercontent.com/assets/2560096/12190613/96a7d652-b605-11e5-8109-1c6fefa9dfc4.png"/>
+</h2>
+
 ## Template
 
 Someone asks for the template/boilerplate of the SDK, here some example for you. [TEMPLATE.md](https://github.com/huei90/JavaScript-sdk-design/blob/master/Template/README.md)
