@@ -84,6 +84,8 @@ Feel free to [edit](https://github.com/huei90/JavaScript-sdk-design/edit/master/
  * [Check if Element in Viewport](#check-if-element-in-viewport)
  * [Check if Element is Visible](#check-if-element-is-visible)
  * [Get Viewport Size](#get-viewport-size)
+* [WTF](#wtf)
+ * [Misspelling Of Referrer](#misspelling-of-referrer)
 * [Template](#template)
 * [Book to Read](#booknice-to-read)
 * [Reference](#reference)
@@ -1124,6 +1126,16 @@ var getViewportSize = function() {
 
 // return as rray [viewport_width, viewport_height]
 ```
+
+## WTF
+
+### Misspelling Of Referrer
+
+Do you know that why the HTTP Request Header having the field name `referer` not `referrer`
+
+_According to the [Wikipedia](https://en.wikipedia.org/wiki/HTTP_referer#Etymology)_
+
+> The `misspelling of referrer` originated in the original proposal by computer scientist `Phillip Hallam-Baker` to incorporate the field into the HTTP specification. The misspelling was set in stone by the time of its incorporation into the `Request for Comments` standards document `RFC 1945`; document co-author `Roy Fielding` has remarked that neither "referrer" nor the misspelling "referer" were recognized by the standard `Unix spell checker` of the period. "Referer" has since become a widely used spelling in the industry when discussing HTTP referrers; usage of the misspelling is not universal, though, as the correct spelling "referrer" is used in some web specifications such as the `Document Object Model`.
 
 ## Template
 
