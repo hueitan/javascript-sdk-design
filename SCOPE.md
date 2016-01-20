@@ -4,6 +4,7 @@
   * [Google Maps Async load](#google-maps-async-load)
   * [UserVoice Javascript SDK](#uservoice-javascript-sdk)
   * [Facebook SDK](#facebook-sdk)
+  * [IMA HTML5 SDK](#ima-html5-sdk)
 * [Analytics and Metrics](#analytics-and-metrics)
   * [Google Analytics](#google-analytics) 
   * [Mixpanel](#mixpanel)
@@ -107,6 +108,10 @@ UserVoice=window.UserVoice||[];
    }(document, 'script', 'facebook-jssdk'));
 </script>
 ```
+
+### IMA HTML5 SDK
+
+- [Code Sample](https://github.com/googleads/googleads-ima-html5)
 
 ## Analytics and Metrics
 
