@@ -534,6 +534,8 @@ function ready (fn) {
 
 > **load** event can be used to detect a fully-loaded page
 
+> Information from JS Tip - https://github.com/loverajoel/jstips/blob/gh-pages/_posts/en/2016-02-15-detect-document-ready-in-pure-js.md
+
 ### Message Event
 
 It's about the cross-origin communication between iframe and window, read the [API documentation](https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage).
