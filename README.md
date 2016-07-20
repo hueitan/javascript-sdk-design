@@ -333,7 +333,7 @@ http://xxx.com/sdk-experimental.js
 
 You should notice that your SDK user will not know if you upgrade your SDK without announcement.
 Remember to write a changelog to document your major, minor and even bug fix change.
-It will be a good developer experience if we can trace the changing API for the SDK. - [Keep a Changelog](http://keepachangelog.com), [Github Repo](https://github.com/olivierlacan/keep-a-changelog)
+It will be a good developer experience if we can trace the changing API for the SDK. - [Keep a Changelog](http://keepachangelog.com) ([Github Repo](https://github.com/olivierlacan/keep-a-changelog))
 
 Each version should have:
 
@@ -345,6 +345,8 @@ Each version should have:
 [Fixed] for any bug fixes.
 [Security] to invite users to upgrade in case of vulnerabilities.
 ```
+
+In addition, [commit-message-emoji](https://github.com/dannyfritz/commit-message-emoji) uses emoji to explain the commit's changes itself.
 
 ## Namespace
 
