@@ -1145,7 +1145,7 @@ _According to the [Wikipedia](https://en.wikipedia.org/wiki/HTTP_referer#Etymolo
 
 ## Template
 
-Someone asks for the template/boilerplate of the SDK, here some example for you. [TEMPLATE.md](https://github.com/huei90/JavaScript-sdk-design/blob/master/Template/README.md)
+Someone asks for the template/boilerplate of the SDK, here some examples for you. [TEMPLATE.md](https://github.com/huei90/JavaScript-sdk-design/blob/master/Template/README.md)
 
 ## Book/Nice to Read
 
