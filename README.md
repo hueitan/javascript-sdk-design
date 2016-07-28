@@ -931,7 +931,7 @@ we just need to do a simple 1x1 pixel request (for example: return a request whe
 
 ### Page Visibility API
 
-Sometimes, your SDK wants to detect the user is whether focus your page. Try the polyfills  [visibly.js](https://github.com/addyosmani/visibly.js) and [visibilityjs](https://github.com/ai/visibilityjs).
+Sometimes, your SDK wants to detect if the user has your page in focus. Try the polyfills  [visibly.js](https://github.com/addyosmani/visibly.js) and [visibilityjs](https://github.com/ai/visibilityjs).
 
 ### Document Referrer
 
