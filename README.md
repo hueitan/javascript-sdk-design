@@ -1170,7 +1170,7 @@ Someone asks for the template/boilerplate of the SDK, here some examples for you
 11. [Introduction to Analytics.js - Universal Analytics Web Tracking](https://developers.google.com/analytics/devguides/collection/analyticsjs/)
 12. [Facebook Conversion Tracking Pixel](https://www.facebook.com/help/421433191260652)
 13. [What is the maximum length of a URL](http://www.boutell.com/newfaq/misc/urllength.html)
-14. [YOU MIGHT NOW NEED JQUERY](http://youmightnotneedjquery.com/)
+14. [YOU MIGHT NOT NEED JQUERY](http://youmightnotneedjquery.com/)
 15. [What is a Polyfill?](https://remysharp.com/2010/10/08/what-is-a-polyfill)
 16. [Asynchronous and deferred JavaScript execution explained](http://peter.sh/experiments/asynchronous-and-deferred-javascript-execution-explained/)
 17. [generate random UUIDs](https://gist.github.com/jed/982883)
