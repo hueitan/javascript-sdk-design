@@ -1008,7 +1008,7 @@ function loadScript(url, callback) {
 
 ### Once Function
 
-Here show how to implement the function `once`
+Implementation of the function `once`
 
 > Every so often you have a function which you only want to run once.  Oftentimes these functions are in the form of event listeners which may be difficult to manage.  Of course if they were easy to manage, you'd just remove the listeners but that's a perfect world and sometimes you simply want the ability to only allow a function to be called once.  Here's the JavaScript function to make that possible!
 
