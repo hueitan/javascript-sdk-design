@@ -2,10 +2,9 @@
 
 ## Introduction
 
-This guide gives you an introduction to developing a [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) SDK on desktop and mobile web in different platforms and browsers (<99.99% I might skip some browsers), for those developed for non-browser supports (hardware, embedded, node/io js) are excluded in this document and will be considered in the future.
+This guide gives you an introduction to developing a [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) SDK on desktop and mobile web in different platforms and browsers, for those developed for non-browser supports (hardware, embedded, node/io js) are excluded in this document and will be considered in the future.
 
-Since I didn't find out a better documentation for the [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) SDK,
-I'm here to gather and note down the knowledge of my personal experiences. **JavaScript-SDK-Design** is not just about SDK only, it's the connection between user and browser machine. The more native we write, the more we think, we do care about the performances and differences between platforms and browsers.
+I'm here to gather and note down the knowledge of my personal experiences. **JavaScript-SDK-Design** is not just about SDK, it's the connection between user and browser machine. The more native we write, the more we think, we do care about the performances and differences between platforms and browsers.
 
 Feel free to [edit](https://github.com/huei90/JavaScript-sdk-design/edit/master/README.md) or you can drop me suggestions on the [issue list](https://github.com/huei90/JavaScript-sdk-design/issues).
 
