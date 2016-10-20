@@ -97,8 +97,8 @@ I know it's very common, but it is.
 
 ## Design Philosophy
 
-It depends on your purpose of your SDK service and usage,
-but there must be **native**, **short**, **fast**, **clean**, **readable** and **testable**.
+It depends on the purpose of your SDK service and usage,
+but they must be **native**, **short**, **fast**, **clean**, **readable** and **testable**.
 
 Written in native JavaScript code, compiler language like
 Livescript, Coffeescript, Typescript and others are **not** recommend.
