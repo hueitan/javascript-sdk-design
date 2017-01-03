@@ -1,4 +1,4 @@
-# JavaScript SDK Design Guide
+# JavaScript SDK Design Guide [![Gitter chat](https://badges.gitter.im/huei90/javascript-sdk-design.png)](https://gitter.im/huei90/javascript-sdk-design)
 
 ## Introduction
 
