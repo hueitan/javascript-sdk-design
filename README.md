@@ -93,7 +93,7 @@ Feel free to [edit](https://github.com/huei90/JavaScript-sdk-design/edit/master/
 
 I know it's very common, but it is.
 
-"Short for **software development kit**, a programming package that enables a programmer to develop applications for a specific platform. Typically an SDK includes one or more APIs, programming tools, and documentation."
+"Short for **software development kit**, a programming package that enables a programmer to develop applications for a specific platform. Typically an SDK includes one or more APIs, programming tools, and documentation." - _[webopedia](http://www.webopedia.com/TERM/S/SDK.html)_
 
 ## Design Philosophy
 
