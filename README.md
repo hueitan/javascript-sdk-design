@@ -332,7 +332,7 @@ http://xxx.com/sdk-experimental.js
 
 You should notice that your SDK user will not know if you upgrade your SDK without announcement.
 Remember to write a changelog to document your major, minor and even bug fix change.
-It will be a good developer experience if we can trace the changing API for the SDK. - [Keep a Changelog](http://keepachangelog.com) ([Github Repo](https://github.com/olivierlacan/keep-a-changelog))
+It will be a good developer experience if we can trace the changing API for the SDK. - _[Keep a Changelog](http://keepachangelog.com) ([Github Repo](https://github.com/olivierlacan/keep-a-changelog))_
 
 Each version should have:
 
@@ -352,13 +352,13 @@ In addition, [commit-message-emoji](https://github.com/dannyfritz/commit-message
 You should not define more than one global namespace in your SDK and
 prevent using the common word for your namespace to avoid collision with other libraries.
 
-On your SDK mainland, you should use `(function () { ... })()` to wrap all your source.
+On your SDK playground, use `(function () { ... })()` to wrap all sources.
 
 This is an increasingly common practice, employed by many popular JavaScript libraries (jQuery, Node.js, etc.). This technique creates a closure around the entire contents of the file which, perhaps most importantly, creates a private namespace and thereby helps avoid potential name clashes between different JavaScript modules and libraries. [#](http://www.toptal.com/javascript/interview-questions)
 
 To avoid **namespace collision**
 
-Learning this from Google Analytics, you can define your namespace by changing the value `ga`
+From Google Analytics, define the namespace by changing the value `ga`
 
 ```js
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
