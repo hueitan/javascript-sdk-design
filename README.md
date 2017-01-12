@@ -352,7 +352,7 @@ In addition, [commit-message-emoji](https://github.com/dannyfritz/commit-message
 You should not define more than one global namespace in your SDK and
 prevent using the common word for your namespace to avoid collision with other libraries.
 
-On your SDK playground, use `(function () { ... })()` to wrap all sources.
+On your SDK playground, use `(function () { ... })()` or ES6 Blocks `{ ... }` to wrap all sources.
 
 This is an increasingly common practice, employed by many popular JavaScript libraries (jQuery, Node.js, etc.). This technique creates a closure around the entire contents of the file which, perhaps most importantly, creates a private namespace and thereby helps avoid potential name clashes between different JavaScript modules and libraries. [#](http://www.toptal.com/javascript/interview-questions)
 
