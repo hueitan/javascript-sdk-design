@@ -83,6 +83,7 @@ Feel free to [edit](https://github.com/huei90/JavaScript-sdk-design/edit/master/
  * [Check if Element in Viewport](#check-if-element-in-viewport)
  * [Check if Element is Visible](#check-if-element-is-visible)
  * [Get Viewport Size](#get-viewport-size)
+ * [User Tracking](#user-tracking)
 * [WTF](#wtf)
  * [Misspelling Of Referrer](#misspelling-of-referrer)
 * [Template](#template)
@@ -1129,6 +1130,10 @@ var getViewportSize = function() {
 
 // return as rray [viewport_width, viewport_height]
 ```
+
+### User Tracking
+
+Assume an Evil Advertisement Company wants to track a user, evil generates your own personalize unique hash by using [fingerprinting](https://github.com/Valve/fingerprintjs2), but an ethical company uses cookies and offers Opt-out solution.
 
 ## WTF
 
