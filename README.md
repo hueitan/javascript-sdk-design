@@ -536,7 +536,9 @@ function ready (fn) {
 
 > **load** event can be used to detect a fully-loaded page
 
-> Information from JS Tip - https://github.com/loverajoel/jstips/blob/gh-pages/_posts/en/2016-02-15-detect-document-ready-in-pure-js.md
+> Information from JS Tip - https://github.com/loverajoel/jstips/blob/master/_posts/en/javascript/2016-02-15-detect-document-ready-in-pure-js.md
+
+> [element-ready](https://github.com/sindresorhus/element-ready) from [sindresorhus](https://github.com/sindresorhus)
 
 ### Message Event
 
