@@ -329,6 +329,8 @@ http://xxx.com/sdk-latest.js
 http://xxx.com/sdk-experimental.js
 ```
 
+To Read : [Why use SemVer?](http://blog.npmjs.org/post/162134793605/why-use-semver) from npm
+
 ## Changelog Document
 
 You should notice that your SDK user will not know if you upgrade your SDK without announcement.
