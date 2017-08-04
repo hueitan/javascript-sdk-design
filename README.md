@@ -9,10 +9,10 @@ I'm here to gather and note down the knowledge of my personal experiences. **Jav
 Feel free to [edit](https://github.com/huei90/JavaScript-sdk-design/edit/master/README.md) or you can drop me suggestions on the [issue list](https://github.com/huei90/JavaScript-sdk-design/issues).
 
 <p align="right">
-<i>READ IT</i> 
+<i>READ IT</i>
 <a href="http://sdk-design.js.org" target="_blank">ONLINE</a> /
 <a href="https://gitprint.com/huei90/javascript-sdk-design/blob/master/README.md" target="_blank">PDF</a>
-<i>OR</i> 
+<i>OR</i>
 <a href="http://ctt.ec/GyjRN" title="Click to Tweet">Tweet It</a> <br/>
 </p>
 
@@ -137,7 +137,7 @@ We want to optimize the user experience on the website as we don't want our SDK 
     var s = document.createElement('script');
     s.type = 'text/javascript';
     s.async = true;
-    s.src = 'http://xxx.com/sdk.js';
+    s.src = 'http://<DOMAIN>.com/sdk.js';
     var x = document.getElementsByTagName('script')[0];
     x.parentNode.insertBefore(s, x);
   })();
@@ -147,13 +147,13 @@ We want to optimize the user experience on the website as we don't want our SDK 
 Target on the modern browser, you can use `async`.
 
 ```html
-<script async src="http://xxx.com/sdk.js"></script>
+<script async src="http://<DOMAIN>.com/sdk.js"></script>
 ```
 
 ### Traditional Syntax
 
 ```html
-<script type="text/javascript" src="http://xxx.com/sdk.js"></script>
+<script type="text/javascript" src="http://<DOMAIN>.com/sdk.js"></script>
 ```
 
 ### Comparison
@@ -192,7 +192,7 @@ you cannot execute your SDK function which script written within the page.
     var s = document.createElement('script');
     s.type = 'text/javascript';
     s.async = true;
-    s.src = 'http://xxx.com/sdk.js';
+    s.src = 'http://<DOMAIN>.com/sdk.js';
     var x = document.getElementsByTagName('script')[0];
     x.parentNode.insertBefore(s, x);
   })();
@@ -217,7 +217,7 @@ your SDK should handle and execute `SDKName.q` and reinitial the namespace `SDKN
     var s = document.createElement('script');
     s.type = 'text/javascript';
     s.async = true;
-    s.src = 'http://xxx.com/sdk.js';
+    s.src = 'http://<DOMAIN>.com/sdk.js';
     var x = document.getElementsByTagName('script')[0];
     x.parentNode.insertBefore(s, x);
   })();
@@ -237,7 +237,7 @@ your SDK should handle and execute `SDKName.q` and reinitial the namespace `SDKN
     var s = document.createElement('script');
     s.type = 'text/javascript';
     s.async = true;
-    s.src = 'http://xxx.com/sdk.js';
+    s.src = 'http://<DOMAIN>.com/sdk.js';
     var x = document.getElementsByTagName('script')[0];
     x.parentNode.insertBefore(s, x);
   })();
@@ -270,27 +270,27 @@ module('sdk.js',['sdk-track.js', 'sdk-beacon.js'],function(track, beacon) {
 
 // you should contain this "module" method
 (function () {
- 
+
   var modules = {}; // private record of module data
- 
+
   // modules are functions with additional information
   function module(name,imports,mod) {
- 
+
     // record module information
     window.console.log('found module '+name);
     modules[name] = {name:name, imports: imports, mod: mod};
- 
+
     // trigger loading of import dependencies
     for (var imp in imports) loadModule(imports[imp]);
- 
+
     // check whether this was the last module to be loaded
     // in a given dependency group
     loadedModule(name);
   }
-  
+
   // function loadModule
   // function loadedModule
-  
+
   window.module = module;
 })();
 ```
@@ -307,26 +307,26 @@ Normally, we can have different ways to state the SDK version, it depends on you
 
 Using Query String path.
 ```
-http://xxx.com/sdk.js?v=1.0.0
+http://<DOMAIN>.com/sdk.js?v=1.0.0
 ```
 
 Using the Folder Naming.
 ```
-http://xxx.com/v1.0.0/sdk.js
+http://<DOMAIN>.com/v1.0.0/sdk.js
 ```
 
 Using hostname (subdomain).
 ```
-http://v1.xxx.com/sdk.js
+http://v1.<DOMAIN>.com/sdk.js
 ```
 
 For the further development, you are advised to use  `stable` `unstable` `alpha` `latest` `experimental` version.
 ```
-http://xxx.com/sdk-stable.js
-http://xxx.com/sdk-unstable.js
-http://xxx.com/sdk-alpha.js
-http://xxx.com/sdk-latest.js
-http://xxx.com/sdk-experimental.js
+http://<DOMAIN>.com/sdk-stable.js
+http://<DOMAIN>.com/sdk-unstable.js
+http://<DOMAIN>.com/sdk-alpha.js
+http://<DOMAIN>.com/sdk-latest.js
+http://<DOMAIN>.com/sdk-experimental.js
 ```
 
 To Read : [Why use SemVer?](http://blog.npmjs.org/post/162134793605/why-use-semver) from npm
@@ -386,21 +386,21 @@ For `path=/`,
 you have a cookie `first=value1` in domain `http://github.com`,
 another cookie `second=value2` in domain `http://sub.github.com`
 
-|  | http://github.com | http://sub.github.com
-|:---------:|:------------:|:------------:
-first=value1	 | ✓ | ✓
-second=value2 | ✘ | ✓
+|               | http://github.com | http://sub.github.com |
+|:-------------:|:-----------------:|:---------------------:|
+| first=value1  |         ✓         |           ✓           |
+| second=value2 |         ✘         |           ✓           |
 
 You have a cookie `first=value1` in domain `http://github.com`,
 cookie `second=value2` in domain path `http://github.com/path1`
 and cookie `third=value3` in domain `http://sub.github.com`,
 
 
-|  | http://github.com | http://github.com/path1 | http://sub.github.com
-|:---------:|:------------:|:------------:|:------------:
-first=value1	 | ✓ | ✓ | ✓
-second=value2 | ✘ | ✓ | ✘
-third=value3 | ✘ | ✘ | ✓
+|               | http://github.com | http://github.com/path1 | http://sub.github.com |
+|:-------------:|:-----------------:|:-----------------------:|:---------------------:|
+| first=value1  |         ✓         |            ✓            |           ✓           |
+| second=value2 |         ✘         |            ✓            |           ✘           |
+| third=value3  |         ✘         |            ✘            |           ✓           |
 
 #### Check Cookie Writable
 
@@ -594,7 +594,7 @@ In web page, use CSS style `overflow: hidden`, in some mobile web, this css does
 
 ```js
 document.addEventListener('touchstart', function(e){ e.preventDefault(); }); // prevent scroll
-// or 
+// or
 document.body.addEventListener('touchstart', function(e){ e.preventDefault(); }); // prevent scroll
 // use move if you need some touch event
 document.addEventListener('touchmove', function(e){ e.preventDefault(); }); // prevent scroll
@@ -613,7 +613,7 @@ Use the Image Beacon to ask the browser to perform a method GET Request to get a
 *Remember to add timestamp (Cache Buster) to prevent caching in browser.*
 
 ```js
-(new Image()).src = 'http://xxxxx.com/collect?id=1111';
+(new Image()).src = 'http://<DOMAIN>.com/collect?id=1111';
 ```
 
 Some notice for GET Query String, there is the limit of length which is 2048(Basically It depends on different browser and server). You should do some tricks to handle if exceed length limit.
@@ -632,7 +632,7 @@ For the image load **success/error callback**
 
 ```js
 var img = new Image();
-img.src = 'http://xxxxx.com/collect?id=1111';
+img.src = 'http://<DOMAIN>.com/collect?id=1111';
 img.onload = successCallback;
 img.onerror = errorCallback;
 ```
@@ -647,7 +647,7 @@ var input = document.createElement('input');
 
 form.style.display = 'none';
 form.setAttribute('method', 'POST');
-form.setAttribute('action', 'http://xxxx.com/track');
+form.setAttribute('action', 'http://<DOMAIN>.com/track');
 
 input.name = 'username';
 input.value = 'attacker';
@@ -718,7 +718,7 @@ var iframe = document.createElement('iframe');
 var body = document.getElementsByTagName('body')[0];
 
 iframe.style.display = 'none';
-iframe.src = 'http://xxxx.com/page';
+iframe.src = 'http://<DOMAIN>.com/page';
 iframe.onreadystatechange = function () {
     if (iframe.readyState !== 'complete') {
         return;
@@ -751,13 +751,13 @@ body.appendChild(iframe);
   document.getElementById('iframe').src = "data:text/html;charset=utf-8," + escape(html_string);
   // alert data:text/html;charset=utf-8.....
   // access cookie get ERROR
-  
+
   var doc = document.getElementById('iframe').contentWindow.document;
   doc.open();
   doc.write('<body>Test<script>alert(location.href);</script></body>');
   doc.close();
   // alert "top window url"
-  
+
   var iframe = document.createElement('iframe');
   iframe.src = 'javascript:;\'' + encodeURI('<html><body><script>alert(location.href);</body></html>') + '\'';
   // iframe.src = 'javascript:;"' + encodeURI((html_tag).replace(/\"/g, '\\\"')) + '"';
@@ -1019,10 +1019,10 @@ Implementation of the function `once`
 ```js
 // Copy from DWB
 // http://davidwalsh.name/javascript-once
-function once(fn, context) { 
+function once(fn, context) {
 	var result;
 
-	return function() { 
+	return function() {
 		if(fn) {
 			result = fn.apply(context || this, arguments);
 			fn = null;
@@ -1072,7 +1072,7 @@ If you stuck on the term pixel, ratio, density, dimension, what while developing
 
 <script>
     document.getElementById('black').style.color; // => black
-    
+
     // real
     var black = document.getElementById('black');
     window.getComputedStyle(black, null).getPropertyValue('color'); // => rgb(255, 0, 0)
