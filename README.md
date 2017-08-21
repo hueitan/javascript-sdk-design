@@ -84,6 +84,7 @@ Feel free to [edit](https://github.com/huei90/JavaScript-sdk-design/edit/master/
   * [Check if Element is Visible](#check-if-element-is-visible)
   * [Get Viewport Size](#get-viewport-size)
   * [User Tracking](#user-tracking)
+  * [Opt Out](#opt-out)
 * [WTF](#wtf)
   * [Misspelling Of Referrer](#misspelling-of-referrer)
 * [Template](#template)
@@ -1138,6 +1139,10 @@ var getViewportSize = function() {
 ### User Tracking
 
 Assume an Evil Advertisement Company wants to track a user, evil generates your own personalize unique hash by using [fingerprinting](https://github.com/Valve/fingerprintjs2), but an ethical company uses cookies and offers Opt-out solution.
+
+### Opt Out
+
+[DIGITAL ADVERTISING ALLIANCE, POWERED BY YOURADCHOICES](http://optout.aboutads.info/#!/) provides a tool that helps anyone to opt out from all the participating companies.
 
 ## WTF
 
