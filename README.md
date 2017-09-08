@@ -6,7 +6,7 @@ This guide gives you an introduction to developing a [JavaScript](https://develo
 
 I'm here to gather and note down the knowledge of my personal experiences. **JavaScript-SDK-Design** is not just about SDK, it's the connection between user and browser machine. The more native we write, the more we think about the design and performance between platforms and browsers
 
-Feel free to [edit](https://github.com/huei90/JavaScript-sdk-design/edit/master/README.md) or you can drop me suggestions on the [issue list](https://github.com/huei90/JavaScript-sdk-design/issues).
+Feel free to [edit](https://github.com/hueitan/JavaScript-sdk-design/edit/master/README.md) or you can drop me suggestions on the [issue list](https://github.com/hueitan/JavaScript-sdk-design/issues).
 
 <p align="right">
 <i>READ IT</i>
@@ -108,7 +108,7 @@ There must be a better way to write your own JavaScript code in native faster th
 
 Please **don't** involve jQuery in your SDK unless it's really important,
 you can have other jQuery-like libraries, zepto.js, for the DOM manipulation.
-Or if you need the HTTP [ajax request](https://github.com/huei90/JavaScript-sdk-design#request), use another light library like `window.fetch`.
+Or if you need the HTTP [ajax request](#request), use another light library like `window.fetch`.
 
 Once every SDK version released, make sure that it can be fitted into older and newer SDK version in the future.
 Hence, remember to write your **Documentation** for your SDK, comment in your code, unit test and user scenario test.
@@ -119,11 +119,11 @@ Hence, remember to write your **Documentation** for your SDK, comment in your co
 
 In which case, you should design a JavaScript SDK for your application?
 
-1. [Embedded widgets](https://github.com/huei90/javascript-sdk-design/blob/master/SCOPE.md#embedded-widgets) - Small interactive applications embedded on the publisher's web page (Disqus, Google Maps, Facebook Widget)
-2. [Analytics and metrics](https://github.com/huei90/javascript-sdk-design/blob/master/SCOPE.md#analytics-and-metrics) - For gathering intelligence about visitors and how they interact with the publisher's website (GA, Flurry, Mixpanel)
-3. [Web service API wrappers](https://github.com/huei90/javascript-sdk-design/blob/master/SCOPE.md#web-service-api-wrappers) - For developing client-side applications that communicate with external web services. (Facebook Graph API)
+1. [Embedded widgets](./SCOPE.md#embedded-widgets) - Small interactive applications embedded on the publisher's web page (Disqus, Google Maps, Facebook Widget)
+2. [Analytics and metrics](./SCOPE.md#analytics-and-metrics) - For gathering intelligence about visitors and how they interact with the publisher's website (GA, Flurry, Mixpanel)
+3. [Web service API wrappers](./SCOPE.md#web-service-api-wrappers) - For developing client-side applications that communicate with external web services. (Facebook Graph API)
 
-In what case we should use SDK in JavaScript environment? [Suggest one](https://github.com/huei90/JavaScript-sdk-design/edit/master/README.md).
+In what case we should use SDK in JavaScript environment? [Suggest one](https://github.com/hueitan/JavaScript-sdk-design/edit/master/README.md).
 
 ## Include the SDK
 
@@ -816,17 +816,17 @@ Writing XMLHttpRequest is not a good idea. I assume that you don't want to waste
 
 Also known as hash mark `#`. Remember that request with hash mark at the end is not pass within http request.
 
-For example, you are in the page `http://github.com/awesome#huei90`
+For example, you are in the page `http://github.com/awesome#hueitan`
 
 ```js
 // Sending a request with a parameter url which contains current url
-(new Image()).src = 'http://yourrequest.com?url=http://github.com/awesome#huei90';
+(new Image()).src = 'http://yourrequest.com?url=http://github.com/awesome#hueitan';
 
 // actual request will be without #
 (new Image()).src = 'http://yourrequest.com?url=http://github.com/awesome';
 
 // Solved, encodeURIComponent(url);
-(new Image()).src = 'http://yourrequest.com?url=' + encodeURIComponent('http://github.com/awesome#huei90');
+(new Image()).src = 'http://yourrequest.com?url=' + encodeURIComponent('http://github.com/awesome#hueitan');
 ```
 
 ### Maximum Number of Connection
@@ -864,7 +864,7 @@ It's important to know if your SDK needs to parse the location url.
 Here's a simplest by using the native URL() Interface but it doesn't support all the browsers also [not standard yet](https://developer.mozilla.org/en-US/docs/Web/API/Window/URL).
 
 ```js
-var parser = new URL('http://github.com/huei90');
+var parser = new URL('http://github.com/hueitan');
 parser.hostname; // => "github.com"
 ```
 
@@ -872,7 +872,7 @@ For the browser which doesn't have the URL() Interface, try DOM createElement('a
 
 ```js
 var parser = document.createElement('a');
-parser.href = "http://github.com/huei90";
+parser.href = "http://github.com/hueitan";
 parser.hostname; // => "github.com"
 ```
 
@@ -1160,7 +1160,7 @@ _According to the [Wikipedia](https://en.wikipedia.org/wiki/HTTP_referer#Etymolo
 
 ## Template
 
-Someone asks for the template/boilerplate of the SDK, here some examples for you. [TEMPLATE.md](https://github.com/huei90/JavaScript-sdk-design/blob/master/Template/README.md)
+Someone asks for the template/boilerplate of the SDK, here some examples for you. [TEMPLATE.md](./Template/README.md)
 
 ## Book/Nice to Read
 
