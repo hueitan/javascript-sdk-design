@@ -926,7 +926,7 @@ It really helps a lot if you need to test your SDK result in multiple cross devi
 
 ### Debugging Node.js Apps
 
-Debugging your script in Chrome Developer Tools.
+Debugging your script in Chrome Developer Tools. (Node.js v6.3.0+ required)
 
 ```shell
 $ node --inspect-brk [script.js]
