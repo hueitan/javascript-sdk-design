@@ -933,6 +933,7 @@ $ node --inspect-brk [script.js]
 ```
 
 - [Official document](https://nodejs.org/en/docs/inspector/)
+- [Paul Irish gave a talk in 15 minutes about how to use --inspect](https://www.youtube.com/watch?v=Xb_0awoShR8)
 
 ## Tips and Tricks
 
