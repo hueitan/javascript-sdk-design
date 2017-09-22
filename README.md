@@ -4,7 +4,7 @@
 
 This guide gives you an introduction to developing a [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) SDK on desktop and mobile web in different platforms and browsers. Those who developed on non-browsers (hardware, embedded, Node.js) are not the target audiences but would be considered in the future.
 
-I'm here to gather and note down the knowledge of my personal experiences. **JavaScript-SDK-Design** is not just about SDK, it's the connection between user and browser machine. The more native we write, the more we think about the design and performance between platforms and browsers
+I'm here to gather and note down the knowledge of my personal experiences. **JavaScript-SDK-Design** is not just about SDK, it's the connection between user and browser machine. The more native we write, the more we think about the design and performance between platforms and browsers.
 
 Feel free to [edit](https://github.com/hueitan/JavaScript-sdk-design/edit/master/README.md) or you can drop me suggestions on the [issue list](https://github.com/hueitan/JavaScript-sdk-design/issues).
 
@@ -68,6 +68,7 @@ Feel free to [edit](https://github.com/hueitan/JavaScript-sdk-design/edit/master
   * [Console Logs](#console-logs)
   * [Debugging Proxy](#debugging-proxy)
   * [BrowserSync](#browsersync)
+  * [Debugging Node.js Apps](#debugging-nodejs-apps)
 * [Tips and Tricks](#tips-and-tricks)
   * [Piggyback](#piggyback)
   * [Page Visibility API](#page-visibility-api)
@@ -922,6 +923,16 @@ Here's some software you can try
 [BrowserSync](http://www.browsersync.io) makes your tweaking and testing faster by synchronising file changes and interactions across multiple devices. It’s wicked-fast and totally free.
 
 It really helps a lot if you need to test your SDK result in multiple cross devices. Try it =)
+
+### Debugging Node.js Apps
+
+Debugging your script in Chrome Developer Tools.
+
+```shell
+$ node --inspect-brk [script.js]
+```
+
+- [Official document](https://nodejs.org/en/docs/inspector/)
 
 ## Tips and Tricks
 
