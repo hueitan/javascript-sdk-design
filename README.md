@@ -1120,7 +1120,7 @@ function isElementInViewport (el) {
 ### Check if Element is Visible
 
 ```js
-var isVisible: function(b) {
+var isVisible = function(b) {
     var a = window.getComputedStyle(b);
     return 0 === a.getPropertyValue("opacity") || "none" === a.getPropertyValue("display") || "hidden" === a.getPropertyValue("visibility") || 0 === parseInt(b.style.opacity, 10) || "none" === b.style.display || "hidden" === b.style.visibility ? false : true;
 }
@@ -1145,7 +1145,7 @@ var getViewportSize = function() {
     return vp;
 }
 
-// return as rray [viewport_width, viewport_height]
+// return as array [viewport_width, viewport_height]
 ```
 
 ### User Tracking
