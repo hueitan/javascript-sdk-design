@@ -947,10 +947,10 @@ It really helps a lot to test SDK  across mutliple devices. Totally worths a try
 
 ### Debugging Node.js Apps
 
-Debugging your script in Chrome Developer Tools. (Node.js v6.3.0+ required)
+To debug SDK scripts in Chrome Developer Tools. (Node.js v6.3.0+ required)
 
 ```shell
-$ node --inspect-brk [script.js]
+  $ node --inspect-brk [script.js]
 ```
 
 - [Official document](https://nodejs.org/en/docs/inspector/)
@@ -960,8 +960,9 @@ $ node --inspect-brk [script.js]
 
 ### Piggyback
 
-Sometimes, we don't want our developers include all the SDK source,
-we just need to do a simple 1x1 pixel request (for example: return a request when landing on thank you/last page). All we need to do is ask the developer to include an image file with our url link.
+Sometimes, including all the SDK source code is not required in some use cases.
+That is the case of a simple 1x1 pixel request -- For example: make a request when someone lands on thank you(last) page. 
+In such a scenario, the developer may include an image file with a the (url) link, as explained in the following snippet.
 
 ```html
 <img height="1" width="1" alt="" style="display:none" src="https://yourUrlLink.com/t?timestamp=1234567890&type=page1&currency=USD&noscript=1" />
@@ -969,15 +970,18 @@ we just need to do a simple 1x1 pixel request (for example: return a request whe
 
 ### Page Visibility API
 
-Sometimes, your SDK wants to detect if the user has your page in focus. Try the polyfills  [visibly.js](https://github.com/addyosmani/visibly.js) and [visibilityjs](https://github.com/ai/visibilityjs).
+Sometimes, the SDK wants to detect if a user has a particular page in focus. 
+These polyfills  [visibly.js](https://github.com/addyosmani/visibly.js) and [visibilityjs](https://github.com/ai/visibilityjs) may help achieve just that.
 
 ### Document Referrer
 
-Use `document.referrer` to get the url of current previous page. But remember that this referrer is "Browser Referrer" not the "Human Known Referrer". If you click the **browser back button**, for example pageA -> pageB -> pageC -> (back button) pageB, current pageB's referrer is pageA, not pageC.
+The `document.referrer` can be used to get the url of current or previous page. 
+It is however advised to remember that this referrer is "Browser Referrer" not the "Human Known Referrer". 
+The case where a user clicks the **browser back button**, for example pageA -> pageB -> pageC -> (back button) pageB, current pageB's referrer is pageA, not pageC.
 
 ### Console Logs Polyfill
 
-It's not a real polyfill, just make sure that calling `console.log` API doesn't throw error event to client side.
+The following is not a special polyfill. It just make sure that calling `console.log` API doesn't throw error event to client side.
 
 ```js
 if (typeof console === "undefined") {
@@ -995,7 +999,7 @@ if (typeof console === "undefined") {
 
 Understand the difference between `escape()` `encodeURI()` `encodeURIComponent()` [here](http://stackoverflow.com/a/3608791/1748884).
 
-Remember that using `encodeURI()` and `encodeURIComponent()` has exactly 11 characters difference.
+It worth mentioning that using `encodeURI()` and `encodeURIComponent()` has exactly 11 characters difference.
 These characters are: # $ & + , / : ; = ? @ [more discussion](http://stackoverflow.com/a/23842171/1748884).
 
 <h2 align="center">
@@ -1048,7 +1052,7 @@ function loadScript(url, callback) {
 
 Implementation of the function `once`
 
-> Every so often you have a function which you only want to run once.  Oftentimes these functions are in the form of event listeners which may be difficult to manage.  Of course if they were easy to manage, you'd just remove the listeners but that's a perfect world and sometimes you simply want the ability to only allow a function to be called once.  Here's the JavaScript function to make that possible!
+> Quite often, there are functions that are needed only want to run once.  Oftentimes these functions are in the form of event listeners which may be difficult to manage.  Of course if they were easy to manage, it is advised to just remove the listeners. The following is the JavaScript function to make that possible!
 
 ```js
 // Copy from DWB
@@ -1077,10 +1081,10 @@ canOnlyFireOnce(); // nada
 
 ### Pixel Ratio Density
 
-If you stuck on the term pixel, ratio, density, dimension, what while developing mobile web, try understanding the video, it may help.
+To better understand terms such as pixel, ratio, density, dimension are while developing mobile web -- the following links can provide more insights:
 
-[Device pixel ratio - Mobile Web Development](https://www.youtube.com/watch?v=u0rfDeaxehc) <br/>
-[Mobile device pixels - Mobile Web Development](https://www.youtube.com/watch?t=34&v=UUF4jD-xoYc)
+- [Device pixel ratio - Mobile Web Development](https://www.youtube.com/watch?v=u0rfDeaxehc)
+- [Mobile device pixels - Mobile Web Development](https://www.youtube.com/watch?t=34&v=UUF4jD-xoYc)
 
 ### Get Style Value
 
@@ -1117,7 +1121,7 @@ ref: [https://developer.mozilla.org/en-US/docs/Web/API/Window/getComputedStyle](
 
 ### Check if Element in Viewport
 
-You can find out more [here](http://stackoverflow.com/questions/123999/how-to-tell-if-a-dom-element-is-visible-in-the-current-viewport/7557433#7557433).
+There is more [here](http://stackoverflow.com/questions/123999/how-to-tell-if-a-dom-element-is-visible-in-the-current-viewport/7557433#7557433).
 
 ```js
 function isElementInViewport (el) {
@@ -1171,7 +1175,7 @@ var getViewportSize = function() {
 
 ### User Tracking
 
-Assume an Evil Advertisement Company wants to track a user, evil generates your own personalize unique hash by using [fingerprinting](https://github.com/Valve/fingerprintjs2), but an ethical company uses cookies and offers Opt-out solution.
+Assuming that an Evil Advertisement Company wants to track a user, evil may well generate a personalized unique hash by using [fingerprinting](https://github.com/Valve/fingerprintjs2). However, ethical company uses cookies and offers Opt-out solution.
 
 ### Opt Out
 
