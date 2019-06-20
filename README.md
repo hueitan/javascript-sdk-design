@@ -242,7 +242,7 @@ The following snippet depicts the statement in previous paragraph.
 </script>
 ```
 
-**Or** using [].push
+**Or** using `[].push`
 
 ```js
 <script>
@@ -312,39 +312,34 @@ module('sdk.js',['sdk-track.js', 'sdk-beacon.js'],function(track, beacon) {
 
 ## SDK Versioning
 
-Please avoid using your special case for version like `brand-v<timestamp>.js` `brand-v<datetime>.js` `brand-v1-v2.js`,
-it may cause the developer who use the SDK on confusing which is the latest version.
+It is not a good practice to use one of the following versioning styles: 
 
-Use [Semantic Versioning](http://semver.org) to define your SDK Version in the form "MAJOR.MINOR.PATCH".
-Version in `v1.0.0` `v1.5.0` `v2.0.0` is easier for them to trace and search for the changelog documentation.
+  - `brand-v<timestamp>.js` 
+  - `brand-v<datetime>.js` 
+  - `brand-v1-v2.js`,
 
-Normally, we can have different ways to state the SDK version, it depends on your service and design.
+The reason behind this is that It becomes confusing to track the lastest version. 
+Therefore, previous styling do not help developers who use the SDK.
 
-Using Query String path.
-```
-http://<DOMAIN>.com/sdk.js?v=1.0.0
-```
+It is however a good practice to use [Semantic Versioning](http://semver.org), a.k.a **SemVer**, when versioning SDKs.
+It worths to mention that SemVer has three main parts, each corresponding to importance of a release: "MAJOR.MINOR.PATCH".
+Version in `v1.0.0` `v1.5.0` `v2.0.0` is easier to trace and track in changelog documentations, for instance.
 
-Using the Folder Naming.
-```
-http://<DOMAIN>.com/v1.0.0/sdk.js
-```
+Depending on service design, some of the ways SDK can be distributed(or tracked) by version are the following:
 
-Using hostname (subdomain).
-```
-http://v1.<DOMAIN>.com/sdk.js
-```
+ - Using Query String path -- `http://<DOMAIN>.com/sdk.js?v=1.0.0`
+ - Using the Folder Naming -- `http://<DOMAIN>.com/v1.0.0/sdk.js`
+ - Using hostname (subdomain) -- `http://v1.<DOMAIN>.com/sdk.js`
 
-For the further development, you are advised to use  `stable` `unstable` `alpha` `latest` `experimental` version.
-```
-http://<DOMAIN>.com/sdk-stable.js
-http://<DOMAIN>.com/sdk-unstable.js
-http://<DOMAIN>.com/sdk-alpha.js
-http://<DOMAIN>.com/sdk-latest.js
-http://<DOMAIN>.com/sdk-experimental.js
-```
+Depending on use case, there are other environmental dependant forms that are commonly advised to use:  
 
-To Read : [Why use SemVer?](http://blog.npmjs.org/post/162134793605/why-use-semver) from npm
+ - In `stable` version `http://<DOMAIN>.com/sdk-stable.js`  
+ - In `unstable` version `http://<DOMAIN>.com/sdk-unstable.js` 
+ - In `alpha` version `http://<DOMAIN>.com/sdk-alpha.js` 
+ - In `latest` version `http://<DOMAIN>.com/sdk-latest.js` 
+ - In `experimental` version `http://<DOMAIN>.com/sdk-experimental.js`
+
+> Reading suggestion: _*[Why use SemVer?](http://blog.npmjs.org/post/162134793605/why-use-semver)*_ on `npm` blog.
 
 ## Changelog Document
 
