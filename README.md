@@ -106,7 +106,7 @@ This question is pretty ubiquitous, but here it is again.
 
 ## Design Philosophy
 
-Depending on the purpose of SDK's service and usage -- common shared traits are, but not limited to be **native**, **short**, **fast**, **clean**, **readable** and **testable**.
+Depending on the purpose of SDK's service and usage — common shared traits are, but not limited to be **native**, **short**, **fast**, **clean**, **readable** and **testable**.
 
 The widely adopted good practice, is to writ SDK with vanilla JavaScript. 
 Languages compiling to JavaScript such as LiveScript, CoffeeScript, TypeScript and others are **not** recommended.
@@ -114,7 +114,7 @@ Languages compiling to JavaScript such as LiveScript, CoffeeScript, TypeScript a
 It is also recommended not to use libraries suchs as jQuery in SDK development. 
 The exception is of course when it is really important. There are also other jQuery-like libraries, zepto.js _etc_ to choose from, for the DOM manipulation purposes.
 
-In event of HTTP [ajax request](#request) requirements -- there are native equivalent such as `window.fetch`. It is light-weight, supported in ever growing platforms. 
+In event of HTTP [ajax request](#request) requirements — there are native equivalent such as `window.fetch`. It is light-weight, supported in ever growing platforms. 
 
 Backward compatibility is paramount. Every new  SDK version released should be enabled with  support of previous older versions. Likewise, current version should be designed to support future SDK versions. This is referred to as Forward compatibility.
 
@@ -274,7 +274,7 @@ There are other different ways to include a script
 
 #### Modular include a Script
 
-There is full source code -- and this awesome tutorial _"[Loading JavaScript Modules](https://libraryinstitute.wordpress.com/2010/12/01/loading-javascript-modules/)"_ may help for in depth understanding of concepts discussed above.
+There is full source code — and this awesome tutorial _"[Loading JavaScript Modules](https://libraryinstitute.wordpress.com/2010/12/01/loading-javascript-modules/)"_ may help for in depth understanding of concepts discussed above.
 
 ```js
 module('sdk.js',['sdk-track.js', 'sdk-beacon.js'],function(track, beacon) {
@@ -327,9 +327,9 @@ Version in `v1.0.0` `v1.5.0` `v2.0.0` is easier to trace and track in changelog 
 
 Depending on service design, some of the ways SDK can be distributed(or tracked) by version are the following:
 
- - Using Query String path -- `http://<DOMAIN>.com/sdk.js?v=1.0.0`
- - Using the Folder Naming -- `http://<DOMAIN>.com/v1.0.0/sdk.js`
- - Using hostname (subdomain) -- `http://v1.<DOMAIN>.com/sdk.js`
+ - Using Query String path — `http://<DOMAIN>.com/sdk.js?v=1.0.0`
+ - Using the Folder Naming — `http://<DOMAIN>.com/v1.0.0/sdk.js`
+ - Using hostname (subdomain) — `http://v1.<DOMAIN>.com/sdk.js`
 
 Depending on use case, there are other environmental dependant forms that are commonly advised to use:  
 
