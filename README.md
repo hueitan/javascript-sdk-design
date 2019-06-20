@@ -154,7 +154,7 @@ This approach reduce chances of the SDK library interfering with the hosting web
 </script>
 ```
 
-Target on the modern browser, you can use `async`.
+The `async` syntax is used when targetting on the modern browsers.
 
 ```html
 <script async src="http://<DOMAIN>.com/sdk.js"></script>
@@ -171,15 +171,17 @@ Target on the modern browser, you can use `async`.
 Here's the simple graph to show the differentiate between Asynchronous and Traditional Syntax.
 
 Asynchronous:
-```
+
+``` 
  |----A-----|
     |-----B-----------|
         |-------C------|
 ```
 
 Synchronous:
+
 ```
-|----A-----||-----B-----------||-------C------|
+  |----A-----||-----B-----------||-------C------|
 ```
 
 Asynchronous and deferred JavaScript execution explained
@@ -189,14 +191,15 @@ Asynchronous and deferred JavaScript execution explained
 
 
 > _https://developers.google.com/speed/docs/insights/BlockingJS_ <br/>
-> You should avoid and minimize the use of blocking JavaScript, especially external scripts that must be fetched before they can be executed. Scripts that are necessary to render page content can be inlined to avoid extra network requests, however the inlined content needs to be small and must execute quickly to deliver good performance. Scripts that are not critical to initial render should be made asynchronous or deferred until after the first render.
+> It is good practice to avoid, or minimize, the use of blocking JavaScript, especially external scripts that must be fetched before they can be executed. Scripts that are necessary to render page content can be inlined to avoid extra network requests, however the inlined content needs to be small and must execute quickly(non-blocking fashion) to deliver good performance. Scripts that are not critical to initial render should be made asynchronous or deferred until after the first render.
 
 ### Problem of Asynchronous
 
-When you are using Asynchronous,
-you cannot execute your SDK function which script written within the page.
+When using Asynchronous approach, It is ill advised to execute SDK initialization function before all libraries are loaded, parsed and executed in hosting page.
 
-```js
+Considering the following snippet as a visual example to the previous statement:
+
+```javascript
 <script>
   (function () {
     var s = document.createElement('script');
@@ -212,12 +215,14 @@ you cannot execute your SDK function which script written within the page.
 </script>
 ```
 
-The result will lead to undefined because the `SDKName()` execute before the script loaded,
-therefore we should do some tricks and make sure the script execute successfully.
-The event will store in the `SDKName.q` queue array,
-your SDK should handle and execute `SDKName.q` and reinitial the namespace `SDKName`.
+The end result of such initialization will lead to bugs. 
+The `SDKName()` function, undefined at this point, executes before it becomes available in the environment's global variable. The script is not loaded yet.
 
-```js
+To make it work, some tricks are necessary to make sure the script execute with success. The event will store in the `SDKName.q` queue array. The SDK should be able to handle and execute `SDKName.q` event and initialize the `SDKName` namespace.
+
+The following snippet depicts the statement in previous paragraph.
+
+```javascript
 <script>
   (function () {
     // add a queue event here
@@ -261,15 +266,15 @@ your SDK should handle and execute `SDKName.q` and reinitial the namespace `SDKN
 
 There are other different ways to include a script
 
-**Import in ES2015**
+#### Import in ES2015
 
-```js
-import "your-sdk";
+```javascript
+  import "your-sdk";
 ```
 
-**Modular include a Script**
+#### Modular include a Script
 
-For full source code, see this awesome tutorial. [Loading JavaScript Modules](https://libraryinstitute.wordpress.com/2010/12/01/loading-javascript-modules/)
+There is full source code -- and this awesome tutorial _"[Loading JavaScript Modules](https://libraryinstitute.wordpress.com/2010/12/01/loading-javascript-modules/)"_ may help for in depth understanding of concepts discussed above.
 
 ```js
 module('sdk.js',['sdk-track.js', 'sdk-beacon.js'],function(track, beacon) {
