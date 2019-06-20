@@ -343,9 +343,9 @@ Depending on use case, there are other environmental dependant forms that are co
 
 ## Changelog Document
 
-You should notice that your SDK user will not know if you upgrade your SDK without announcement.
-Remember to write a changelog to document your major, minor and even bug fix change.
-It will be a good developer experience if we can trace the changing API for the SDK. - _[Keep a Changelog](http://keepachangelog.com) ([Github Repo](https://github.com/olivierlacan/keep-a-changelog))_
+It is hard to notice when an SDK has updates(or is upgraded) when no announcement has been issued.
+It is a good practice to write a changelog to document major, minor and even bug fix changes.
+Tracing changes in SDK APIs deliver good developer experience. - _[Keep a Changelog](http://keepachangelog.com) ([Github Repo](https://github.com/olivierlacan/keep-a-changelog))_
 
 Each version should have:
 
@@ -362,10 +362,10 @@ In addition, [commit-message-emoji](https://github.com/dannyfritz/commit-message
 
 ## Namespace
 
-You should not define more than one global namespace in your SDK and
-prevent using the common word for your namespace to avoid collision with other libraries.
+To avoid collision with other libraries, It is better to define no more than one global SDK namespace.
+The naming should also avoid using the commonly used words and catch-phrases as namespaces.
 
-On your SDK playground, use `(function () { ... })()` or ES6 Blocks `{ ... }` to wrap all sources.
+As a quick example, SDK playground can well use `(function () { ... })()` or ES6 Blocks `{ ... }` to wrap all sources.
 
 This is an increasingly common practice, employed by many popular JavaScript libraries (jQuery, Node.js, etc.). This technique creates a closure around the entire contents of the file which, perhaps most importantly, creates a private namespace and thereby helps avoid potential name clashes between different JavaScript modules and libraries. [#](http://www.toptal.com/javascript/interview-questions)
 
@@ -393,15 +393,15 @@ From [OpenX experience](http://docs.openx.com/ad_server/adtags_namespace.html), 
 The domain scope of using cookie is quite complex while involving the `subdomain` and `path`.
 
 For `path=/`,
-you have a cookie `first=value1` in domain `http://github.com`,
-another cookie `second=value2` in domain `http://sub.github.com`
+there is a cookie part `first=value1` in domain `http://github.com`,
+and another cookie `second=value2` in domain `http://sub.github.com`
 
 |               | http://github.com | http://sub.github.com |
 |:-------------:|:-----------------:|:---------------------:|
 | first=value1  |         ✓         |           ✓           |
 | second=value2 |         ✘         |           ✓           |
 
-You have a cookie `first=value1` in domain `http://github.com`,
+There is a cookie `first=value1` in domain `http://github.com`,
 cookie `second=value2` in domain path `http://github.com/path1`
 and cookie `third=value3` in domain `http://sub.github.com`,
 
