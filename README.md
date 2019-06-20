@@ -1185,7 +1185,7 @@ Assuming that an Evil Advertisement Company wants to track a user, evil may well
 
 ### Misspelling Of Referrer
 
-Do you know that why the HTTP Request Header having the field name `referer` not `referrer`
+Fun fact about why the HTTP Request Header having the field name `referer` not `referrer`
 
 _According to the [Wikipedia](https://en.wikipedia.org/wiki/HTTP_referer#Etymology)_
 
@@ -1197,7 +1197,9 @@ _According to the [Wikipedia](https://en.wikipedia.org/wiki/HTTP_referer#Etymolo
 
 ## Template
 
-Someone asks for the template/boilerplate of the SDK, here some examples for you. [TEMPLATE.md](./Template/README.md)
+This guide provides **templates** and **boilerplates** to building an SDK. 
+  
+- [TEMPLATE.md](./Template/README.md)
 
 ## Book/Nice to Read
 
@@ -1227,5 +1229,6 @@ Someone asks for the template/boilerplate of the SDK, here some examples for you
 18. [DOMContentLoaded and Load Event](http://stackoverflow.com/questions/2414750/difference-between-domcontentloaded-and-load-events)
 19. [Must See JavaScript Dev Tools That Put Other Dev Tools to Shame](https://medium.com/javascript-scene/must-see-javascript-dev-tools-that-put-other-dev-tools-to-shame-aca6d3e3d925)
 20. [Learn the art of writing quality READMEs.](https://github.com/noffle/art-of-readme)
+21. [The Deep Dive - JavaScript Widgets](https://medium.com/hoopeez/the-deep-dive-javascript-widget-33df679b6c8d) ~ _How to design, build and deploy a JavaScript Widget that runs on other people’s websites_
 
 *(inspired by [http-api-design](https://github.com/interagent/http-api-design))*
