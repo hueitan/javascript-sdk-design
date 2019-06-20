@@ -134,8 +134,10 @@ Three use cases worth to consider while designing a JavaScript SDK:
 
 ## Include the SDK
 
-You are suggested to use **Asynchronous Syntax** for your script loaded.
-We want to optimize the user experience on the website as we don't want our SDK library to interfere the main web loaded.
+To include the SDK in user-facing environment, It is a good practice use **Asynchronous Syntax** to load the scripts.
+
+This helps to optimize the user experience on the website that are using the SDK.
+This approach reduce chances of the SDK library interfering with the hosting website.
 
 ### Asynchronous Syntax
 
