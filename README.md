@@ -367,7 +367,7 @@ The naming should also avoid using the commonly used words and catch-phrases as 
 
 As a quick example, SDK playground can well use `(function () { ... })()` or ES6 Blocks `{ ... }` to wrap all sources.
 
-This is an increasingly common practice, employed by many popular JavaScript libraries (jQuery, Node.js, etc.). This technique creates a closure around the entire contents of the file which, perhaps most importantly, creates a private namespace and thereby helps avoid potential name clashes between different JavaScript modules and libraries. [#](http://www.toptal.com/javascript/interview-questions)
+This is an increasingly common practice found in many popular JavaScript libraries such as (jQuery, Node.js, etc.). This technique creates a closure around the entire contents of the file which, perhaps most importantly, creates a private namespace and thereby helps avoid potential name clashes between different JavaScript modules and libraries. [#](http://www.toptal.com/javascript/interview-questions)
 
 To avoid **namespace collision**
 
@@ -872,14 +872,15 @@ It's important to know if the SDK needs to parse the location url.
 
 ### Parsing URI
 
-Here's a simplest by using the native URL() Interface but it doesn't support all the browsers also [not standard yet](https://developer.mozilla.org/en-US/docs/Web/API/Window/URL).
+Here's a simplest by using the native URL() Interface but it doesn't support all the browsers.
+It is also [not a standard yet](https://developer.mozilla.org/en-US/docs/Web/API/Window/URL).
 
 ```js
 var parser = new URL('http://github.com/hueitan');
 parser.hostname; // => "github.com"
 ```
 
-For the browser which doesn't have the URL() Interface, try DOM createElement('a').
+The DOM 's `createElement('a')` can be used in browsers that don't have the `URL()` Interface yet.
 
 ```js
 var parser = document.createElement('a');
@@ -891,7 +892,8 @@ parser.hostname; // => "github.com"
 
 ### Simulating Multiple Domains
 
-You don't need to register different domain names to simulate multiple domain, you can just edit your operating system's hosts file.
+To simulate multiple domains, there is no need to register different domain names.
+Editing operating system's hosts file can do the trick.
 
 ```shell
 $ sudo vim /etc/hosts
@@ -905,23 +907,32 @@ Add the following entries
 127.0.0.1 sdk.net
 ```
 
-Then you can access the page `http://publisher.net` and `http://sdk.net`
+Every website URL becomes accessible via `http://publisher.net` and `http://sdk.net`
 
 ### Developer Tools
 
-Use the web debugging tools from browser vendors when debugging your SDK JavaScript code - `Chrome Developer Tools` `Safari Developer Tools` `Firebug`. Developer tools also short for DevTools.
+Browsers come with a debugging tools specific to every vendor. Obviously, these tools can be used to debug SDK JavaScript code - `Chrome Developer Tools` `Safari Developer Tools` `Firebug`. Developer tools also short for DevTools.
 
 > The DevTools provide web developers deep access into the internals of the browser and their web application. Use the DevTools to efficiently track down layout issues, set JavaScript breakpoints, and get insights for code optimization.
 
 ### Console Logs
 
-For testing expected output text and other general debugging, `Console Logs` can be used throught the browser API `console.log()`. There are various typeways to format and output your messages, find out more [Console API](https://developer.mozilla.org/en/docs/Web/API/console).
+For testing expected output text and other general debugging, `Console Logs` can be used throught the browser API `console.log()`. There are various typeways to format and output messages. There is more on this issue discussed on this link: [Console API](https://developer.mozilla.org/en/docs/Web/API/console).
 
 ![screen shot 2015-06-15 at 3 50 23 pm](https://cloud.githubusercontent.com/assets/2560096/8155377/411fb24a-1376-11e5-98da-f71f8ed29bcd.png)
 
 ### Debugging Proxy
 
-Sometimes debugging proxy will give you a hand on testing your SDK. Debug traffic, modify cookies, headers, cache, edit http request/response, SSL Proxying, ajax debugging and more.
+Debugging proxy gives a hand on testing SDK in development. 
+Some of the areas covered are: 
+
+- Debugging traffic
+- modify cookies
+- Inspecting headers
+- Verifying the cache
+- Editing http request/response
+- SSL Proxying
+- Debugging Ajax and more.
 
 Here's some software you can try
 - [FiddlerCore](http://www.telerik.com/fiddler/fiddlercore)
@@ -930,9 +941,9 @@ Here's some software you can try
 
 ### BrowserSync
 
-[BrowserSync](http://www.browsersync.io) makes your tweaking and testing faster by synchronising file changes and interactions across multiple devices. It’s wicked-fast and totally free.
+[BrowserSync](http://www.browsersync.io) makes it easy to tweak and test faster by synchronizing file changes and interactions across multiple devices. It’s wicked-fast and totally free.
 
-It really helps a lot if you need to test your SDK result in multiple cross devices. Try it =)
+It really helps a lot to test SDK  across mutliple devices. Totally worths a try =)
 
 ### Debugging Node.js Apps
 
