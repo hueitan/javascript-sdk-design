@@ -433,7 +433,8 @@ var checkCookieWritable = function(domain) {
 
 #### Check Third Party Cookie Writable
 
-It's impossible to check only using client side JavaScript, you need a server to do that. ([Example](https://dl.dropboxusercontent.com/u/105727/web/3rd/third-party-cookies.html))
+It's impossible to check only using client side JavaScript, but a server can help to achive just that. 
+([Example](https://dl.dropboxusercontent.com/u/105727/web/3rd/third-party-cookies.html))
 
 #### Write Read Remove Cookie Code
 
@@ -470,8 +471,8 @@ var cookie = {
 ```
 ### Session
 
-It's important to know that JavaScript is **not possible** to write Session,
-please refer to the server side team to implement Session.
+It's important to know that in JavaScript It is **not possible** to write Session.
+That is the server responsibility. The server side team should implement Session management related use cases.
 
 A page session lasts for as long as the browser is open and survives over page reloads and restores. Opening a page in a new tab or window will cause a new session to be initiated.
 
@@ -481,7 +482,9 @@ Stores data with no expiration date, storage limit is far larger (at least 5MB) 
 information is never transferred to the server.
 
 It's good to know that each localStorage from `http` and `https` in the same domain aren't shared.
-You can create an iframe inside the website and use `postMessage` to pass the value to others. [HOW TO?](http://stackoverflow.com/questions/10502469/is-there-any-workaround-to-make-use-of-html5-localstorage-on-both-http-and-https)
+Creating an iframe inside a website and using `postMessage` to pass the value to others. 
+
+- [HOW TO?](http://stackoverflow.com/questions/10502469/is-there-any-workaround-to-make-use-of-html5-localstorage-on-both-http-and-https)
 
 #### Check LocalStorage Writable
 
@@ -612,21 +615,20 @@ document.addEventListener('touchmove', function(e){ e.preventDefault(); }); // p
 
 ## Request
 
-The communication between our SDK and Server is using Ajax Request,
-as we know we can use jQuery ajax http request to communicate with Server,
-but there's a better solution to implement it.
+The communication between our SDK and Server is using Ajax Request. 
+Most commonly use-cases leverage jQuery's ajax http request to communicate with Server. The good news is that there is even a better solution to achieve that.
 
 ### Image Beacon
 
-Use the Image Beacon to ask the browser to perform a method GET Request to get an Image.
+Using the Image Beacon to ask the browser to perform a method GET Request to get an Image.
 
-*Remember to add timestamp (Cache Buster) to prevent caching in browser.*
+*Ones should always remember to add timestamp (Cache Buster) to prevent caching in browser.*
 
 ```js
 (new Image()).src = 'http://<DOMAIN>.com/collect?id=1111';
 ```
 
-Some notice for GET Query String, there is the limit of length which is 2048(Basically It depends on different browser and server). You should do some tricks to handle if exceed length limit.
+Some notice for GET Query String, there is the limit of length which is 2048(Basically It depends on different browser and server). The following trick helps to handle the case of  exceeded length limit.
 
 ```js
 if (length > 2048) {
@@ -636,7 +638,7 @@ if (length > 2048) {
 }
 ```
 
-You may have the problem on `encodeURI` or `encodeURIComponent`, it's better if you understand them. [See below](#encodeuri-or-encodeuricomponent).
+There are well known problems using `encodeURI` or `encodeURIComponent`. However, It is better to understand how these two approaches work. [Reading details below](#encodeuri-or-encodeuricomponent).
 
 For the image load **success/error callback**
 
@@ -649,7 +651,7 @@ img.onerror = errorCallback;
 
 ### Single Post
 
-Use the native form element method POST to send a key value.
+it is possible to use the native form element method POST to send a key value.
 
 ```js
 var form = document.createElement('form');
@@ -670,7 +672,7 @@ form.submit();
 
 ### Multiple Post
 
-The Service is often complex, we need to send more data through method POST.
+The Service is often complex, especially when needing to send more data through POST method.
 
 ```js
 function requestWithoutAjax( url, params, method ){
@@ -721,7 +723,7 @@ requestWithoutAjax('url/to', { id: 2, price: 2.5, lastname: 'Gamez'});
 
 ### Iframe
 
-When you need to generate a content within the page, you can use iframe to embed your html.
+Iframe embedded in html can always be used to cover the use case of generating content within the page.
 
 ```js
 var iframe = document.createElement('iframe');
@@ -792,7 +794,7 @@ Just include the JS script link.
   })();
 ```
 
-Know more about jsonp
+To learn more about jsonp
 
 1. JSONP only works in GET HTTP request.
 2. JSONP lacks error handling, means you cannot detect case in response status code 404, 500 and so on.
