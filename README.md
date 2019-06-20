@@ -2,16 +2,16 @@
 
 ## Introduction
 
-This guide provides an introduction to develop a [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) SDK.
+This guide provides an introduction to develop a [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) SDKs.
 
-> The best one sentence to describe an SDK is: __"The SDK is the connection bridging the gap between users and the (browser) machine."__
+> The best one sentence to describe an SDK is: _"The SDK is the connection bridging the gap between users and the (browser) machine."_
 
 
-The SDK will be capable to run in browsers, desktop, mobile web and various other platforms capable of running JavaScript. 
+At the end of this guide, the SDK will be capable to run in browsers, desktop, mobile web and various other platforms capable of running JavaScript. 
 
-The developer target audience of this writeup exludes non-browser environments such as hardware, embedded and Node.js for now. However, future additional materials will be added to cover those areas.
+The target audience of this writeup exludes **non-browser environments** such as hardware, embedded and Node.js for now. However, future materials will be added to cover those areas.
 
-> If you see anything that can be improved, feel free to [edit](https://github.com/hueitan/JavaScript-sdk-design/edit/master/README.md) or simply drop the suggestions on the [issue list](https://github.com/hueitan/JavaScript-sdk-design/issues) and, I owe you a beer :beers:
+> It is possible to suggest improvements by [editing](https://github.com/hueitan/JavaScript-sdk-design/edit/master/README.md), dropping suggestions on the [issue list](https://github.com/hueitan/JavaScript-sdk-design/issues). I owe you a beer :beers:
 
 <p align="right">
 <i>READ IT</i>
@@ -28,6 +28,7 @@ The developer target audience of this writeup exludes non-browser environments s
 <hr/>
 
 ## Content
+
 * [What is SDK](#what-is-sdk)
 * [Design Philosophy](#design-philosophy)
 * [Scope](#scope)
@@ -99,25 +100,25 @@ The developer target audience of this writeup exludes non-browser environments s
 
 ## What is SDK
 
-I know it's very common, but it is.
+This question is pretty ubiquitous, but here it is again.
 
 "Short for **software development kit**, a programming package that enables a programmer to develop applications for a specific platform. Typically an SDK includes one or more APIs, programming tools, and documentation." - _[webopedia](http://www.webopedia.com/TERM/S/SDK.html)_
 
 ## Design Philosophy
 
-It depends on the purpose of your SDK service and usage,
-but they must be **native**, **short**, **fast**, **clean**, **readable** and **testable**.
+Depending on the purpose of SDK's service and usage -- common shared traits are, but not limited to be **native**, **short**, **fast**, **clean**, **readable** and **testable**.
 
-Written in native JavaScript code, compiler language like
-Livescript, Coffeescript, Typescript and others are **not** recommend.
-There must be a better way to write your own JavaScript code in native faster than others.
+The widely adopted good practice, is to writ SDK with vanilla JavaScript. 
+Languages compiling to JavaScript such as LiveScript, CoffeeScript, TypeScript and others are **not** recommended.
 
-Please **don't** involve jQuery in your SDK unless it's really important,
-you can have other jQuery-like libraries, zepto.js, for the DOM manipulation.
-Or if you need the HTTP [ajax request](#request), use another light library like `window.fetch`.
+It is also recommended not to use libraries suchs as jQuery in SDK development. 
+The exception is of course when it is really important. There are also other jQuery-like libraries, zepto.js _etc_ to choose from, for the DOM manipulation purposes.
 
-Once every SDK version released, make sure that it can be fitted into older and newer SDK version in the future.
-Hence, remember to write your **Documentation** for your SDK, comment in your code, unit test and user scenario test.
+In event of HTTP [ajax request](#request) requirements -- there are native equivalent such as `window.fetch`. It is light-weight, supported in ever growing platforms. 
+
+Backward compatibility is paramount. Every new  SDK version released should be enabled with  support of previous older versions. Likewise, current version should be designed to support future SDK versions. This is referred to as Forward compatibility.
+
+Moreover, a good **Documentation**, well commented code, a healthy unit test coverage, as well as end-to-end (user) scenario are key to the success of SDK.
 
 ## Scope
 
