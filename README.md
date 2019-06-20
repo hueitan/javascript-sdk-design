@@ -124,13 +124,13 @@ Moreover, a good **Documentation**, well commented code, a healthy unit test cov
 
 *Based on the book [Third-Party JavaScript](http://thirdpartyjs.com)*
 
-In which case, you should design a JavaScript SDK for your application?
+Three use cases worth to consider while designing a JavaScript SDK:
 
 1. [Embedded widgets](./SCOPE.md#embedded-widgets) - Small interactive applications embedded on the publisher's web page (Disqus, Google Maps, Facebook Widget)
 2. [Analytics and metrics](./SCOPE.md#analytics-and-metrics) - For gathering intelligence about visitors and how they interact with the publisher's website (GA, Flurry, Mixpanel)
 3. [Web service API wrappers](./SCOPE.md#web-service-api-wrappers) - For developing client-side applications that communicate with external web services. (Facebook Graph API)
 
-In what case we should use SDK in JavaScript environment? [Suggest one](https://github.com/hueitan/JavaScript-sdk-design/edit/master/README.md).
+> [Suggest a case](https://github.com/hueitan/JavaScript-sdk-design/edit/master/README.md) in which the use of an SDK in JavaScript environment is deemed important.
 
 ## Include the SDK
 
