@@ -850,7 +850,7 @@ Check the maximum number of browser's request connection. [browserscope](http://
 
 ## Component of URI
 
-It's important to know if your SDK needs to parse the location url.
+It's important to know if the SDK needs to parse the location url.
 ```
                          authority
                    __________|_________
