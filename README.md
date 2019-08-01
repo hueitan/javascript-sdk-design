@@ -2,11 +2,16 @@
 
 ## Introduction
 
-This guide gives you an introduction to developing a [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) SDK on desktop and mobile web in different platforms and browsers. There is only one sentence to describe it, the SDK is the connection bridge between user and the browser machine.
+This guide provides an introduction to develop a [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) SDKs.
 
-For those who developed on non-browsers (hardware, embedded, Node.js) are not the target audiences but would be considered in the future.
+> The best one sentence to describe an SDK is: _"The SDK is the connection bridging the gap between users and the (browser) machine."_
 
-If you see anything that can be improved, feel free to [edit](https://github.com/hueitan/JavaScript-sdk-design/edit/master/README.md) or simply drop the suggestions on the [issue list](https://github.com/hueitan/JavaScript-sdk-design/issues) and, I owe you a beer :beers:
+
+At the end of this guide, the SDK will be capable to run in browsers, desktop, mobile web and various other platforms capable of running JavaScript. 
+
+The target audience of this writeup exludes **non-browser environments** such as hardware, embedded and Node.js for now. However, future materials will be added to cover those areas.
+
+> It is possible to suggest improvements by [editing](https://github.com/hueitan/JavaScript-sdk-design/edit/master/README.md), dropping suggestions on the [issue list](https://github.com/hueitan/JavaScript-sdk-design/issues). I owe you a beer :beers:
 
 <p align="right">
 <i>READ IT</i>
@@ -23,6 +28,7 @@ If you see anything that can be improved, feel free to [edit](https://github.com
 <hr/>
 
 ## Content
+
 * [What is SDK](#what-is-sdk)
 * [Design Philosophy](#design-philosophy)
 * [Scope](#scope)
@@ -94,42 +100,44 @@ If you see anything that can be improved, feel free to [edit](https://github.com
 
 ## What is SDK
 
-I know it's very common, but it is.
+This question is pretty ubiquitous, but here it is again.
 
 "Short for **software development kit**, a programming package that enables a programmer to develop applications for a specific platform. Typically an SDK includes one or more APIs, programming tools, and documentation." - _[webopedia](http://www.webopedia.com/TERM/S/SDK.html)_
 
 ## Design Philosophy
 
-It depends on the purpose of your SDK service and usage,
-but they must be **native**, **short**, **fast**, **clean**, **readable** and **testable**.
+Depending on the purpose of SDK's service and usage — common shared traits are, but not limited to be **native**, **short**, **fast**, **clean**, **readable** and **testable**.
 
-Written in native JavaScript code, compiler language like
-Livescript, Coffeescript, Typescript and others are **not** recommend.
-There must be a better way to write your own JavaScript code in native faster than others.
+The widely adopted good practice, is to writ SDK with vanilla JavaScript. 
+Languages compiling to JavaScript such as LiveScript, CoffeeScript, TypeScript and others are **not** recommended.
 
-Please **don't** involve jQuery in your SDK unless it's really important,
-you can have other jQuery-like libraries, zepto.js, for the DOM manipulation.
-Or if you need the HTTP [ajax request](#request), use another light library like `window.fetch`.
+It is also recommended not to use libraries suchs as jQuery in SDK development. 
+The exception is of course when it is really important. There are also other jQuery-like libraries, zepto.js _etc_ to choose from, for the DOM manipulation purposes.
 
-Once every SDK version released, make sure that it can be fitted into older and newer SDK version in the future.
-Hence, remember to write your **Documentation** for your SDK, comment in your code, unit test and user scenario test.
+In event of HTTP [ajax request](#request) requirements — there are native equivalent such as `window.fetch`. It is light-weight, supported in ever growing platforms. 
+
+Backward compatibility is paramount. Every new  SDK version released should be enabled with  support of previous older versions. Likewise, current version should be designed to support future SDK versions. This is referred to as Forward compatibility.
+
+Moreover, a good **Documentation**, well commented code, a healthy unit test coverage, as well as end-to-end (user) scenario are key to the success of SDK.
 
 ## Scope
 
 *Based on the book [Third-Party JavaScript](http://thirdpartyjs.com)*
 
-In which case, you should design a JavaScript SDK for your application?
+Three use cases worth to consider while designing a JavaScript SDK:
 
 1. [Embedded widgets](./SCOPE.md#embedded-widgets) - Small interactive applications embedded on the publisher's web page (Disqus, Google Maps, Facebook Widget)
 2. [Analytics and metrics](./SCOPE.md#analytics-and-metrics) - For gathering intelligence about visitors and how they interact with the publisher's website (GA, Flurry, Mixpanel)
 3. [Web service API wrappers](./SCOPE.md#web-service-api-wrappers) - For developing client-side applications that communicate with external web services. (Facebook Graph API)
 
-In what case we should use SDK in JavaScript environment? [Suggest one](https://github.com/hueitan/JavaScript-sdk-design/edit/master/README.md).
+> [Suggest a case](https://github.com/hueitan/JavaScript-sdk-design/edit/master/README.md) in which the use of an SDK in JavaScript environment is deemed important.
 
 ## Include the SDK
 
-You are suggested to use **Asynchronous Syntax** for your script loaded.
-We want to optimize the user experience on the website as we don't want our SDK library to interfere the main web loaded.
+To include the SDK in user-facing environment, It is a good practice use **Asynchronous Syntax** to load the scripts.
+
+This helps to optimize the user experience on the website that are using the SDK.
+This approach reduce chances of the SDK library interfering with the hosting website.
 
 ### Asynchronous Syntax
 
@@ -146,7 +154,7 @@ We want to optimize the user experience on the website as we don't want our SDK 
 </script>
 ```
 
-Target on the modern browser, you can use `async`.
+The `async` syntax is used when targetting on the modern browsers.
 
 ```html
 <script async src="http://<DOMAIN>.com/sdk.js"></script>
@@ -163,15 +171,17 @@ Target on the modern browser, you can use `async`.
 Here's the simple graph to show the differentiate between Asynchronous and Traditional Syntax.
 
 Asynchronous:
-```
+
+``` 
  |----A-----|
     |-----B-----------|
         |-------C------|
 ```
 
 Synchronous:
+
 ```
-|----A-----||-----B-----------||-------C------|
+  |----A-----||-----B-----------||-------C------|
 ```
 
 Asynchronous and deferred JavaScript execution explained
@@ -181,14 +191,15 @@ Asynchronous and deferred JavaScript execution explained
 
 
 > _https://developers.google.com/speed/docs/insights/BlockingJS_ <br/>
-> You should avoid and minimize the use of blocking JavaScript, especially external scripts that must be fetched before they can be executed. Scripts that are necessary to render page content can be inlined to avoid extra network requests, however the inlined content needs to be small and must execute quickly to deliver good performance. Scripts that are not critical to initial render should be made asynchronous or deferred until after the first render.
+> It is good practice to avoid, or minimize, the use of blocking JavaScript, especially external scripts that must be fetched before they can be executed. Scripts that are necessary to render page content can be inlined to avoid extra network requests, however the inlined content needs to be small and must execute quickly(non-blocking fashion) to deliver good performance. Scripts that are not critical to initial render should be made asynchronous or deferred until after the first render.
 
 ### Problem of Asynchronous
 
-When you are using Asynchronous,
-you cannot execute your SDK function which script written within the page.
+When using Asynchronous approach, It is ill advised to execute SDK initialization function before all libraries are loaded, parsed and executed in hosting page.
 
-```js
+Considering the following snippet as a visual example to the previous statement:
+
+```javascript
 <script>
   (function () {
     var s = document.createElement('script');
@@ -204,12 +215,14 @@ you cannot execute your SDK function which script written within the page.
 </script>
 ```
 
-The result will lead to undefined because the `SDKName()` execute before the script loaded,
-therefore we should do some tricks and make sure the script execute successfully.
-The event will store in the `SDKName.q` queue array,
-your SDK should handle and execute `SDKName.q` and reinitial the namespace `SDKName`.
+The end result of such initialization will lead to bugs. 
+The `SDKName()` function, undefined at this point, executes before it becomes available in the environment's global variable. The script is not loaded yet.
 
-```js
+To make it work, some tricks are necessary to make sure the script execute with success. The event will store in the `SDKName.q` queue array. The SDK should be able to handle and execute `SDKName.q` event and initialize the `SDKName` namespace.
+
+The following snippet depicts the statement in previous paragraph.
+
+```javascript
 <script>
   (function () {
     // add a queue event here
@@ -229,7 +242,7 @@ your SDK should handle and execute `SDKName.q` and reinitial the namespace `SDKN
 </script>
 ```
 
-**Or** using [].push
+**Or** using `[].push`
 
 ```js
 <script>
@@ -253,15 +266,15 @@ your SDK should handle and execute `SDKName.q` and reinitial the namespace `SDKN
 
 There are other different ways to include a script
 
-**Import in ES2015**
+#### Import in ES2015
 
-```js
-import "your-sdk";
+```javascript
+  import "your-sdk";
 ```
 
-**Modular include a Script**
+#### Modular include a Script
 
-For full source code, see this awesome tutorial. [Loading JavaScript Modules](https://libraryinstitute.wordpress.com/2010/12/01/loading-javascript-modules/)
+There is full source code — and this awesome tutorial _"[Loading JavaScript Modules](https://libraryinstitute.wordpress.com/2010/12/01/loading-javascript-modules/)"_ may help for in depth understanding of concepts discussed above.
 
 ```js
 module('sdk.js',['sdk-track.js', 'sdk-beacon.js'],function(track, beacon) {
@@ -299,45 +312,40 @@ module('sdk.js',['sdk-track.js', 'sdk-beacon.js'],function(track, beacon) {
 
 ## SDK Versioning
 
-Please avoid using your special case for version like `brand-v<timestamp>.js` `brand-v<datetime>.js` `brand-v1-v2.js`,
-it may cause the developer who use the SDK on confusing which is the latest version.
+It is not a good practice to use one of the following versioning styles: 
 
-Use [Semantic Versioning](http://semver.org) to define your SDK Version in the form "MAJOR.MINOR.PATCH".
-Version in `v1.0.0` `v1.5.0` `v2.0.0` is easier for them to trace and search for the changelog documentation.
+  - `brand-v<timestamp>.js` 
+  - `brand-v<datetime>.js` 
+  - `brand-v1-v2.js`,
 
-Normally, we can have different ways to state the SDK version, it depends on your service and design.
+The reason behind this is that It becomes confusing to track the lastest version. 
+Therefore, previous styling do not help developers who use the SDK.
 
-Using Query String path.
-```
-http://<DOMAIN>.com/sdk.js?v=1.0.0
-```
+It is however a good practice to use [Semantic Versioning](http://semver.org), a.k.a **SemVer**, when versioning SDKs.
+It worths to mention that SemVer has three main parts, each corresponding to importance of a release: "MAJOR.MINOR.PATCH".
+Version in `v1.0.0` `v1.5.0` `v2.0.0` is easier to trace and track in changelog documentations, for instance.
 
-Using the Folder Naming.
-```
-http://<DOMAIN>.com/v1.0.0/sdk.js
-```
+Depending on service design, some of the ways SDK can be distributed(or tracked) by version are the following:
 
-Using hostname (subdomain).
-```
-http://v1.<DOMAIN>.com/sdk.js
-```
+ - Using Query String path — `http://<DOMAIN>.com/sdk.js?v=1.0.0`
+ - Using the Folder Naming — `http://<DOMAIN>.com/v1.0.0/sdk.js`
+ - Using hostname (subdomain) — `http://v1.<DOMAIN>.com/sdk.js`
 
-For the further development, you are advised to use  `stable` `unstable` `alpha` `latest` `experimental` version.
-```
-http://<DOMAIN>.com/sdk-stable.js
-http://<DOMAIN>.com/sdk-unstable.js
-http://<DOMAIN>.com/sdk-alpha.js
-http://<DOMAIN>.com/sdk-latest.js
-http://<DOMAIN>.com/sdk-experimental.js
-```
+Depending on use case, there are other environmental dependant forms that are commonly advised to use:  
 
-To Read : [Why use SemVer?](http://blog.npmjs.org/post/162134793605/why-use-semver) from npm
+ - In `stable` version `http://<DOMAIN>.com/sdk-stable.js`  
+ - In `unstable` version `http://<DOMAIN>.com/sdk-unstable.js` 
+ - In `alpha` version `http://<DOMAIN>.com/sdk-alpha.js` 
+ - In `latest` version `http://<DOMAIN>.com/sdk-latest.js` 
+ - In `experimental` version `http://<DOMAIN>.com/sdk-experimental.js`
+
+> Reading suggestion: _*[Why use SemVer?](http://blog.npmjs.org/post/162134793605/why-use-semver)*_ on `npm` blog.
 
 ## Changelog Document
 
-You should notice that your SDK user will not know if you upgrade your SDK without announcement.
-Remember to write a changelog to document your major, minor and even bug fix change.
-It will be a good developer experience if we can trace the changing API for the SDK. - _[Keep a Changelog](http://keepachangelog.com) ([Github Repo](https://github.com/olivierlacan/keep-a-changelog))_
+It is hard to notice when an SDK has updates(or is upgraded) when no announcement has been issued.
+It is a good practice to write a changelog to document major, minor and even bug fix changes.
+Tracing changes in SDK APIs deliver good developer experience. - _[Keep a Changelog](http://keepachangelog.com) ([Github Repo](https://github.com/olivierlacan/keep-a-changelog))_
 
 Each version should have:
 
@@ -354,12 +362,12 @@ In addition, [commit-message-emoji](https://github.com/dannyfritz/commit-message
 
 ## Namespace
 
-You should not define more than one global namespace in your SDK and
-prevent using the common word for your namespace to avoid collision with other libraries.
+To avoid collision with other libraries, It is better to define no more than one global SDK namespace.
+The naming should also avoid using the commonly used words and catch-phrases as namespaces.
 
-On your SDK playground, use `(function () { ... })()` or ES6 Blocks `{ ... }` to wrap all sources.
+As a quick example, SDK playground can well use `(function () { ... })()` or ES6 Blocks `{ ... }` to wrap all sources.
 
-This is an increasingly common practice, employed by many popular JavaScript libraries (jQuery, Node.js, etc.). This technique creates a closure around the entire contents of the file which, perhaps most importantly, creates a private namespace and thereby helps avoid potential name clashes between different JavaScript modules and libraries. [#](http://www.toptal.com/javascript/interview-questions)
+This is an increasingly common practice found in many popular JavaScript libraries such as (jQuery, Node.js, etc.). This technique creates a closure around the entire contents of the file which, perhaps most importantly, creates a private namespace and thereby helps avoid potential name clashes between different JavaScript modules and libraries. [#](http://www.toptal.com/javascript/interview-questions)
 
 To avoid **namespace collision**
 
@@ -385,15 +393,15 @@ From [OpenX experience](http://docs.openx.com/ad_server/adtags_namespace.html), 
 The domain scope of using cookie is quite complex while involving the `subdomain` and `path`.
 
 For `path=/`,
-you have a cookie `first=value1` in domain `http://github.com`,
-another cookie `second=value2` in domain `http://sub.github.com`
+there is a cookie part `first=value1` in domain `http://github.com`,
+and another cookie `second=value2` in domain `http://sub.github.com`
 
 |               | http://github.com | http://sub.github.com |
 |:-------------:|:-----------------:|:---------------------:|
 | first=value1  |         ✓         |           ✓           |
 | second=value2 |         ✘         |           ✓           |
 
-You have a cookie `first=value1` in domain `http://github.com`,
+There is a cookie `first=value1` in domain `http://github.com`,
 cookie `second=value2` in domain path `http://github.com/path1`
 and cookie `third=value3` in domain `http://sub.github.com`,
 
@@ -425,7 +433,8 @@ var checkCookieWritable = function(domain) {
 
 #### Check Third Party Cookie Writable
 
-It's impossible to check only using client side JavaScript, you need a server to do that. ([Example](https://dl.dropboxusercontent.com/u/105727/web/3rd/third-party-cookies.html))
+It's impossible to check only using client side JavaScript, but a server can help to achive just that. 
+([Example](https://dl.dropboxusercontent.com/u/105727/web/3rd/third-party-cookies.html))
 
 #### Write Read Remove Cookie Code
 
@@ -462,8 +471,8 @@ var cookie = {
 ```
 ### Session
 
-It's important to know that JavaScript is **not possible** to write Session,
-please refer to the server side team to implement Session.
+It's important to know that in JavaScript It is **not possible** to write Session.
+That is the server responsibility. The server side team should implement Session management related use cases.
 
 A page session lasts for as long as the browser is open and survives over page reloads and restores. Opening a page in a new tab or window will cause a new session to be initiated.
 
@@ -473,7 +482,9 @@ Stores data with no expiration date, storage limit is far larger (at least 5MB) 
 information is never transferred to the server.
 
 It's good to know that each localStorage from `http` and `https` in the same domain aren't shared.
-You can create an iframe inside the website and use `postMessage` to pass the value to others. [HOW TO?](http://stackoverflow.com/questions/10502469/is-there-any-workaround-to-make-use-of-html5-localstorage-on-both-http-and-https)
+Creating an iframe inside a website and using `postMessage` to pass the value to others. 
+
+- [HOW TO?](http://stackoverflow.com/questions/10502469/is-there-any-workaround-to-make-use-of-html5-localstorage-on-both-http-and-https)
 
 #### Check LocalStorage Writable
 
@@ -604,21 +615,20 @@ document.addEventListener('touchmove', function(e){ e.preventDefault(); }); // p
 
 ## Request
 
-The communication between our SDK and Server is using Ajax Request,
-as we know we can use jQuery ajax http request to communicate with Server,
-but there's a better solution to implement it.
+The communication between our SDK and Server is using Ajax Request. 
+Most commonly use-cases leverage jQuery's ajax http request to communicate with Server. The good news is that there is even a better solution to achieve that.
 
 ### Image Beacon
 
-Use the Image Beacon to ask the browser to perform a method GET Request to get an Image.
+Using the Image Beacon to ask the browser to perform a method GET Request to get an Image.
 
-*Remember to add timestamp (Cache Buster) to prevent caching in browser.*
+*Ones should always remember to add timestamp (Cache Buster) to prevent caching in browser.*
 
 ```js
 (new Image()).src = 'http://<DOMAIN>.com/collect?id=1111';
 ```
 
-Some notice for GET Query String, there is the limit of length which is 2048(Basically It depends on different browser and server). You should do some tricks to handle if exceed length limit.
+Some notice for GET Query String, there is the limit of length which is 2048(Basically It depends on different browser and server). The following trick helps to handle the case of  exceeded length limit.
 
 ```js
 if (length > 2048) {
@@ -628,7 +638,7 @@ if (length > 2048) {
 }
 ```
 
-You may have the problem on `encodeURI` or `encodeURIComponent`, it's better if you understand them. [See below](#encodeuri-or-encodeuricomponent).
+There are well known problems using `encodeURI` or `encodeURIComponent`. However, It is better to understand how these two approaches work. [Reading details below](#encodeuri-or-encodeuricomponent).
 
 For the image load **success/error callback**
 
@@ -641,7 +651,7 @@ img.onerror = errorCallback;
 
 ### Single Post
 
-Use the native form element method POST to send a key value.
+it is possible to use the native form element method POST to send a key value.
 
 ```js
 var form = document.createElement('form');
@@ -662,7 +672,7 @@ form.submit();
 
 ### Multiple Post
 
-The Service is often complex, we need to send more data through method POST.
+The Service is often complex, especially when needing to send more data through POST method.
 
 ```js
 function requestWithoutAjax( url, params, method ){
@@ -713,7 +723,7 @@ requestWithoutAjax('url/to', { id: 2, price: 2.5, lastname: 'Gamez'});
 
 ### Iframe
 
-When you need to generate a content within the page, you can use iframe to embed your html.
+Iframe embedded in html can always be used to cover the use case of generating content within the page.
 
 ```js
 var iframe = document.createElement('iframe');
@@ -784,7 +794,7 @@ Just include the JS script link.
   })();
 ```
 
-Know more about jsonp
+To learn more about jsonp
 
 1. JSONP only works in GET HTTP request.
 2. JSONP lacks error handling, means you cannot detect case in response status code 404, 500 and so on.
@@ -840,7 +850,7 @@ Check the maximum number of browser's request connection. [browserscope](http://
 
 ## Component of URI
 
-It's important to know if your SDK needs to parse the location url.
+It's important to know if the SDK needs to parse the location url.
 ```
                          authority
                    __________|_________
@@ -862,14 +872,15 @@ It's important to know if your SDK needs to parse the location url.
 
 ### Parsing URI
 
-Here's a simplest by using the native URL() Interface but it doesn't support all the browsers also [not standard yet](https://developer.mozilla.org/en-US/docs/Web/API/Window/URL).
+Here's a simplest by using the native URL() Interface but it doesn't support all the browsers.
+It is also [not a standard yet](https://developer.mozilla.org/en-US/docs/Web/API/Window/URL).
 
 ```js
 var parser = new URL('http://github.com/hueitan');
 parser.hostname; // => "github.com"
 ```
 
-For the browser which doesn't have the URL() Interface, try DOM createElement('a').
+The DOM 's `createElement('a')` can be used in browsers that don't have the `URL()` Interface yet.
 
 ```js
 var parser = document.createElement('a');
@@ -881,7 +892,8 @@ parser.hostname; // => "github.com"
 
 ### Simulating Multiple Domains
 
-You don't need to register different domain names to simulate multiple domain, you can just edit your operating system's hosts file.
+To simulate multiple domains, there is no need to register different domain names.
+Editing operating system's hosts file can do the trick.
 
 ```shell
 $ sudo vim /etc/hosts
@@ -895,23 +907,32 @@ Add the following entries
 127.0.0.1 sdk.net
 ```
 
-Then you can access the page `http://publisher.net` and `http://sdk.net`
+Every website URL becomes accessible via `http://publisher.net` and `http://sdk.net`
 
 ### Developer Tools
 
-Use the web debugging tools from browser vendors when debugging your SDK JavaScript code - `Chrome Developer Tools` `Safari Developer Tools` `Firebug`. Developer tools also short for DevTools.
+Browsers come with a debugging tools specific to every vendor. Obviously, these tools can be used to debug SDK JavaScript code - `Chrome Developer Tools` `Safari Developer Tools` `Firebug`. Developer tools also short for DevTools.
 
 > The DevTools provide web developers deep access into the internals of the browser and their web application. Use the DevTools to efficiently track down layout issues, set JavaScript breakpoints, and get insights for code optimization.
 
 ### Console Logs
 
-For testing expected output text and other general debugging, `Console Logs` can be used throught the browser API `console.log()`. There are various typeways to format and output your messages, find out more [Console API](https://developer.mozilla.org/en/docs/Web/API/console).
+For testing expected output text and other general debugging, `Console Logs` can be used throught the browser API `console.log()`. There are various typeways to format and output messages. There is more on this issue discussed on this link: [Console API](https://developer.mozilla.org/en/docs/Web/API/console).
 
 ![screen shot 2015-06-15 at 3 50 23 pm](https://cloud.githubusercontent.com/assets/2560096/8155377/411fb24a-1376-11e5-98da-f71f8ed29bcd.png)
 
 ### Debugging Proxy
 
-Sometimes debugging proxy will give you a hand on testing your SDK. Debug traffic, modify cookies, headers, cache, edit http request/response, SSL Proxying, ajax debugging and more.
+Debugging proxy gives a hand on testing SDK in development. 
+Some of the areas covered are: 
+
+- Debugging traffic
+- modify cookies
+- Inspecting headers
+- Verifying the cache
+- Editing http request/response
+- SSL Proxying
+- Debugging Ajax and more.
 
 Here's some software you can try
 - [FiddlerCore](http://www.telerik.com/fiddler/fiddlercore)
@@ -920,16 +941,16 @@ Here's some software you can try
 
 ### BrowserSync
 
-[BrowserSync](http://www.browsersync.io) makes your tweaking and testing faster by synchronising file changes and interactions across multiple devices. It’s wicked-fast and totally free.
+[BrowserSync](http://www.browsersync.io) makes it easy to tweak and test faster by synchronizing file changes and interactions across multiple devices. It’s wicked-fast and totally free.
 
-It really helps a lot if you need to test your SDK result in multiple cross devices. Try it =)
+It really helps a lot to test SDK  across mutliple devices. Totally worths a try =)
 
 ### Debugging Node.js Apps
 
-Debugging your script in Chrome Developer Tools. (Node.js v6.3.0+ required)
+To debug SDK scripts in Chrome Developer Tools. (Node.js v6.3.0+ required)
 
 ```shell
-$ node --inspect-brk [script.js]
+  $ node --inspect-brk [script.js]
 ```
 
 - [Official document](https://nodejs.org/en/docs/inspector/)
@@ -939,8 +960,9 @@ $ node --inspect-brk [script.js]
 
 ### Piggyback
 
-Sometimes, we don't want our developers include all the SDK source,
-we just need to do a simple 1x1 pixel request (for example: return a request when landing on thank you/last page). All we need to do is ask the developer to include an image file with our url link.
+Sometimes, including all the SDK source code is not required in some use cases.
+That is the case of a simple 1x1 pixel request -- For example: make a request when someone lands on thank you(last) page. 
+In such a scenario, the developer may include an image file with a the (url) link, as explained in the following snippet.
 
 ```html
 <img height="1" width="1" alt="" style="display:none" src="https://yourUrlLink.com/t?timestamp=1234567890&type=page1&currency=USD&noscript=1" />
@@ -948,15 +970,18 @@ we just need to do a simple 1x1 pixel request (for example: return a request whe
 
 ### Page Visibility API
 
-Sometimes, your SDK wants to detect if the user has your page in focus. Try the polyfills  [visibly.js](https://github.com/addyosmani/visibly.js) and [visibilityjs](https://github.com/ai/visibilityjs).
+Sometimes, the SDK wants to detect if a user has a particular page in focus. 
+These polyfills  [visibly.js](https://github.com/addyosmani/visibly.js) and [visibilityjs](https://github.com/ai/visibilityjs) may help achieve just that.
 
 ### Document Referrer
 
-Use `document.referrer` to get the url of current previous page. But remember that this referrer is "Browser Referrer" not the "Human Known Referrer". If you click the **browser back button**, for example pageA -> pageB -> pageC -> (back button) pageB, current pageB's referrer is pageA, not pageC.
+The `document.referrer` can be used to get the url of current or previous page. 
+It is however advised to remember that this referrer is "Browser Referrer" not the "Human Known Referrer". 
+The case where a user clicks the **browser back button**, for example pageA -> pageB -> pageC -> (back button) pageB, current pageB's referrer is pageA, not pageC.
 
 ### Console Logs Polyfill
 
-It's not a real polyfill, just make sure that calling `console.log` API doesn't throw error event to client side.
+The following is not a special polyfill. It just make sure that calling `console.log` API doesn't throw error event to client side.
 
 ```js
 if (typeof console === "undefined") {
@@ -974,7 +999,7 @@ if (typeof console === "undefined") {
 
 Understand the difference between `escape()` `encodeURI()` `encodeURIComponent()` [here](http://stackoverflow.com/a/3608791/1748884).
 
-Remember that using `encodeURI()` and `encodeURIComponent()` has exactly 11 characters difference.
+It worth mentioning that using `encodeURI()` and `encodeURIComponent()` has exactly 11 characters difference.
 These characters are: # $ & + , / : ; = ? @ [more discussion](http://stackoverflow.com/a/23842171/1748884).
 
 <h2 align="center">
@@ -1027,7 +1052,7 @@ function loadScript(url, callback) {
 
 Implementation of the function `once`
 
-> Every so often you have a function which you only want to run once.  Oftentimes these functions are in the form of event listeners which may be difficult to manage.  Of course if they were easy to manage, you'd just remove the listeners but that's a perfect world and sometimes you simply want the ability to only allow a function to be called once.  Here's the JavaScript function to make that possible!
+> Quite often, there are functions that are needed only want to run once.  Oftentimes these functions are in the form of event listeners which may be difficult to manage.  Of course if they were easy to manage, it is advised to just remove the listeners. The following is the JavaScript function to make that possible!
 
 ```js
 // Copy from DWB
@@ -1056,10 +1081,10 @@ canOnlyFireOnce(); // nada
 
 ### Pixel Ratio Density
 
-If you stuck on the term pixel, ratio, density, dimension, what while developing mobile web, try understanding the video, it may help.
+To better understand terms such as pixel, ratio, density, dimension are while developing mobile web -- the following links can provide more insights:
 
-[Device pixel ratio - Mobile Web Development](https://www.youtube.com/watch?v=u0rfDeaxehc) <br/>
-[Mobile device pixels - Mobile Web Development](https://www.youtube.com/watch?t=34&v=UUF4jD-xoYc)
+- [Device pixel ratio - Mobile Web Development](https://www.youtube.com/watch?v=u0rfDeaxehc)
+- [Mobile device pixels - Mobile Web Development](https://www.youtube.com/watch?t=34&v=UUF4jD-xoYc)
 
 ### Get Style Value
 
@@ -1096,7 +1121,7 @@ ref: [https://developer.mozilla.org/en-US/docs/Web/API/Window/getComputedStyle](
 
 ### Check if Element in Viewport
 
-You can find out more [here](http://stackoverflow.com/questions/123999/how-to-tell-if-a-dom-element-is-visible-in-the-current-viewport/7557433#7557433).
+There is more [here](http://stackoverflow.com/questions/123999/how-to-tell-if-a-dom-element-is-visible-in-the-current-viewport/7557433#7557433).
 
 ```js
 function isElementInViewport (el) {
@@ -1150,7 +1175,7 @@ var getViewportSize = function() {
 
 ### User Tracking
 
-Assume an Evil Advertisement Company wants to track a user, evil generates your own personalize unique hash by using [fingerprinting](https://github.com/Valve/fingerprintjs2), but an ethical company uses cookies and offers Opt-out solution.
+Assuming that an Evil Advertisement Company wants to track a user, evil may well generate a personalized unique hash by using [fingerprinting](https://github.com/Valve/fingerprintjs2). However, ethical company uses cookies and offers Opt-out solution.
 
 ### Opt Out
 
@@ -1160,7 +1185,7 @@ Assume an Evil Advertisement Company wants to track a user, evil generates your 
 
 ### Misspelling Of Referrer
 
-Do you know that why the HTTP Request Header having the field name `referer` not `referrer`
+Fun fact about why the HTTP Request Header having the field name `referer` not `referrer`
 
 _According to the [Wikipedia](https://en.wikipedia.org/wiki/HTTP_referer#Etymology)_
 
@@ -1172,7 +1197,9 @@ _According to the [Wikipedia](https://en.wikipedia.org/wiki/HTTP_referer#Etymolo
 
 ## Template
 
-Someone asks for the template/boilerplate of the SDK, here some examples for you. [TEMPLATE.md](./Template/README.md)
+This guide provides **templates** and **boilerplates** to building an SDK. 
+  
+- [TEMPLATE.md](./Template/README.md)
 
 ## Book/Nice to Read
 
@@ -1202,5 +1229,6 @@ Someone asks for the template/boilerplate of the SDK, here some examples for you
 18. [DOMContentLoaded and Load Event](http://stackoverflow.com/questions/2414750/difference-between-domcontentloaded-and-load-events)
 19. [Must See JavaScript Dev Tools That Put Other Dev Tools to Shame](https://medium.com/javascript-scene/must-see-javascript-dev-tools-that-put-other-dev-tools-to-shame-aca6d3e3d925)
 20. [Learn the art of writing quality READMEs.](https://github.com/noffle/art-of-readme)
+21. [The Deep Dive - JavaScript Widgets](https://medium.com/hoopeez/the-deep-dive-javascript-widget-33df679b6c8d) ~ _How to design, build and deploy a JavaScript Widget that runs on other people’s websites_
 
 *(inspired by [http-api-design](https://github.com/interagent/http-api-design))*
