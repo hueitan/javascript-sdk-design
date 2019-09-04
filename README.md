@@ -434,7 +434,6 @@ var checkCookieWritable = function(domain) {
 #### Check Third Party Cookie Writable
 
 It's impossible to check only using client side JavaScript, but a server can help to achive just that. 
-([Example](https://dl.dropboxusercontent.com/u/105727/web/3rd/third-party-cookies.html))
 
 #### Write Read Remove Cookie Code
 
