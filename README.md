@@ -108,7 +108,7 @@ This question is pretty ubiquitous, but here it is again.
 
 Depending on the purpose of SDK's service and usage — common shared traits are, but not limited to be **native**, **short**, **fast**, **clean**, **readable** and **testable**.
 
-The widely adopted good practice, is to writ SDK with vanilla JavaScript. 
+The widely adopted good practice, is to write SDK with vanilla JavaScript. 
 Languages compiling to JavaScript such as LiveScript, CoffeeScript, TypeScript and others are **not** recommended.
 
 It is also recommended not to use libraries suchs as jQuery in SDK development. 
