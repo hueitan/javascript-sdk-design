@@ -1,4 +1,5 @@
 # JavaScript SDK Design Guide [![Gitter chat](https://badges.gitter.im/huei90/javascript-sdk-design.png)](https://gitter.im/huei90/javascript-sdk-design)
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors)
 
 ## Introduction
 
@@ -1231,3 +1232,19 @@ This guide provides **templates** and **boilerplates** to building an SDK.
 21. [The Deep Dive - JavaScript Widgets](https://medium.com/hoopeez/the-deep-dive-javascript-widget-33df679b6c8d) ~ _How to design, build and deploy a JavaScript Widget that runs on other people’s websites_
 
 *(inspired by [http-api-design](https://github.com/interagent/http-api-design))*
+
+## Contributors ✨
+
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore -->
+<table>
+  <tr>
+    <td align="center"><a href="https://www.linkedin.com/in/hueitan"><img src="https://avatars0.githubusercontent.com/u/2560096?v=4" width="100px;" alt="Huei Tan"/><br /><sub><b>Huei Tan</b></sub></a><br /><a href="https://github.com/hueitan/javascript-sdk-design/commits?author=hueitan" title="Documentation">📖</a></td>
+  </tr>
+</table>
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
