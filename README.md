@@ -1,5 +1,5 @@
-# JavaScript SDK Design Guide [![Gitter chat](https://badges.gitter.im/huei90/javascript-sdk-design.png)](https://gitter.im/huei90/javascript-sdk-design)
-[![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors)
+# JavaScript SDK Design Guide
+[![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors-)
 
 ## Introduction
 
@@ -98,6 +98,7 @@ The target audience of this writeup exludes **non-browser environments** such as
 * [Template](#template)
 * [Book to Read](#booknice-to-read)
 * [Reference](#reference)
+* [Contributors](#contributors-)
 
 ## What is SDK
 
