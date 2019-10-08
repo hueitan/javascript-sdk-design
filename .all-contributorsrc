@@ -1,0 +1,23 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "hueitan",
+      "name": "Huei Tan",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/2560096?v=4",
+      "profile": "https://www.linkedin.com/in/hueitan",
+      "contributions": [
+        "doc"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "javascript-sdk-design",
+  "projectOwner": "hueitan",
+  "repoType": "github",
+  "repoHost": "https://github.com"
+}
