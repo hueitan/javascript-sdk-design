@@ -1,5 +1,5 @@
 # JavaScript SDK Design Guide [![Gitter chat](https://badges.gitter.im/huei90/javascript-sdk-design.png)](https://gitter.im/huei90/javascript-sdk-design)
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors)
+[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors)
 
 ## Introduction
 
@@ -1241,6 +1241,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- prettier-ignore -->
 <table>
   <tr>
+    <td align="center"><a href="https://www.linkedin.com/in/hueitan"><img src="https://avatars0.githubusercontent.com/u/2560096?v=4" width="100px;" alt="Huei Tan"/><br /><sub><b>Huei Tan</b></sub></a><br /><a href="https://github.com/hueitan/javascript-sdk-design/commits?author=hueitan" title="Documentation">📖</a></td>
     <td align="center"><a href="https://github.com/murindwaz"><img src="https://avatars1.githubusercontent.com/u/259806?v=4" width="100px;" alt="Pascal Maniraho"/><br /><sub><b>Pascal Maniraho</b></sub></a><br /><a href="https://github.com/hueitan/javascript-sdk-design/commits?author=murindwaz" title="Documentation">📖</a></td>
   </tr>
 </table>
