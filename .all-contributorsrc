@@ -1,0 +1,23 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "murindwaz",
+      "name": "Pascal Maniraho",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/259806?v=4",
+      "profile": "https://github.com/murindwaz",
+      "contributions": [
+        "doc"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "javascript-sdk-design",
+  "projectOwner": "hueitan",
+  "repoType": "github",
+  "repoHost": "https://github.com"
+}
