@@ -1,4 +1,4 @@
-# JavaScript SDK Design Guide
+# JavaScript SDK Design Guide 
 [![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors-)
 
 ## Introduction
@@ -8,7 +8,7 @@ This guide provides an introduction to develop a [JavaScript](https://developer.
 > The best one sentence to describe an SDK is: _"The SDK is the connection bridging the gap between users and the (browser) machine."_
 
 
-At the end of this guide, the SDK will be able to run in browsers, desktop, mobile web and various other platforms capable of running JavaScript. 
+By using this guide, the SDK will be able to run in browsers, desktop, mobile web and various other platforms capable of running JavaScript. 
 
 The target audience of this writeup excludes **non-browser environments** such as hardware, embedded and Node.js for now. However, in the future material will be added to cover those areas.
 
