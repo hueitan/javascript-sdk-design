@@ -1000,7 +1000,7 @@ if (typeof console === "undefined") {
 
 Understand the difference between `escape()` `encodeURI()` `encodeURIComponent()` [here](http://stackoverflow.com/a/3608791/1748884).
 
-It worth mentioning that using `encodeURI()` and `encodeURIComponent()` has exactly 11 characters difference.
+It's worth mentioning that using `encodeURI()` and `encodeURIComponent()` has exactly 11 characters different.
 These characters are: # $ & + , / : ; = ? @ [more discussion](http://stackoverflow.com/a/23842171/1748884).
 
 <h2 align="center">
