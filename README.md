@@ -222,7 +222,7 @@ The `SDKName()` function, undefined at this point, executes before it becomes av
 
 To make it work, some tricks are necessary to make sure the script executes successfully. The event will (need to) be stored in the `SDKName.q` queue array. The SDK should be able to handle and execute the `SDKName.q` event and initialize the `SDKName` namespace.
 
-The following snippet shos this:
+The following snippet depicts the statement in previous paragraph.
 
 ```javascript
 <script>
@@ -323,8 +323,8 @@ It is not a good practice to use one of the following versioning styles:
 The reason is that it becomes confusing to track the lastest version. 
 Therefore, previous styling does not help developers who use the SDK.
 
-It is however a good practice to use [Semantic Versioning](http://semver.org), a.k.a. **SemVer**, when versioning SDKs.
-It's worth mentioning that SemVer has three main parts, each corresponding to importance of a release: "MAJOR.MINOR.PATCH".
+It is however a good practice to use [Semantic Versioning](http://semver.org), also known as **SemVer**, when versioning SDKs.
+It has three main parts, each corresponding to importance of a release: "MAJOR.MINOR.PATCH".
 Version in `v1.0.0` `v1.5.0` `v2.0.0` is easier to trace and track in changelog documentation, for instance.
 
 Depending on service design, some of the ways SDK can be distributed (or tracked) by version are the following:
@@ -1000,7 +1000,7 @@ if (typeof console === "undefined") {
 
 Understand the difference between `escape()` `encodeURI()` `encodeURIComponent()` [here](http://stackoverflow.com/a/3608791/1748884).
 
-It worth mentioning that using `encodeURI()` and `encodeURIComponent()` has exactly 11 characters different.
+It worth mentioning that using `encodeURI()` and `encodeURIComponent()` has exactly 11 characters difference.
 These characters are: # $ & + , / : ; = ? @ [more discussion](http://stackoverflow.com/a/23842171/1748884).
 
 <h2 align="center">
