@@ -1176,7 +1176,7 @@ var getViewportSize = function() {
 
 ### User Tracking
 
-Assuming that an Evil Advertisement Company wants to track a user, Evil may well generate a personalized unique hash by using [fingerprinting](https://github.com/Valve/fingerprintjs2). However, Ethical Company uses cookies and offers Opt-out solution.
+Assuming that an Evil Advertisement Company wants to track a user, Evil may well generate a personalized unique hash by using [fingerprinting](https://github.com/Valve/fingerprintjs2). However, Ethical Company uses cookies and offers [Opt-out](https://en.wikipedia.org/wiki/Opt-out) solution.
 
 ### Opt Out
 
