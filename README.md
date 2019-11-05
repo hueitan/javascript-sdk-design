@@ -97,7 +97,6 @@ The target audience of this writeup excludes **non-browser environments** such a
   * [Misspelling Of Referrer](#misspelling-of-referrer)
 * [Template](#template)
 * [Book to Read](#booknice-to-read)
-* [Reference](#reference)
 * [Contributors](#contributors-)
 
 ## What is an SDK
@@ -1207,30 +1206,6 @@ This guide provides **templates** and **boilerplates** to building an SDK.
 1. [Third-Party JavaScript](http://thirdpartyjs.com)
 2. [JQuery Plugin](https://learn.jquery.com/plugins/)
 3. [LightningJS](https://github.com/olark/lightningjs)
-
-## References
-
-1. [What is Software Development Kit](http://www.webopedia.com/TERM/S/SDK.html)
-2. [A window.fetch JavaScript polyfill.](https://github.com/github/fetch)
-3. [POST Request](http://stackoverflow.com/questions/692196/post-request-JavaScript/25423688#25423688)
-4. [Semantic VersioningVersioning 2.0.0](http://semver.org)
-5. [HTTP API design guide extracted from work on the Heroku Platform API](https://github.com/interagent/http-api-design)
-6. [Understanding URIs](http://medialize.github.io/URI.js/about-uris.html)
-7. [URI Parsing with JavaScript](https://gist.github.com/jlong/2428561)
-8. [Modernizr: the feature detection library for HTML5/CSS3](http://modernizr.com)
-9. [HTML5 Web Storage](http://www.w3schools.com/html/html5_webstorage.asp)
-10. [Check if third-party cookies are enabled](http://stackoverflow.com/questions/3550790/check-if-third-party-cookies-are-enabled)
-11. [Introduction to Analytics.js - Universal Analytics Web Tracking](https://developers.google.com/analytics/devguides/collection/analyticsjs/)
-12. [Facebook Conversion Tracking Pixel](https://www.facebook.com/help/421433191260652)
-13. [What is the maximum length of a URL](http://www.boutell.com/newfaq/misc/urllength.html)
-14. [YOU MIGHT NOT NEED JQUERY](http://youmightnotneedjquery.com/)
-15. [What is a Polyfill?](https://remysharp.com/2010/10/08/what-is-a-polyfill)
-16. [Asynchronous and deferred JavaScript execution explained](http://peter.sh/experiments/asynchronous-and-deferred-javascript-execution-explained/)
-17. [generate random UUIDs](https://gist.github.com/jed/982883)
-18. [DOMContentLoaded and Load Event](http://stackoverflow.com/questions/2414750/difference-between-domcontentloaded-and-load-events)
-19. [Must See JavaScript Dev Tools That Put Other Dev Tools to Shame](https://medium.com/javascript-scene/must-see-javascript-dev-tools-that-put-other-dev-tools-to-shame-aca6d3e3d925)
-20. [Learn the art of writing quality READMEs.](https://github.com/noffle/art-of-readme)
-21. [The Deep Dive - JavaScript Widgets](https://medium.com/hoopeez/the-deep-dive-javascript-widget-33df679b6c8d) ~ _How to design, build and deploy a JavaScript Widget that runs on other people’s websites_
 
 *(inspired by [http-api-design](https://github.com/interagent/http-api-design))*
 
