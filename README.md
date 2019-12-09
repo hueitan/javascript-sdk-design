@@ -359,7 +359,7 @@ Each version should have:
 [Security] to invite users to upgrade in case of vulnerabilities.
 ```
 
-In addition, [commit-message-emoji](https://github.com/dannyfritz/commit-message-emoji) uses an emoji to explain the commit's changes itself.
+In addition, [commit-message-emoji](https://github.com/dannyfritz/commit-message-emoji) uses an emoji to explain the commit's changes itself. Find the best suitable format or [changelog generator tool](https://github.com/topics/changelog) for your project.
 
 ## Namespace
 
