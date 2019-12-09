@@ -353,10 +353,10 @@ Each version should have:
 ```
 [Added] for new features.
 [Changed] for changes in existing functionality.
-[Deprecated] for once-stable features removed in upcoming releases.
-[Removed] for deprecated features removed in this release.
+[Deprecated] for soon-to-be removed features.
+[Removed] for now removed features.
 [Fixed] for any bug fixes.
-[Security] to invite users to upgrade in case of vulnerabilities.
+[Security] in case of vulnerabilities.
 ```
 
 In addition, [commit-message-emoji](https://github.com/dannyfritz/commit-message-emoji) uses an emoji to explain the commit's changes itself. Find the best suitable format or [changelog generator tool](https://github.com/topics/changelog) for your project.
