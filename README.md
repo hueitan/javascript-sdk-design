@@ -46,7 +46,7 @@ The target audience of this writeup excludes **non-browser environments** such a
   * [Cookie](#cookie)
     * [Check Cookie Writable](#check-cookie-writable)
     * [Check Third-Party Cookie Writable](#check-third-party-cookie-writable)
-    * [Write Read Remove Cookie Code](#write-read-remove-cookie-code)
+    * [Write Read Remove Cookie Code](#writereadremove-cookie-code)
   * [Session](#session)
   * [LocalStorage](#localstorage)
     * [Check LocalStorage Writable](#check-localstorage-writable)
