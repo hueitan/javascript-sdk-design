@@ -112,7 +112,7 @@ Depending on the purpose of SDK's service and usage — common shared traits are
 The widely adopted good practice, is to write SDK with vanilla JavaScript. 
 Languages compiling to JavaScript such as LiveScript, CoffeeScript, TypeScript and others are **not** recommended.
 
-It is also recommended not to use libraries suchs as jQuery in SDK development. 
+It is also recommended **not** to use libraries suchs as jQuery in SDK development. 
 The exception is of course when it is really important. There are also other jQuery-like libraries, zepto.js _etc_ to choose from, for the DOM manipulation purposes.
 
 In event of HTTP [ajax request](#request) requirements — there are native equivalent such as `window.fetch`. It is light-weight, supported in ever growing platforms. 
