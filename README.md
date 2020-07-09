@@ -606,11 +606,13 @@ var orientation = screen.orientation || screen.mozOrientation || screen.msOrient
 In web page, use CSS style `overflow: hidden`, in some mobile webs, this CSS doesn't work, use JavaScript event.
 
 ```js
-document.addEventListener('touchstart', function(e){ e.preventDefault(); }); // prevent scroll
+document.addEventListener('touchstart', function(e){ e.preventDefault(); });
 // or
-document.body.addEventListener('touchstart', function(e){ e.preventDefault(); }); // prevent scroll
+document.body.addEventListener('touchstart', function(e){ e.preventDefault(); });
 // use move if you need some touch event
-document.addEventListener('touchmove', function(e){ e.preventDefault(); }); // prevent scroll
+document.addEventListener('touchmove', function(e){ e.preventDefault(); });
+// target modern browser
+document.addEventListener('touchmove', function(e){ e.preventDefault(); }, { passive: false });
 ```
 
 ## Request
