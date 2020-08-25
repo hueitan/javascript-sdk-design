@@ -10,7 +10,7 @@ This guide provides an introduction to develop a [JavaScript](https://developer.
 
 By using this guide, the SDK will be able to run in browsers, desktop, mobile web and various other platforms capable of running JavaScript. 
 
-The target audience of this writeup excludes **non-browser environments** such as hardware, embedded and Node.js for now. However, in the future material will be added to cover those areas.
+The target audience of this writeup excludes **non-browser environments** such as hardware, embedded and Node.js.
 
 > It is possible to suggest improvements by [editing](https://github.com/hueitan/JavaScript-sdk-design/edit/master/README.md), or dropping suggestions on the [issue list](https://github.com/hueitan/JavaScript-sdk-design/issues). I owe you a beer :beers:
 
