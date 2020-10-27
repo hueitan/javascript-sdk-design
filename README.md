@@ -72,7 +72,7 @@ The target audience of this writeup excludes **non-browser environments** such a
 * [Debugging](#debugging)
   * [Simulating Multiple Domains](#simulating-multiple-domains)
   * [Developer Tools](#developer-tools)
-  * [Simulate a slower network connection](simulate-a-slower-network-connection)
+  * [Simulate a slower network connection](#simulate-a-slower-network-connection)
   * [Console Logs](#console-logs)
   * [Debugging Proxy](#debugging-proxy)
   * [BrowserSync](#browsersync)
