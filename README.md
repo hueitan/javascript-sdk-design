@@ -60,7 +60,7 @@ The target audience of this writeup excludes **non-browser environments** such a
 * [Request](#request)
   * [Image Beacon](#image-beacon)
   * [Single Post](#single-post)
-  * [Multiple Post](#multiple-post)
+  * [Multiple Posts](#multiple-posts)
   * [Iframe](#iframe)
   * [Script jsonp](#script-jsonp)
   * [Navigator.sendBeacon()](#navigatorsendbeacon)
