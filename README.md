@@ -72,6 +72,7 @@ The target audience of this writeup excludes **non-browser environments** such a
 * [Debugging](#debugging)
   * [Simulating Multiple Domains](#simulating-multiple-domains)
   * [Developer Tools](#developer-tools)
+  * [Simulate a slower network connection](simulate-a-slower-network-connection)
   * [Console Logs](#console-logs)
   * [Debugging Proxy](#debugging-proxy)
   * [BrowserSync](#browsersync)
@@ -916,6 +917,12 @@ Every website URL becomes accessible via `http://publisher.net` and `http://sdk.
 Browsers come with debugging tools specific to every vendor. Obviously, these tools can be used to debug SDK JavaScript code - `Chrome Developer Tools` `Safari Developer Tools` `Firebug`. Developer tools also shortened as DevTools.
 
 > The DevTools provide web developers deep access into the internals of the browser and their web application. Use the DevTools to efficiently track down layout issues, set JavaScript breakpoints, and get insights for code optimization.
+
+### Simulate a slower network connection
+
+> The network connection of the computer that you use to build sites is probably faster than the network connections of the mobile devices of your users. By throttling the page you can get a better idea of how long a page takes to load on a mobile device. --- https://developers.google.com/web/tools/chrome-devtools/network#throttle
+
+![screenshot](https://developers.google.com/web/tools/chrome-devtools/network-performance/imgs/tutorial/throttling.png)
 
 ### Console Logs
 
