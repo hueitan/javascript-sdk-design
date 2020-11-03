@@ -6,7 +6,7 @@
  * This is a template that contains init function
  *
  * To find out more sdk template, please visit javascript-sdk-design homepage
- * https://github.com/huei90/javascript-sdk-design
+ * https://github.com/hueitan/javascript-sdk-design
  */
 (function (window) {
 

@@ -170,4 +170,4 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 Some other [SDKs](https://github.com/vsouza/awesome-ios#sdk).
 
-[Suggest one Now!](https://github.com/huei90/javascript-sdk-design/edit/master/SCOPE.md)
+[Suggest one Now!](https://github.com/hueitan/javascript-sdk-design/edit/master/SCOPE.md)
