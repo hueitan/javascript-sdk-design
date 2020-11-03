@@ -96,6 +96,7 @@ The target audience of this writeup excludes **non-browser environments** such a
   * [Opt Out](#opt-out)
 * [WTF](#wtf)
   * [Misspelling Of Referrer](#misspelling-of-referrer)
+  * [CSS Flexible Box Layout Module](#css-flexible-box-layout-module)
 * [Template](#template)
 * [Book to Read](#booknice-to-read)
 * [Contributors](#contributors-)
@@ -1203,6 +1204,12 @@ _According to the [Wikipedia](https://en.wikipedia.org/wiki/HTTP_referer#Etymolo
 <h2 align="center">
     <img src="https://cloud.githubusercontent.com/assets/2560096/12190613/96a7d652-b605-11e5-8109-1c6fefa9dfc4.png"/>
 </h2>
+
+### CSS Flexible Box Layout Module
+
+Be sure to double-check the flexbox functionality in a different browser, especially the partial support in IE10/11.
+
+![image](https://user-images.githubusercontent.com/2560096/97968315-c7528d80-1dbe-11eb-8331-9ab1207a00a8.png)
 
 ## Template
 
