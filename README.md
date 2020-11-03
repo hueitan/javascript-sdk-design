@@ -16,9 +16,8 @@ The target audience of this writeup excludes **non-browser environments** such a
 
 <p align="right">
 <i>READ IT</i>
-<a href="http://sdk-design.js.org" target="_blank">ONLINE</a> /
-<a href="https://gitprint.com/huei90/javascript-sdk-design/blob/master/README.md" target="_blank">PDF</a>
-<i>OR</i>
+<a href="http://sdk-design.js.org" target="_blank">ONLINE</a> 
+<i>AND</i>
 <a href="http://ctt.ec/GyjRN" title="Click to Tweet">Tweet It</a> <br/>
 </p>
 
