@@ -12,7 +12,7 @@ By using this guide, the SDK will be able to run in browsers, desktop, mobile we
 
 The target audience of this writeup excludes **non-browser environments** such as hardware, embedded and Node.js.
 
-> It is possible to suggest improvements by [editing](https://github.com/hueitan/JavaScript-sdk-design/edit/master/README.md), or dropping suggestions on the [issue list](https://github.com/hueitan/JavaScript-sdk-design/issues). I owe you a beer :beers:
+> Suggest improvements by [editing](https://github.com/hueitan/JavaScript-sdk-design/edit/master/README.md), or drop suggestions on the [issue list](https://github.com/hueitan/JavaScript-sdk-design/issues). I owe you a beer :beers:
 
 <p align="right">
 <i>READ IT</i>
