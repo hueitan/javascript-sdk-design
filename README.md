@@ -63,7 +63,7 @@ The target audience of this writeup excludes **non-browser environments** such a
   * [Navigator.sendBeacon()](#navigatorsendbeacon)
   * [XMLHttpRequest](#xmlhttprequest)
   * [Fragment Identifier](#fragment-identifier)
-  * [Maximum Number of Connection](#maximum-number-of-connection)
+  * [Maximum Number of Connections](#maximum-number-of-connections)
 * [Component of URI](#component-of-uri)
   * [Parsing URI](#parsing-uri)
 * [Debugging](#debugging)
@@ -95,7 +95,7 @@ The target audience of this writeup excludes **non-browser environments** such a
   * [Misspelling Of Referrer](#misspelling-of-referrer)
   * [CSS Flexible Box Layout Module](#css-flexible-box-layout-module)
 * [Template](#template)
-* [Book to Read](#booknice-to-read)
+* [Book to Read](#booksnice-to-reads)
 * [Contributors](#contributors-)
 
 ## What is an SDK
@@ -116,7 +116,7 @@ The exception is of course when it is really important. There are also other jQu
 
 In event of HTTP [ajax request](#request) requirements — there are native equivalent such as `window.fetch`. It is light-weight, supported in ever growing platforms. 
 
-Backward compatibility is paramount. Every new  SDK version released should be enabled with  support of previous older versions. Likewise, current version should be designed to support future SDK versions. This is referred to as Forward compatibility.
+[Backward compatibility](https://en.wikipedia.org/wiki/Backward_compatibility#In_software) is paramount. Every new  SDK version released should be enabled with  support of previous older versions. Likewise, current version should be designed to support future SDK versions. This is referred to as Forward compatibility.
 
 Moreover, a good **Documentation**, well commented code, a healthy unit test coverage, as well as end-to-end (user) scenario are key to the success of SDK.
 
