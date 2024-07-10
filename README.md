@@ -1030,7 +1030,7 @@ Useful Tips
 
 ### Load Script with Callback
 
-It's similar to [asynchrnous script loading](#asynchronous-syntax) with additional callback event
+It's similar to [asynchronous script loading](#asynchronous-syntax) with additional callback event
 
 ```js
 function loadScript(url, callback) {
