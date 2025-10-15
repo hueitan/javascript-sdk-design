@@ -274,7 +274,7 @@ There are other different ways to include a script
 
 #### Modular include a Script
 
-There is full source code — and this awesome tutorial _"[Loading JavaScript Modules](https://libraryinstitute.wordpress.com/2010/12/01/loading-javascript-modules/)"_ may help for in-depth understanding of concepts discussed above.
+There is full source code — and this awesome tutorial _"[Loading JavaScript Modules](https://web.archive.org/web/20110414083046/http://libraryinstitute.wordpress.com/2010/12/01/loading-javascript-modules/)"_ may help for in-depth understanding of concepts discussed above.
 
 ```js
 module('sdk.js',['sdk-track.js', 'sdk-beacon.js'],function(track, beacon) {
